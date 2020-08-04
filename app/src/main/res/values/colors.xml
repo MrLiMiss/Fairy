@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/colorWhite</color>
+    <color name="colorPrimaryDark">@color/colorWhite</color>
+    <color name="colorAccent">@color/color_5184FA</color>
+    <color name="colorBase">@color/color_5184FA</color>
+    <color name="colorBg">@color/color_FAFAFA</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite_60">#66FFFFFF</color>
+    <color name="colorWhite_40">#99FFFFFF</color>
+    <color name="color_5184FA">#ff6d26</color>
+    <color name="color_5184FA_60">#99ff6d26</color>
+    <color name="color_5184FA_40">#66ff6d26</color>
+    <color name="color_111111">#111111</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_EEEEEE">#EEEEEE</color>
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <color name="color_f8f8f8">#F8F8F8</color>
+    <color name="color_f9f9f9">#f9f9f9</color>
+    <color name="color_FFFFFF">#FFFFFF</color>
+    <color name="color_F5F5F5">#F5F5F5</color>
+    <color name="color_F64A46">#F64A46</color>
+    <color name="color_E5E5E5">#E5E5E5</color>
+    <color name="color_F2F2F2">#F2F2F2</color>
+    <color name="color_FDFFFF">#FDFFFF</color>
+    <color name="color_transparent_66">#66000000</color>
+    <color name="color_4C4C4C">#4C4C4C</color>
+    <color name="color_70_white">#B3FFFFFF</color>
+
+    <!-- 透明色 -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- 海军色 -->
+    <color name="black">#000000</color>
+
+    <!-- 半透明色 -->
+    <color name="transparent">#00000000</color>
 </resources>

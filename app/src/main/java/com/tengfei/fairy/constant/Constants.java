@@ -66,6 +66,12 @@ public class Constants {
 
     }
 
+    public static class SPKey {
+        public static final String TOKEN = "token";
+        public static final String USER_NAME = "user_name";
+        public static final String AES_DYNAMICKEY = "aes_dynamickey";
+    }
+
     //公共事件属性
     /**
      * •   "_app_name":"手机银行",//项目应用名称
