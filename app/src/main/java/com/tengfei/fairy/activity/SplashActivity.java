@@ -42,8 +42,9 @@ public class SplashActivity extends Activity {
                 /**
                  *要执行的操作
                  */
-                IntentUtils.toMainActivity(mActivity);
-                mActivity.finish();
+                Intent intent =new Intent(SplashActivity.this,LoginActivity.class);
+                mActivity.startActivity(intent);
+
             }
         }, 3000);//3秒后执行Runnable中的run方法
     }

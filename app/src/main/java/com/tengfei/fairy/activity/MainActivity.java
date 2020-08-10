@@ -38,83 +38,11 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Log.e("ltf","onClick");
-//                HrbbData.trackEvent("_appStart");
-
-//                HrbbData.trackView("首页","www.mainActivity.com");
-//                HrbbData.trackClick("按钮1","www.button.com","MainActivity","www.mainactivity.com");
-//                HrbbData.encryptionEvent(MainActivity.this,"APP_START_04","title4","url4");
+                Log.e("ltf", "onClick");
             }
-
-        });
-        button2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-//             ackEvent("event_code20");
-            }
-
-        });
-        button3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-//                Constants.trackView="003";
-//                String trackView=Constants.trackView;
-
-
-//                ToastTools.showLong(MainActivity.this,content+"");
-            }
-
-        });
+            });
     }
 
-
-
-//    private void checkCameraPermission() {
-//        String[] reqPermissions = {Manifest.permission.ACCESS_FINE_LOCATION,
-//                Manifest.permission.ACCESS_COARSE_LOCATION,
-//                Manifest.permission.READ_EXTERNAL_STORAGE,
-//                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-//                Manifest.permission.READ_PHONE_STATE,
-//                Manifest.permission.GET_TASKS};
-//        AndPermission.with(MainActivity.this)
-//                //.runtime()
-//                .permission(reqPermissions)
-//                //.onGranted(action)
-//                .onGranted(new Action() {
-//                    @Override
-//                    public void onAction(Object data) {
-//                        Log.e("AndPermission", "权限均允许");
-//                    }
-//
-//                })
-//
-//                .onDenied(new Action() {
-//                    @Override
-//                    public void onAction(Object data) {
-//                        // Storage permission are not allowed.
-//                        //* 判断用户是否点击了禁止后不再询问
-//                        if (AndPermission.hasAlwaysDeniedPermission(MainActivity.this, reqPermissions)) {
-//                            Log.e("AndPermission", "部分功能被禁止");
-//                            //System.exit(0) ;//直接退出
-//                        }
-//                    }
-//
-//                })
-//                .start();
-//
-//
-//
-//        int hasCameraPermission = ContextCompat.checkSelfPermission(getApplication(),
-//                Manifest.permission.ACCESS_COARSE_LOCATION);
-//        if (hasCameraPermission == PackageManager.PERMISSION_GRANTED) {
-//            //有权限
-////            IntentUtils.startoHotLine(mActivity);
-//        } else {
-//            //没有权限，申请权限。
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-//                    com.tengfei.fairy.constant.Code.PERMISSION_LOCATION);
-//        }
-//    }
 
     /**
      * 处理权限申请的回调。
@@ -157,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
         getDialog().alert("温馨提示", "您确定要退出app吗？", "确定", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         },"取消", null);
     }
