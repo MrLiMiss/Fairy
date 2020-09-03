@@ -22,6 +22,7 @@ public class LoginActivity extends Activity  implements View.OnClickListener{
     private EditText account;
     private Button bt_login;
     private DialogHelper dialogHelper;
+    private Button btn_regester;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +34,16 @@ public class LoginActivity extends Activity  implements View.OnClickListener{
     private void initView() {
         account = findViewById(R.id.et_account);
         bt_login = findViewById(R.id.btn_login);
+        btn_regester = findViewById(R.id.btn_regester);
+        btn_regester.setOnClickListener(this);
         bt_login.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
+        dialogHelper = new DialogHelper(LoginActivity.this);
         switch (view.getId()){
             case R.id.btn_login:
-                dialogHelper = new DialogHelper(LoginActivity.this);
                 if(account.getText().length()==0||account.getText().equals("")){
                     dialogHelper.alert("温馨提示", "密码输入为空，请重新输入！", "确定", new View.OnClickListener() {
                         @Override
@@ -61,6 +64,14 @@ public class LoginActivity extends Activity  implements View.OnClickListener{
                         }
                     },"取消", null);
                 }
+                break;
+            case R.id.btn_regester:
+                dialogHelper.alert("温馨提示", "注册功能暂未开放，敬请期待", "确定", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                },"取消",null);
                 break;
             default:
                 break;
