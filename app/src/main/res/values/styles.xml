@@ -71,4 +71,12 @@
         <item name="android:layerType">software</item>
     </style>
 
+    <style name="CustomTab" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#FF6D26</item>
+        <item name="tabTextColor">@color/color_999999</item>
+        <item name="tabSelectedTextColor">#FF6D26</item>
+        <item name="tabBackground">@color/transparent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+    </style>
+
 </resources>

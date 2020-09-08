@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">Fairy</string>
     <string name="action_settings">Settings</string>
-    <string name="app_save_suc"><Data><![CDATA[
-        还款计划已保存到系统相册<br/>
-        <font size='10'>保存路径为：相册/Pictures</font>
-        ]]></Data></string>
 </resources>

@@ -55,6 +55,7 @@ public class LoginActivity extends Activity  implements View.OnClickListener{
                    Toast.makeText(this,"密码正确",Toast.LENGTH_LONG);
                     Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }else {
 
                     dialogHelper.alert("温馨提示", "输入密码错误！"+account.getText()+"请重新输入。", "确定", new View.OnClickListener() {
