@@ -13,11 +13,21 @@
         android:layout_weight="1">
     </androidx.viewpager.widget.ViewPager>
 
+    <!--<android.support.design.widget.TabLayout-->
+        <!--android:id="@+id/tabLayout"-->
+        <!--style="@style/CustomTab"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="49dp"-->
+        <!--android:layout_alignParentBottom="true" />-->
+
     <com.google.android.material.tabs.TabLayout
         style="@style/CustomTab"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="49dp"></com.google.android.material.tabs.TabLayout>
+        app:tabBackground="@color/transparent"
+        app:tabRippleColor="@color/transparent"
+        android:layout_height="49dp">
+    </com.google.android.material.tabs.TabLayout>
 
 
 </LinearLayout>
