@@ -40,4 +40,9 @@
 
     <!-- 半透明色 -->
     <color name="transparent">#00000000</color>
+    <color name="red">#FF0000</color>
+    <color name="text_tab_selected">#ff570e</color>
+    <color name="text_tab_normal">#000000</color>
+
+    <color name="color_FF6D26">#FF6D26</color>
 </resources>

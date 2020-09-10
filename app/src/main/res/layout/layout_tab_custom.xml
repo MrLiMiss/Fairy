@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tengfei.fairy.wedget.TabButton
+        android:id="@+id/tabButtun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text_color="@color/selector_tab_text"
+        app:text_size="10sp" />
+        <!--app:button_image="@drawable/selector_tab_home"-->
+
+</LinearLayout>

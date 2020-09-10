@@ -72,11 +72,20 @@
     </style>
 
     <style name="CustomTab" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">#FF6D26</item>
+        <item name="tabIndicatorColor">@color/color_FF6D26</item>
         <item name="tabTextColor">@color/color_999999</item>
-        <item name="tabSelectedTextColor">#FF6D26</item>
+        <item name="tabSelectedTextColor">@color/color_FF6D26</item>
         <item name="tabBackground">@color/transparent</item>
         <item name="tabIndicatorHeight">0dp</item>
     </style>
+
+    <!--底部导航栏自定义button-->
+    <declare-styleable name="TabButtun">
+        <attr name="button_image" format="reference" />
+        <attr name="button_text" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="selected" format="boolean" />
+    </declare-styleable>
 
 </resources>

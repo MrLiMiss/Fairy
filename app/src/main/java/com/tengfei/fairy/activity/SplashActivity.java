@@ -46,7 +46,7 @@ public class SplashActivity extends Activity {
                 mActivity.startActivity(intent);
 
             }
-        }, 3000);//3秒后执行Runnable中的run方法
+        }, 1000);//3秒后执行Runnable中的run方法
     }
 
     protected int getLayoutId() {
