@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.tengfei.fairy.R;
+import com.tengfei.fairy.constant.Constants;
 import com.tengfei.fairy.utils.AppUtils;
 import com.tengfei.fairy.utils.IntentUtils;
+import com.tengfei.fairy.utils.SharePreferenceUtil;
 
 /**
  * @ Description :splash页面
@@ -42,8 +44,16 @@ public class SplashActivity extends Activity {
                 /**
                  *要执行的操作
                  */
-                Intent intent =new Intent(SplashActivity.this,LoginActivity.class);
-                mActivity.startActivity(intent);
+                if( SharePreferenceUtil.getBooleanInfoFromShared("isLogined",false)){
+                    Intent intent =new Intent(SplashActivity.this,MainActivity.class);
+                    mActivity.startActivity(intent);
+                    finish();
+                }else {
+                    Intent intent =new Intent(SplashActivity.this,LoginActivity.class);
+                    mActivity.startActivity(intent);
+                    finish();
+                }
+
 
             }
         }, 1000);//3秒后执行Runnable中的run方法

@@ -30,6 +30,8 @@ public class Constants {
     public static String latitude;//GPS 经度
     public static String trackView="";//GPS 经度
 
+    public static Boolean isLogined=false;//是否是登录状态
+
 
 
 

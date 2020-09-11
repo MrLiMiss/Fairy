@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 import com.tengfei.fairy.BuildConfig;
+import com.tengfei.fairy.utils.SharePreferenceUtil;
 
 /**
  * @ Description :全局application
@@ -34,7 +35,6 @@ public class FairyApplication extends MultiDexApplication {
 //            initCrashHandler();
 //            //梆梆安全 威胁感知
 //            initBangBangSafe();
-
         }
 
         private void initBangBangSafe() {

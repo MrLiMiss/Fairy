@@ -42,8 +42,8 @@ public class AppUtils {
 
     public static void logOutClearInfo() {
         //清空token
-        SharePreferenceUtil.put(Constants.SPKey.TOKEN, "");
-        SharePreferenceUtil.put(Constants.SPKey.USER_NAME, "");
+        SharePreferenceUtil.setInfoToShared(Constants.SPKey.TOKEN, "");
+        SharePreferenceUtil.setInfoToShared(Constants.SPKey.USER_NAME, "");
     }
 
     /**

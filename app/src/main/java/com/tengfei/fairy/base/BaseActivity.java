@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import com.tengfei.fairy.utils.Logs;
 import butterknife.ButterKnife;
 
@@ -79,6 +81,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      * @version 1.0 2013-6-18
      */
     protected abstract void initData();
+
+
+    public void clearPopBackStack() {//清空回退栈
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack(null,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }
 
     /**
      * 根据资源id获取值

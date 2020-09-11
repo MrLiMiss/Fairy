@@ -9,7 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.tengfei.fairy.R;
+import com.tengfei.fairy.constant.Constants;
 import com.tengfei.fairy.utils.DialogHelper;
+import com.tengfei.fairy.utils.SharePreferenceUtil;
 
 /**
  * @ Description :登录页面
@@ -54,6 +56,7 @@ public class LoginActivity extends Activity  implements View.OnClickListener{
                 }else if (account.getText().toString().equals("123321")){
                    Toast.makeText(this,"密码正确",Toast.LENGTH_LONG);
                     Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                    SharePreferenceUtil.setBooleanInfoToShared("isLogined",true);
                     startActivity(intent);
                     finish();
                 }else {

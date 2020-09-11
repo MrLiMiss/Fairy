@@ -196,9 +196,8 @@ public class MainActivity extends BaseActivity {
         getDialog().alert("温馨提示", "您确定要退出app吗？", "确定", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                clearPopBackStack();
+                activity.finish();
             }
         },"取消", null);
     }
