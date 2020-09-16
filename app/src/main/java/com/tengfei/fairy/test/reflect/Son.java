@@ -12,23 +12,24 @@ public class Son extends Father {
     //被private static修饰的属性仅仅可以被静态方法调用，但是只能被本类中的方法（可以是非静态的）调用，在外部创建这个类的对象或者直接使用这个类访问都是非法的。
 
 
-    public static String sex="1";
+    public static String sex = "1";
+    public int age=12;
     private String IDNumber;//身份证号
-    public int age;
-    protected String  name;
+    protected String name;
 
 
-    public Son(){}
-
-    public Son(String name,int age){
-        this.name=name;
-        this.age=age;
+    public Son() {
     }
 
-    public Son(String name,int age,String idnumber){
-        this.name=name;
-        this.age=age;
-        this.IDNumber=idnumber;
+    public Son(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Son(String name, int age, String idnumber) {
+        this.name = name;
+        this.age = age;
+        this.IDNumber = idnumber;
     }
 
     public static String getSex() {
@@ -65,9 +66,14 @@ public class Son extends Father {
         this.name = name;
     }
 
-    public class Job{
+    public class Job {
         public String Address;
 
+    }
+
+    //私有方法
+    private void say() {
+        System.out.println("private say()...");
     }
 
 

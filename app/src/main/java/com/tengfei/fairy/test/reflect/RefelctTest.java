@@ -19,39 +19,77 @@ public class RefelctTest {
 
     public static void main(String[] args) throws Exception {
         Son son = new Son();
-        Class clazz = son.getClass();
-        son.setIDNumber("123123321");
-        son.setName("adam");
-        son.setAge(3);
-        new ReflectUtil().copy(son);
+        Class clazz=son.getClass();
 
+//        myRefelct();
 
-        myConstuctor(clazz);
+        //构造函数
+//        myConstuctor(clazz);
 
-        myField(clazz);
+        //所有public 非public属性
+      getAllField(son);
+//        getPublicField(son);
 
 
     }
 
-
-    //field 相关
-    public static void myField(Class clazz){
+    /**
+     * 获取打印 所有（public & 非public ）field 变量 类型+属性
+     * @param
+     * @throws
+     * @throws
+     */
+    public static void getAllField(Object object) throws NoSuchFieldException, IllegalAccessException {
+        Class clazz=object.getClass();
         System.out.println("获取field相关：");
-        //获取此类的所有的公共（public）的字段，返回 Field 对象的一个数组
-        Field[] fields = clazz.getFields();
+        System.out.println("public & 非public 属性");
         Field[] allFields = clazz.getDeclaredFields();//获取类中所有的属性(public、protected、default、private)，但不包括继承的属性，返回 Field 对象的一个数组
         //获取字段名
         String fieldName = clazz.getName();
         System.out.println("fieldName:" + fieldName);
         for (Field field : allFields) {
+            field.setAccessible(true);
             int xiushifu = field.getModifiers();//
-            System.out.println("修饰符:" + xiushifu);
+
             Class aClass = field.getType();//变量类型 int标识（private为2  public 为1 protected 为 4  public static 为 9 ）
-            String filedname2 = aClass.getName();
-            System.out.println("变量类型：" + filedname2);
+            String fieldType = aClass.getName();
+
+            System.out.println("修饰符:" + xiushifu+",变量类型：" + fieldType+",value:"+field.get(object));
+
 
         }
     }
+
+    /**
+     *
+     * 打印所有public 属性 和属性的值
+     * @param
+     * @throws
+     * @throws
+     */
+    public static void getPublicField(Object obj) throws NoSuchFieldException, IllegalAccessException {
+        Class clazz=obj.getClass();
+        System.out.println("public 属性");
+        //获取此类的所有的公共（public）的字段，返回 Field 对象的一个数组
+        Field[] fields = clazz.getFields();
+        for(Field field:fields){
+            Class cl = field.getType();    // 属性的类型
+
+            int md = field.getModifiers();    // 属性的修饰域
+
+            Field f = clazz.getField(field.getName());    // 属性的值
+            f.setAccessible(true);
+            Object value = (Object)f.get(obj);
+
+            // 判断属性是否被初始化
+            if (value == null) {
+                System.out.println(Modifier.toString(md) + " " + cl + " : " + field.getName());
+            } else {
+                System.out.println(Modifier.toString(md) + " " + cl + " : " + field.getName() + " = " + value.toString());
+            }
+        }
+    }
+
 
 
     /**
@@ -78,5 +116,17 @@ public class RefelctTest {
 
     }
 
+    public static void myRefelct() throws Exception {
+        Son son = new Son();
+        Class clazz = son.getClass();
+        son.setIDNumber("123123321");
+        son.setName("adam");
+        son.setAge(3);
+        new ReflectUtil().copy(son);
+    }
+
+    public static void myMethod(){
+
+    }
 
 }
