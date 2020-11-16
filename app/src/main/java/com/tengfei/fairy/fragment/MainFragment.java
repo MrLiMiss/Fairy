@@ -26,7 +26,7 @@ import com.tengfei.fairy.utils.Logs;
  * @ Version :
  */
 public class MainFragment extends Fragment implements View.OnClickListener {
-
+    private  View contentView;
     public TextView textView;
     public Activity activity;
     public Button button;
@@ -52,35 +52,41 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Logs.i("lifecycle-MainFragment-", "onCreate():");
         initView();
         initAction();
-//        initData();
+        initData();
     }
+
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Logs.i("lifecycle-MainFragment-", "onCreateView()");
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        contentView=inflater.inflate(R.layout.fragment_main, container, false);
+        button=(Button)contentView.findViewById(R.id.bt_main_login);
+        return contentView;
     }
 
 
     @Override
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
+
+        button.setOnClickListener(this);
         Logs.i("lifecycle-MainFragment-", "onActivityCreated()");
 
     }
 
 
     private void initView() {
-        textView=new TextView(activity);
-        button=new Button(activity);
-        textView.findViewById(R.id.tv_main_title);
-        button.findViewById(R.id.bt_main_login);
+
     }
 
 
     private void initAction() {
 
+    }
+
+    private void initData() {
     }
 
 
@@ -137,10 +143,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case R.id.tv_main_title:
-                Intent intent1 = new Intent(activity, LoginActivity.class);
-                startActivity(intent1);
-                break;
             case R.id.bt_main_login:
                 Intent intent2 = new Intent(activity, LoginActivity.class);
                 startActivity(intent2);
