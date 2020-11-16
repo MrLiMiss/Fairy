@@ -8,4 +8,28 @@ package com.tengfei.fairy.mvp;
  */
 public class BaseWebActivity extends BaseMvpActivity {
 
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
+
+    @Override
+    protected BasePresenter loadPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
 }
