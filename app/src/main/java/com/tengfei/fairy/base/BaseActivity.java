@@ -12,7 +12,7 @@ import com.tengfei.fairy.utils.Logs;
 import butterknife.ButterKnife;
 
 /**
- * @ Description :基础activity类
+ * @ Description :基础 mvc activity类
  * @ Author 李腾飞
  * @ Time 2020-09-04   10:01
  * @ Version :

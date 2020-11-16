@@ -98,6 +98,10 @@ public class Constants {
     public static String _carrier="";
 
 
+    public static class Device {
+        public static final String HUAWEI = "huawei";
+    }
+
 
 
     public static String os="android";

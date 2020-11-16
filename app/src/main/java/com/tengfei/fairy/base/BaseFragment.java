@@ -1,212 +1,155 @@
-//package com.tengfei.fairy.base;
-//
-//import android.app.Activity;
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.view.KeyEvent;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//
-//import androidx.fragment.app.Fragment;
-//
-//import com.tengfei.fairy.utils.Logs;
-//
-///**
-// * @ Description :
-// * @ Author 李腾飞
-// * @ Time 2020-09-08   11:04
-// * @ Version :
-// */
-//public class BaseFragment extends Fragment {
-//    private static final String LOG_TAG = "YTBaseFragment";
-//
-////	protected BitmapResourceManage bitmapResManage;
-//
-//    protected View contentView = null;
-//    protected YTFragmentActivity activity = null;
-//    protected boolean isFirstLoad = true;
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
-//
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//        this.activity = (YTFragmentActivity) activity;
-////		bitmapResManage = new BitmapResourceManage(activity);
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        if (contentView == null) {
-//            contentView = inflater.inflate(getContentLayout(), container, false);
-//            isFirstLoad = true;
-//        } else {
-//            isFirstLoad = false;
-//        }
-//        return contentView;
-//    }
-//
-//    @Override
-//    public void onActivityCreated(Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        if (isFirstLoad) {
-//            initView();
-//            initAction();
-//            initData();
-//        }
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        Logs.d(LOG_TAG, this.toString() + "registerKeyDownNotify");
-////        activity.registerKeyDownNotify(this);
-//    }
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        Logs.d(LOG_TAG, this.toString() + "removeKeyDownNotify");
-////        activity.removeKeyDownNotify(this);
-//    }
-//
-//    @Override
-//    public void onDestroyView() {
-//        ViewGroup vp = (ViewGroup) contentView.getParent();
-//        if (null != vp) {
-//            vp.removeView(contentView);//移除当前view
-//        }
-//        super.onDestroyView();
-//    }
-//
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//    }
-//
-//    /**
-//     * 设置布局文件
-//     */
-//    public abstract int getContentLayout();
-//
-//    /**
-//     * 控件初始化
-//     */
-//    protected void initView() {
-//    }
-//
-//    ;
-//
-//    /**
-//     * 事件监听
-//     */
-//    protected void initAction() {
-//    }
-//
-//    ;
-//
-//    /**
-//     * 数据处理
-//     */
-//    protected void initData() {
-//    }
-//
-//    ;
-//
-//    /**
-//     * 处理硬键点击
-//     * 返回false，事件继续传递
-//     * 返回true，事件终止
-//     */
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        return false;
-//    }
-//
-//    /**
-//     * 后退
-//     */
-//    public void finish() {
-//        activity.popBack();
-//    }
-//
-//    /**
-//     * 查找控件
-//     */
-//    public View findViewById(int id) {
-//        View v = null;
-//        if (contentView != null) {
-//            v = contentView.findViewById(id);
-//        }
-//        return v;
-//    }
-//
-//    /**
-//     * 启动Fragment
-//     *
-//     * @param cls    需要启动Fragment的Class
-//     * @param params 需要向启动Fragment传递的参数
-//     */
-//    public boolean startFragment(Class<?> cls, Bundle params) {
-//        boolean isSuccess = false;
-//        try {
-//            YTBaseFragment fragment = (YTBaseFragment) cls.newInstance();
-//            if (params != null) {
-//                fragment.setArguments(params);
-//            }
-//            activity.changeFragment(fragment, true);
-//            isSuccess = true;
-//        } catch (java.lang.InstantiationException e) {
-//            e.printStackTrace();
-//            isSuccess = false;
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//            isSuccess = false;
-//        }
-//        return isSuccess;
-//    }
-//
-//    /**
-//     * 启动Activity
-//     */
-//    public void startActivity(Intent intent) {
-//        activity.startActivity(intent);
-//    }
-//
-//    /**
-//     * 启动Activity，接收返回结果
-//     */
-//    public void startActivityForResult(Intent intent, int requestCode) {
-//        super.startActivityForResult(intent, requestCode);
-//    }
-//
-//    /**
-//     * EventBus监听事件，子类根据需要进行重写
-//     *
-//     * @param object
-//     */
-//    public void onEvent(Object object) {
-//    }
-//
-////	public BitmapDrawable getImage(int resId) {
-////		return activity.getImage(resId);
-////	}
-//
-//    /**
-//     * 读取SD图片
-//     * @param context 上下文
-//     * @param pathString 文件地址
-//     * @return
-//     */
-////	public BitmapDrawable getDiskBitmapDrawable(String pathString) {
-////		BitmapDrawable bitmapDrawable = null;
-////		if (bitmapResManage != null) {
-////			bitmapDrawable = bitmapResManage.getDiskBitmapDrawable(pathString);
-////		}
-////		return bitmapDrawable;
-////	}
-//}
+package com.tengfei.fairy.base;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.tengfei.fairy.mvp.BaseMvpActivity;
+import com.tengfei.fairy.mvp.BasePresenter;
+import com.tengfei.fairy.mvp.IView;
+import com.tengfei.fairy.utils.DialogHelper;
+import com.tengfei.fairy.utils.IntentUtils;
+import com.tengfei.fairy.utils.LogUtils;
+import com.tengfei.fairy.utils.ToastUtils;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
+
+/**
+ * @ Description :
+ * @ Author 李腾飞
+ * @ Time 2020-09-08   11:04
+ * @ Version :
+ */
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements IView {
+    protected P mPresenter;
+    protected Activity mActivity;
+    protected View mRootView;
+    public Unbinder unbinder;
+    private DialogHelper dialogHelper;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mActivity = (Activity) context;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //return super.onCreateView(inflater, container, savedInstanceState);
+        mRootView = View.inflate(mActivity, getLayoutId(), null);
+        mPresenter = loadPresenter();
+        bindViews(this, mRootView);
+        LogUtils.i(getClass(), "fragment_name");
+        return mRootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initCommonData();
+        initView(mRootView);
+        initData();
+        initListener();
+    }
+
+    private void initCommonData() {
+        if (mPresenter != null) {
+            mPresenter.attachView(this);
+        }
+    }
+
+    public DialogHelper getDialog() {
+        if (dialogHelper == null) {
+            dialogHelper = new DialogHelper(mActivity);
+        }
+
+        return dialogHelper;
+    }
+
+    public String getResouseString(int resId) {
+        return getResources().getString(resId);
+    }
+
+
+    protected abstract P loadPresenter();
+
+    protected abstract void initView(View view);
+
+    protected abstract void initData();
+
+    protected abstract void initListener();
+
+    protected abstract int getLayoutId();
+
+    @Override
+    public void showLoading() {
+        ((BaseMvpActivity) getActivity()).showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        ((BaseMvpActivity) getActivity()).hideLoading();
+    }
+
+    @Override
+    public void showToast(String msg) {
+        ToastUtils.showToast(msg);
+    }
+
+    protected void LogI(String log) {
+        LogUtils.i(getClass(), log);
+    }
+
+    protected void LogD(String log) {
+        LogUtils.d(getClass(), log);
+    }
+
+    protected void LogE(String log) {
+        LogUtils.e(getClass(), log);
+    }
+
+    protected void bindViews(Object object, View view) {
+        unbinder = ButterKnife.bind(object, view);
+    }
+
+    protected void unbindViews() {
+        if (unbinder != null) {
+            try {
+                unbinder.unbind();
+            } catch (Exception e) {
+                LogE(e.getMessage());
+            }
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mPresenter != null) {
+            mPresenter.clearAllRequest();
+            mPresenter.detachView();
+        }
+
+        unbindViews();
+    }
+
+    @Override
+    public void loginAgin() {
+//        IntentUtils.toLoginActWithClearTask(mActivity);
+    }
+}
