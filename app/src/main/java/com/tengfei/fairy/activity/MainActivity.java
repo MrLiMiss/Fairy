@@ -28,6 +28,7 @@ import com.tengfei.fairy.constant.Constants;
 import com.tengfei.fairy.fragment.HonorFragment;
 import com.tengfei.fairy.fragment.LifeFragemnt;
 import com.tengfei.fairy.fragment.MainFragment;
+import com.tengfei.fairy.fragment.MyFragment;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.wedget.TabButton;
 
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity {
     int prePosition = 0;
     private final int[] TAB_IMGS = new int[]{R.drawable.selector_tab_home, R.drawable.selector_tab_invest, R.drawable.selector_tab_life, R.drawable.selector_tab_my};
     private String [] TAB_TITLES={"主页","荣耀","生活","我的"};
-    private Class[]TAB_FRAGMENT={MainFragment.class,HonorFragment.class,LifeFragemnt.class,MainFragment.class};
+    private Class[]TAB_FRAGMENT={MainFragment.class,HonorFragment.class,LifeFragemnt.class, MyFragment.class};
 
     @Override
     protected int getContentLayout() {

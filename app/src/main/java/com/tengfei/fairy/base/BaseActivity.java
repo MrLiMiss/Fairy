@@ -26,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (getContentLayout() != 0) {
             setContentView(getContentLayout());
         }
+        Logs.i("lifecycle-BaseActivity", "onCreate()");
         activity = this;
         ButterKnife.bind(this);
         initGui();
@@ -42,17 +43,32 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onStart() {
         super.onStart();
-        Logs.d("BaseActivity", "onStart()");
+        Logs.i("lifecycle-BaseActivity", "onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Logs.i("lifecycle-BaseActivity", "onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Logs.i("lifecycle-BaseActivity", "onPause()");
+    }
+
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Logs.i("lifecycle-BaseActivity", "onStop()");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Logs.i("lifecycle-BaseActivity", "onDestroy()");
     }
 
     /**
