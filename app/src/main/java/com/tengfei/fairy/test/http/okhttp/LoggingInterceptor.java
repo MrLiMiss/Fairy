@@ -1,6 +1,4 @@
-package com.tengfei.fairy.http.okhttp;
-
-import android.util.Log;
+package com.tengfei.fairy.test.http.okhttp;
 
 import java.io.IOException;
 
@@ -32,4 +30,5 @@ public class LoggingInterceptor implements Interceptor {
 
         return response;
     }
+
 }

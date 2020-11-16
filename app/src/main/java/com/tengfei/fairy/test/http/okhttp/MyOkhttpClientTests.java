@@ -1,11 +1,6 @@
-package com.tengfei.fairy.http.okhttp;
+package com.tengfei.fairy.test.http.okhttp;
 
-import android.content.Context;
 import android.util.Log;
-
-import com.google.android.material.tabs.TabLayout;
-import com.tengfei.fairy.test.reflect.Father;
-import com.tengfei.fairy.utils.Logs;
 
 import java.io.File;
 import java.io.IOException;
@@ -255,7 +250,7 @@ public class MyOkhttpClientTests {
     public static void  get2(){
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new LoggingInterceptor())
-                .build();
+                .build();//默认为get（）
         Request request = new Request.Builder()
                 .url("http://www.publicobject.com/helloworld.txt")
                 .header("User-Agent", "OkHttp Example")
