@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_honor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_background"
                 android:padding="5dp"
+                android:layout_margin="5dp"
                 android:text="测试专用"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
@@ -44,28 +45,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="初始化" />
+                    android:text="初始化"
+                    android:textSize="13sp"/>
 
                 <Button
                     android:id="@+id/test_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="测试2" />
+                    android:text="测试2"
+                    android:textSize="13sp"/>
 
                 <Button
                     android:id="@+id/test_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="测试全部功能" />
+                    android:text="全部功能"
+                    android:textSize="13sp"/>
 
                 <Button
                     android:id="@+id/test_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="立即发送数据" />
+                    android:text="发送数据"
+                    android:textSize="13sp"/>
 
 
             </LinearLayout>
@@ -249,6 +254,56 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/textview_background"
                 android:padding="5dp"
+                android:text="android机制"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="事件分发"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_viewdrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="view绘制"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_jizhi1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="机制1"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_jizhi2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="机制2"
+                    android:textSize="8sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_background"
+                android:padding="5dp"
                 android:text="优化"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
@@ -296,6 +351,55 @@
                     android:gravity="center"
                     android:text="多线程"
                     android:textSize="8sp" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_background"
+                android:padding="5dp"
+                android:text="数据库"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="增"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="删"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="改"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="查"
+                    android:textSize="8sp" />
+
 
             </LinearLayout>
 
