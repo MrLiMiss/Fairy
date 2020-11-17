@@ -32,10 +32,6 @@ import com.tengfei.fairy.fragment.MyFragment;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.wedget.TabButton;
 
-
-import butterknife.BindView;
-
-
 public class MainActivity extends BaseActivity {
     ViewPager mViewPager;
 
@@ -46,8 +42,8 @@ public class MainActivity extends BaseActivity {
 
     int prePosition = 0;
     private final int[] TAB_IMGS = new int[]{R.drawable.selector_tab_home, R.drawable.selector_tab_invest, R.drawable.selector_tab_life, R.drawable.selector_tab_my};
-    private String [] TAB_TITLES={"主页","荣耀","生活","我的"};
-    private Class[]TAB_FRAGMENT={MainFragment.class,HonorFragment.class,LifeFragemnt.class, MyFragment.class};
+    private String[] TAB_TITLES = {"主页", "荣耀", "生活", "我的"};
+    private Class[] TAB_FRAGMENT = {MainFragment.class, HonorFragment.class, LifeFragemnt.class, MyFragment.class};
 
     @Override
     protected int getContentLayout() {
@@ -57,8 +53,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initGui() {
 //        initWindow();
-        mTabLayout=findViewById(R.id.tabLayout);
-        mViewPager=findViewById(R.id.viewpager);
+        mTabLayout = findViewById(R.id.tabLayout);
+        mViewPager = findViewById(R.id.viewpager);
         initFragment(TAB_FRAGMENT, TAB_IMGS, TAB_TITLES);
 
 
@@ -98,9 +94,9 @@ public class MainActivity extends BaseActivity {
     TabLayout.OnTabSelectedListener onTabSelectedListener = new TabLayout.OnTabSelectedListener() {
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
-                mViewPager.setCurrentItem(tab.getPosition(), false);
-                prePosition = tab.getPosition();
-            }
+            mViewPager.setCurrentItem(tab.getPosition(), false);
+            prePosition = tab.getPosition();
+        }
 
         @Override
         public void onTabUnselected(TabLayout.Tab tab) {
@@ -154,8 +150,6 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-
     /**
      * 处理权限申请的回调。
      */
@@ -164,12 +158,12 @@ public class MainActivity extends BaseActivity {
         if (requestCode == Constants.Code.PERMISSION_CALL_PHONE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {//允许权限
 //                IntentUtils.startoHotLine(mActivity);
-                Log.e("onRequestPermissions","允许权限");
+                Log.e("onRequestPermissions", "允许权限");
             } else {//拒绝权限
 
                 if (!ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissions[0])) {
                     //不再提示
-                    Log.e("onRequestPermissions","拒绝不再提示");
+                    Log.e("onRequestPermissions", "拒绝不再提示");
 
                 } else {//不再提示--deny
 //                    ToastTools.showLong(this,"请允许权限");
@@ -193,14 +187,14 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         getDialog().alert("温馨提示", "您确定要退出app吗？", "确定", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clearPopBackStack();
                 activity.finish();
             }
-        },"取消", null);
+        }, "取消", null);
     }
 
     public DialogHelper getDialog() {
@@ -210,8 +204,6 @@ public class MainActivity extends BaseActivity {
 
         return dialogHelper;
     }
-
-
 
 
 }
