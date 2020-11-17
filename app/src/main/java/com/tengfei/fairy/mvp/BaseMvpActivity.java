@@ -49,6 +49,7 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends FragmentA
         super.onCreate(savedInstanceState);
         //禁止横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //设置软键盘输入类型，防止遮挡屏幕
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         mRootView = View.inflate(this, getLayoutId(), null);
         setContentView(mRootView);
