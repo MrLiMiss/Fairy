@@ -67,6 +67,7 @@ public class RetrofitFactory {
                                 //.addInterceptor(OkHttpInterceptors.headers())
                                 // https 处理(证书认证)
                                 .sslSocketFactory(createSSLSocketFactory(), new TrustManager())
+                                //verify函数效验服务器主机名
                                 /*.hostnameVerifier(new HostnameVerifier() {
                                     @SuppressLint("BadHostnameVerifier")
                                     @Override
@@ -76,6 +77,7 @@ public class RetrofitFactory {
                                 })*/
                                 .build()
                 )
+                //添加实体转换工具 本项目为gson  也可为其他
                 .addConverterFactory(GsonFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
