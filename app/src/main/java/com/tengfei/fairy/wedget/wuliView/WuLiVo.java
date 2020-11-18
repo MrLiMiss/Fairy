@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 /**
- * @ Description :生活页-唔哩资讯
+ * @ Description :生活页-唔哩资讯 bean
  * @ Author 李腾飞
- * @ Time 2020-10-13   15:33
+ * @ Time 2020-11-18   15:33
  * @ Version :
  *
  */
@@ -38,7 +38,7 @@ public class WuLiVo extends BaseVo {
     private String USE_TIME;
     private int ZXSize;
     @SerializedName("cn.com.yitong.ares.core.ThreadContext_DYNAMIC_KEY")
-    private String _$CnComYitongAresCoreThreadContext_DYNAMIC_KEY187; // FIXME check this code
+    private String _$CnComYitongAresCoreThreadContext_DYNAMIC_KEY187; //
     private String pageNum;
     @SerializedName("ZXList")
     public ArrayList<ZXListBean> ZXList;

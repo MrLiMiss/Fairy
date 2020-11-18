@@ -18,15 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.utils.IntentUtils;
+import com.tengfei.fairy.utils.ToastUtils;
 
 import java.util.List;
 
 import butterknife.BindView;
 
 /**
- * @ Description :生活-唔哩资讯
+ * @ Description :生活-唔哩资讯view
  * @ Author 李腾飞
- * @ Time 2020-10-13   16:42
+ * @ Time 2020-11-18   16:42
  * @ Version :
  */
 public class WuLiView extends CustomLinearLayout {
@@ -51,7 +52,7 @@ public class WuLiView extends CustomLinearLayout {
         mTvMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Todo:添加更多跳转逻辑
+                ToastUtils.showToast("wuliView 更多 点击事件！");
 //                IntentUtils.toWebAct(mContext, Constans.getPath("wulinews_more"));
             }
         });

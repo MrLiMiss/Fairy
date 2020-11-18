@@ -10,7 +10,8 @@ import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 
 /**
- * @author xianmei.li
+ *  Description :自定义化LinearLayout
+ * @author  李腾飞
  * @date 2019/4/13
  */
 

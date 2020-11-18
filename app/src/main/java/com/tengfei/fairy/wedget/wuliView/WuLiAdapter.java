@@ -9,14 +9,14 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.utils.IntentUtils;
 import com.tengfei.fairy.utils.StringUtil;
+import com.tengfei.fairy.utils.ToastUtils;
 import com.tengfei.fairy.utils.image.ImageManager;
 
 /**
  * @ Description :唔哩头条recycleview
  * @ Author 李腾飞
- * @ Time 2020-10-13   11:04
+ * @ Time 2020-11-18   11:04
  * @ Version :
  */
 public class WuLiAdapter extends BaseQuickAdapter<WuLiVo.ZXListBean, BaseViewHolder> {
@@ -55,8 +55,8 @@ public class WuLiAdapter extends BaseQuickAdapter<WuLiVo.ZXListBean, BaseViewHol
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo:唔哩头条点击
 //                IntentUtils.toWebAct(mContext,item.getShareLink());
+                ToastUtils.showToast("wuliView item点击！");
 
             }
         });
