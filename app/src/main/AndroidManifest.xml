@@ -36,6 +36,7 @@
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".trymyself.MyActivity" />
+        <activity android:name=".animation.AnimationActivity"/>
     </application>
 
 </manifest>

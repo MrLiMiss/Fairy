@@ -95,6 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textSize="10sp"
                     android:text="常用控件" />
 
                 <Button
@@ -102,16 +103,39 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textSize="10sp"
                     android:text="自定义view" />
 
                 <Button
-                    android:id="@+id/btn_zuheview"
+                android:id="@+id/btn_zuheview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                    android:textSize="10sp"
+                android:text="组合view" />
+                <Button
+                    android:id="@+id/btn_ceshi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="组合view" />
+                    android:textSize="10sp"
+                    android:text="ViewTest" />
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/tv_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_background"
+                android:padding="5dp"
+                android:text="动画相关"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

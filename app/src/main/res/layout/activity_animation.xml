@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_drawablean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="帧动画"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_rotatean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="属性动画"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_alphaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="补间动画"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_animator4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="改变布局参数"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+</LinearLayout>
