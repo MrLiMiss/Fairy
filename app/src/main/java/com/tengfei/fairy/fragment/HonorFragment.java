@@ -31,8 +31,7 @@ public class HonorFragment extends BaseFragment {
     Button btn_myView;
     @BindView(R.id.btn_viewdrow)
     Button btn_viewdrow;
-    @BindView(R.id.btn_animator4)//设置布局参数 改变view动画
-    Button btn_animator4;
+
     private int letf;
 
     @Override
@@ -79,31 +78,32 @@ public class HonorFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_myView,R.id.btn_animator4})
+    @OnClick({R.id.btn_myView})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
                 int letf = btn_myView.getLeft();
                 break;
-            case R.id.tv_animation:
-                Intent intent=new Intent(getContext(), AnimationActivity.class);
-            case R.id.btn_drawablean://帧动画
-                break;
-            case R.id.btn_alphaan://补间动画
-                break;
-            case R.id.btn_rotatean://属性动画
-                break;
-            case R.id.btn_animator4://改变布局参数，实现动画
-                ViewGroup.LayoutParams layoutParams=btn_animator4.getLayoutParams();
-                ViewGroup.MarginLayoutParams marginLayoutParams=(ViewGroup.MarginLayoutParams) btn_animator4.getLayoutParams();
-                 //改变view参数，需为确定参数大小，如为wrap_content 或 match_parent  会出错（默认width等不为真实值）
-                Log.i(" params.width:", layoutParams.width+"");
-                layoutParams.width+=100;
-                Log.i(" params.width:", layoutParams.width+"");
-                marginLayoutParams.leftMargin+=100;
-//                btn_myView.requestLayout();
-                btn_animator4.setLayoutParams(layoutParams);
-                btn_animator4.setLayoutParams(marginLayoutParams);
+//            case R.id.tv_animation:
+//                Intent intent=new Intent(getContext(), AnimationActivity.class);
+//                break;
+//            case R.id.btn_drawablean://帧动画
+//                break;
+//            case R.id.btn_alphaan://补间动画
+//                break;
+//            case R.id.btn_rotatean://属性动画
+//                break;
+//            case R.id.btn_animator4://改变布局参数，实现动画
+//                ViewGroup.LayoutParams layoutParams=btn_animator4.getLayoutParams();
+//                ViewGroup.MarginLayoutParams marginLayoutParams=(ViewGroup.MarginLayoutParams) btn_animator4.getLayoutParams();
+//                 //改变view参数，需为确定参数大小，如为wrap_content 或 match_parent  会出错（默认width等不为真实值）
+//                Log.i(" params.width:", layoutParams.width+"");
+//                layoutParams.width+=100;
+//                Log.i(" params.width:", layoutParams.width+"");
+//                marginLayoutParams.leftMargin+=100;
+////                btn_myView.requestLayout();
+//                btn_animator4.setLayoutParams(layoutParams);
+//                btn_animator4.setLayoutParams(marginLayoutParams);
 
             default:
                 break;
