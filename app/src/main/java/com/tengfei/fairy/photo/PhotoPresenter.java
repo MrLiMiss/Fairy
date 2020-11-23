@@ -5,7 +5,7 @@ import com.tengfei.fairy.mvp.IModel;
 import com.tengfei.fairy.utils.ToastUtils;
 
 /**
- * @ Description :
+ * @ Description :图片相关presenter
  * @ Author 李腾飞
  * @ Time 2020-11-23   13:44
  * @ Version :

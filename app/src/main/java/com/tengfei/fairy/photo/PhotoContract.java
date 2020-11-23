@@ -5,7 +5,7 @@ import com.tengfei.fairy.mvp.IModel;
 import com.tengfei.fairy.mvp.IView;
 
 /**
- * @ Description :图片存储，显示
+ * @ Description :图片存储，显示 contract
  * @ Author 李腾飞
  * @ Time 2020-11-23   11:19
  * @ Version :

@@ -4,7 +4,7 @@ import android.util.Log;
 
 
 /**
- * @ Description :
+ * @ Description :图片相关model
  * @ Author 李腾飞
  * @ Time 2020-11-23   13:37
  * @ Version :
