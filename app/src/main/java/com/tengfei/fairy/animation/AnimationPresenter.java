@@ -15,4 +15,9 @@ public class AnimationPresenter extends BasePresenter<AnimationModel,AnimationVi
     protected AnimationModel loadModel() {
         return null;
     }
+
+    @Override
+    protected void start() {
+
+    }
 }

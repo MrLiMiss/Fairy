@@ -50,6 +50,11 @@ public abstract class BasePresenter <M extends IModel, V extends IView> implemen
 
     protected abstract M loadModel();
 
+    /**
+     * 初始化方法
+     */
+    protected abstract void start();
+
     public void showLoading() {
         if (getView() != null) {
             getView().showLoading();
