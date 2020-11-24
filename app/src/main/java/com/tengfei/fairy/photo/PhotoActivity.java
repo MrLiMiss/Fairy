@@ -47,6 +47,7 @@ public class PhotoActivity extends BaseMvpActivity<PhotoPresenter> implements Ph
      * @param photoType 照片类型
      */
     public void getPhoto(String userName,int photoType){
+
            mPresenter.getPhoto(userName,photoType);
     }
 
