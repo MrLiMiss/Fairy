@@ -41,6 +41,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".trymyself.MyActivity" />
         <activity android:name=".animation.AnimationActivity" />
+        <activity android:name=".eventbus.EventBus2Activity" />
+        <activity android:name=".eventbus.EventBusActivity" />
     </application>
 
 </manifest>

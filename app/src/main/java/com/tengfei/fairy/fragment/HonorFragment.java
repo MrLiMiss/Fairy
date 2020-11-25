@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.animation.AnimationActivity;
 import com.tengfei.fairy.base.BaseFragment;
+import com.tengfei.fairy.utils.IntentUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,6 +32,8 @@ public class HonorFragment extends BaseFragment {
     Button btn_myView;
     @BindView(R.id.btn_viewdrow)
     Button btn_viewdrow;
+    @BindView(R.id.btn_EventBus)
+    Button btn_EventBus;
 
     private int letf;
 
@@ -78,7 +81,7 @@ public class HonorFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_myView})
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
@@ -104,7 +107,8 @@ public class HonorFragment extends BaseFragment {
 ////                btn_myView.requestLayout();
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
-
+            case R.id.btn_EventBus:
+                IntentUtils.toEventBusActivity(getContext());
             default:
                 break;
 

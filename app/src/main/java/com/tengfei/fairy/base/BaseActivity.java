@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * @ Time 2020-09-04   10:01
  * @ Version :
  */
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity  {
     protected Activity activity;
 
     @Override
@@ -202,14 +202,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         super.startActivity(intent);
     }
 
-    @Override
-    public void onClick(View view) {
-        // 防止连续点击
-        if (isFastDoubleClick()) {
-            Logs.d("BaseActivity", "startActivity() 重复调用");
-            return;
-        }
-    }
+
 
 
 
