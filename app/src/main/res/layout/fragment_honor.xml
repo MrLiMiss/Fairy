@@ -18,18 +18,18 @@
                 android:id="@+id/tv_honor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:text="Honor Fragment"
-                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:background="@drawable/textview_background"
                 android:padding="5dp"
-                android:layout_margin="5dp"
                 android:text="测试专用"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="初始化"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp" />
 
                 <Button
                     android:id="@+id/test_btn2"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="测试2"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp" />
 
                 <Button
                     android:id="@+id/test_btn3"
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="全部功能"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp" />
 
                 <Button
                     android:id="@+id/test_btn4"
@@ -70,10 +70,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="发送数据"
-                    android:textSize="13sp"/>
-
+                    android:textSize="13sp" />
 
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,35 +92,31 @@
 
                 <Button
                     android:id="@+id/btn_EventBus"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="10sp"
                     android:text="EventBus" />
 
                 <Button
                     android:id="@+id/btn_GreenDao"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="10sp"
                     android:text="GreenDao" />
 
                 <Button
                     android:id="@+id/btn_glide"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="10sp"
                     android:text="Glide" />
+
                 <Button
                     android:id="@+id/btn_Butterknife"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="10sp"
                     android:text="Butterknife" />
-
 
             </LinearLayout>
 
@@ -132,35 +128,31 @@
 
                 <Button
                     android:id="@+id/btn_okhttp"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="okhttp"
-                    android:textSize="8sp" />
+                    android:text="okhttp" />
 
                 <Button
                     android:id="@+id/btn_retrofit"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="retrofit"
-                    android:textSize="8sp" />
+                    android:text="retrofit" />
 
                 <Button
                     android:id="@+id/btn_volley"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="volley"
-                    android:textSize="8sp" />
+                    android:text="volley" />
 
                 <Button
                     android:id="@+id/btn_async-http"
+                    style="@style/testButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="async-http"
-                    android:textSize="8sp" />
+                    android:text="async-http" />
 
             </LinearLayout>
 
@@ -185,33 +177,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="10sp"
-                    android:text="常用控件" />
+                    android:text="常用控件"
+                    android:textSize="10sp" />
 
                 <Button
                     android:id="@+id/btn_myView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="10sp"
-                    android:text="自定义view" />
+                    android:text="自定义view"
+                    android:textSize="10sp" />
 
                 <Button
-                android:id="@+id/btn_zuheview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                    android:textSize="10sp"
-                android:text="组合view" />
+                    android:id="@+id/btn_zuheview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="组合view"
+                    android:textSize="10sp" />
+
                 <Button
                     android:id="@+id/btn_ceshi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="10sp"
-                    android:text="ViewTest" />
+                    android:text="ViewTest"
+                    android:textSize="10sp" />
 
             </LinearLayout>
+
             <TextView
                 android:id="@+id/tv_animation"
                 android:layout_width="wrap_content"
@@ -222,9 +216,6 @@
                 android:text="动画相关"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
-
-
-
 
 
             <TextView
@@ -410,6 +401,7 @@
                     android:gravity="center"
                     android:text="内存优化"
                     android:textSize="8sp" />
+
                 <Button
                     android:id="@+id/btn_多线程"
                     android:layout_width="wrap_content"
@@ -419,6 +411,7 @@
                     android:textSize="8sp" />
 
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
