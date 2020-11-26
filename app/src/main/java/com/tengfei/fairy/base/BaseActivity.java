@@ -2,8 +2,11 @@ package com.tengfei.fairy.base;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -203,7 +206,19 @@ public abstract class BaseActivity extends AppCompatActivity  {
     }
 
 
-
+    /**
+     * 设置Activity全屏显示
+     * 状态栏透明
+     */
+    public void initWindow() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            decorView.setSystemUiVisibility(option);
+            getWindow().setStatusBarColor(0x00000000);
+        }
+    }
 
 
 

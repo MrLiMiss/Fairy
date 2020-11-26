@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ivLogin"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="19dp"
+            android:clickable="false"
+            android:src="@drawable/back_login_new" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tv_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/ivLogin"
+        android:src="@drawable/icon_close"
+        android:text="关闭"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/tv_Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+    <ImageView
+        android:id="@+id/ivPopLogo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="15dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#e4e4e4" />
+</RelativeLayout>

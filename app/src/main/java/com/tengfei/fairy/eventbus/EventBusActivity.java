@@ -7,7 +7,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.base.BaseActivity;
 import com.tengfei.fairy.utils.IntentUtils;
 
@@ -28,8 +27,12 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
     TextView tv_event;
     @BindView(R.id.btn_regester_event)
     Button btn_regester_event;
+    @BindView(R.id.btn_unregester)
+    Button btn_unregester;
     @BindView(R.id.btn_to_eventBus2)
     Button btn_to_eventBus2;
+    @BindView(R.id.tv_Logo)
+    TextView tv_Logo;
 
 
     @Override
@@ -39,12 +42,14 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initGui() {
+        tv_Logo.setText("EventBusActivity");
 
     }
 
     @Override
     protected void initAction() {
         btn_regester_event.setOnClickListener(this);
+        btn_unregester.setOnClickListener(this);
         btn_to_eventBus2.setOnClickListener(this);
     }
 
@@ -62,6 +67,35 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
     }
 
 
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void onPostEvent(MessageEvent messageEvent) {
+       if(messageEvent.getMessageType().equals("POST")){
+           tv_event.setText(messageEvent.getMessage());
+           Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
+       }
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    public void onBgEvent(MessageEvent messageEvent) {
+        if(messageEvent.getMessageType().equals("BACKGROUND")){
+            tv_event.setText(messageEvent.getMessage());
+            Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
+    public void onStickyEvent(MessageEvent messageEvent) {
+        if(messageEvent.getMessageType().equals("STICKY")){
+            tv_event.setText(messageEvent.getMessage());
+            Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
+            EventBus.getDefault().removeStickyEvent(messageEvent);//使用完stickyEvent后移除
+        }
+
+    }
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -70,6 +104,9 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.btn_regester_event://注册event事件
                 EventBus.getDefault().register(this);
+                break;
+            case R.id.btn_unregester:
+                EventBus.getDefault().unregister(this);
                 break;
             default:
                 break;
