@@ -61,7 +61,7 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
     //订阅方法，当接收到事件的时候，会调用该方法
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(MessageEvent messageEvent) {
-        Log.d("cylog", "receive it");
+        Log.d("eventBus", "Main："+messageEvent.getMessage());
         tv_event.setText(messageEvent.getMessage());
         Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
     }
@@ -69,6 +69,7 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
 
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void onPostEvent(MessageEvent messageEvent) {
+        Log.d("eventBus", "POSTING："+messageEvent.getMessage());
        if(messageEvent.getMessageType().equals("POST")){
            tv_event.setText(messageEvent.getMessage());
            Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
@@ -78,6 +79,7 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void onBgEvent(MessageEvent messageEvent) {
+        Log.d("eventBus", "BACKGROUND："+messageEvent.getMessage());
         if(messageEvent.getMessageType().equals("BACKGROUND")){
             tv_event.setText(messageEvent.getMessage());
             Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();
@@ -87,6 +89,7 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
 
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
     public void onStickyEvent(MessageEvent messageEvent) {
+        Log.d("eventBus", "STICKY："+messageEvent.getMessage());
         if(messageEvent.getMessageType().equals("STICKY")){
             tv_event.setText(messageEvent.getMessage());
             Toast.makeText(EventBusActivity.this, messageEvent.getMessage(), Toast.LENGTH_LONG).show();

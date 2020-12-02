@@ -1,4 +1,4 @@
-package com.tengfei.fairy.designPattern;
+package com.tengfei.fairy.designPattern.singleton;
 
 /**
  * @ Description :单例模式
