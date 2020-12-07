@@ -45,6 +45,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".eventbus.EventBusActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".test.ConfigChangeActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"/>
     </application>
 
 </manifest>

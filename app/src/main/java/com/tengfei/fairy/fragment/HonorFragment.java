@@ -34,6 +34,8 @@ public class HonorFragment extends BaseFragment {
     Button btn_viewdrow;
     @BindView(R.id.btn_EventBus)
     Button btn_EventBus;
+    @BindView(R.id.btn_activity)
+    Button btn_activity;
 
     private int letf;
 
@@ -81,7 +83,7 @@ public class HonorFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_myView,R.id.btn_EventBus})
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
@@ -109,6 +111,8 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.btn_EventBus:
                 IntentUtils.toEventBusActivity(getContext());
+            case R.id.btn_activity:
+                IntentUtils.toConfigChenagedActivity(getContext());
             default:
                 break;
 

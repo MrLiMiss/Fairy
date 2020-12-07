@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
+import com.tengfei.fairy.test.ConfigChangeActivity;
 
 /**
  * @ Description :intent 跳转工具类
@@ -31,6 +32,11 @@ public class IntentUtils {
 
     public static void toEventBusActivity(Context mContext) {
         Intent intent = new Intent(mContext, EventBusActivity.class);
+        mContext.startActivity(intent);
+    }
+
+    public static void toConfigChenagedActivity(Context mContext) {
+        Intent intent=new Intent(mContext, ConfigChangeActivity.class);
         mContext.startActivity(intent);
     }
 }
