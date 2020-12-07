@@ -12,10 +12,12 @@ import java.util.Locale;
 public class StringFormatTest {
 
     public static void main(String[] args){
+        //常规 类型格式化:
         test1();
+        //搭配转换符的标志转化：
         test2();
+        //时间格式转换符转化：
         test3();
-
 
     }
 
