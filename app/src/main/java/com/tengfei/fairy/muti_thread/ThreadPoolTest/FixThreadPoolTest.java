@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.TThreadPoolTest;
+package com.tengfei.fairy.muti_thread.ThreadPoolTest;
 
 /**
  * @ Description :定长线程池test

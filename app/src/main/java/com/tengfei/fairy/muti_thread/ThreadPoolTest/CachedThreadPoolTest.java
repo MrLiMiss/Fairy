@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.TThreadPoolTest;
+package com.tengfei.fairy.muti_thread.ThreadPoolTest;
 
 /**
  * @ Description :缓存线程池（CachedThreadPool）
