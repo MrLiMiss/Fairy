@@ -432,7 +432,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="增"
+                    android:text="SQLite"
                     android:textSize="8sp" />
 
                 <Button
@@ -440,7 +440,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="删"
+                    android:text="GreenDao"
                     android:textSize="8sp" />
 
                 <Button
@@ -448,7 +448,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="改"
+                    android:text="LitePal"
                     android:textSize="8sp" />
 
                 <Button
@@ -456,7 +456,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="查"
+                    android:text="DBFlow"
                     android:textSize="8sp" />
 
 
