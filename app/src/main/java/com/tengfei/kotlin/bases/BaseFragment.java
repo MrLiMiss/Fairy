@@ -2,15 +2,10 @@ package com.tengfei.kotlin.bases;
 
 import android.content.Context;
 import android.view.View;
-
-import com.beebank.newbee.R;
-import com.beebank.newbee.SDMoneyApplication;
-import com.beebank.newbee.common.ServiceManager;
-import com.beebank.newbee.common.utils.LogUtil;
-import com.beebank.newbee.widgets.CommonDialog;
-import com.beebank.newbee.widgets.CommonLoadingDialog;
-
 import androidx.fragment.app.Fragment;
+
+import com.tengfei.fairy.R;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -21,12 +16,12 @@ public abstract class BaseFragment extends Fragment  {
     private Unbinder unbinder;
 
     protected Context mContext;
-    protected ServiceManager mServiceManager;
-
-    protected CommonLoadingDialog loadingDialog;
+//    protected ServiceManager mServiceManager;
+//
+//    protected CommonLoadingDialog loadingDialog;
 
     public BaseFragment() {
-        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
+//        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
     }
 
     @Override
@@ -54,26 +49,26 @@ public abstract class BaseFragment extends Fragment  {
             try {
                 unbinder.unbind();
             } catch (Exception e) {
-                LogUtil.e(e.getMessage().toString());
+//                LogUtil.e(e.getMessage().toString());
             }
         }
     }
 
     protected void showLoading() {
-        if (loadingDialog != null) {
-            if (loadingDialog.isShowing()) {
-                loadingDialog.dismiss();
-            }
-        } else {
-            loadingDialog = new CommonLoadingDialog.Builder(getContext()).build();
-        }
-        loadingDialog.show();
+//        if (loadingDialog != null) {
+//            if (loadingDialog.isShowing()) {
+//                loadingDialog.dismiss();
+//            }
+//        } else {
+//            loadingDialog = new CommonLoadingDialog.Builder(getContext()).build();
+//        }
+//        loadingDialog.show();
     }
 
     protected void dismissLoading() {
-        if (loadingDialog != null && loadingDialog.isShowing()) {
-            loadingDialog.dismiss();
-        }
+//        if (loadingDialog != null && loadingDialog.isShowing()) {
+//            loadingDialog.dismiss();
+//        }
     }
 
     protected void analyticsEvent(String id) {
@@ -85,13 +80,13 @@ public abstract class BaseFragment extends Fragment  {
 
 
     protected void showTipsDialog(String msg) {
-        CommonDialog.Builder commonDialog = new CommonDialog.Builder(getActivity());
-        commonDialog.addBankLimit();
-        commonDialog.setMessage(msg);
-        commonDialog.setSingleButton(getString(R.string.sdf_common_ok), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        }).build().show();
+//        CommonDialog.Builder commonDialog = new CommonDialog.Builder(getActivity());
+//        commonDialog.addBankLimit();
+//        commonDialog.setMessage(msg);
+//        commonDialog.setSingleButton(getString(R.string.sdf_common_ok), new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            }
+//        }).build().show();
     }
 }

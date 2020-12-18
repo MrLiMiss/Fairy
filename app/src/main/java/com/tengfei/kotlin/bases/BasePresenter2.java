@@ -1,8 +1,5 @@
 package com.tengfei.kotlin.bases;
 
-import com.beebank.newbee.SDMoneyApplication;
-import com.beebank.newbee.common.ServiceManager;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -15,12 +12,12 @@ public class BasePresenter2<T> {
     private IViewHolder viewHolder;
 
     protected T iView;
-    protected ServiceManager mServiceManager;
+//    protected ServiceManager mServiceManager;
 
     public BasePresenter2(T v) {
         viewHolder = new IViewHolder(v);
         iView = viewHolder.hold();
-        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
+//        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
     }
 
     public final void onResume() {

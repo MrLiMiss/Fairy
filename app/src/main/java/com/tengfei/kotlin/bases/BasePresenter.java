@@ -1,18 +1,17 @@
 package com.tengfei.kotlin.bases;
 
-import com.beebank.newbee.SDMoneyApplication;
-import com.beebank.newbee.common.ServiceManager;
+
 
 /**
  * Created by wangxiulong on 16/8/11.
  */
 public class BasePresenter {
     protected boolean visiability;
-    protected ServiceManager mServiceManager;
+//    protected ServiceManager mServiceManager;
 
     public BasePresenter() {
         visiability = false;
-        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
+//        mServiceManager = SDMoneyApplication.getInstance().getServiceManager();
     }
 
     public void onResume() {
