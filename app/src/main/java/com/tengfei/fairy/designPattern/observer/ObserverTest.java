@@ -1,4 +1,4 @@
-package com.tengfei.fairy.designPattern;
+package com.tengfei.fairy.designPattern.observer;
 
 /**
  * @ Description :观察者模式

@@ -1,4 +1,4 @@
-package com.tengfei.fairy.designPattern;
+package com.tengfei.fairy.designPattern.buildpattern;
 
 /**
  * @ Description :建造者模式

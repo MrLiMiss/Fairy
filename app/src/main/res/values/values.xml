@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ActionBarView">
+        <attr name="titleStr" format="string" />
+        <attr name="rightStr" format="string" />
+        <attr name="hideSearch" format="boolean" />
+        <attr name="hideLine" format="boolean" />
+        <attr name="hideBack" format="boolean" />
+        <attr name="rightStrColor" format="color" />
+        <attr name="rightStrSize" format="dimension" />
+    </declare-styleable>
+</resources>

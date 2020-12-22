@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f9f9f9"
+    android:orientation="vertical">
+
+    <com.tengfei.fairy.wedget.ActionBarView
+        android:id="@+id/actionBarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:hideSearch="true"
+        app:showDividers="none"
+        app:titleStr="自定义view" />
+
+    <ScrollView
+        android:id="@+id/view_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_myview"
+                style="@style/testviewshouw"
+                android:text="跟随球" />
+
+            <View
+                style="@style/HorizontalGrayLine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+            <com.tengfei.fairy.wedget.DrawView
+                android:id="@+id/view_drawView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:background="@color/color_E5E5E5" />
+            <TextView
+                style="@style/testviewshouw"
+                android:text="组合自定义view" />
+            <View
+                style="@style/HorizontalGrayLine"
+                android:layout_marginTop="10dp" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

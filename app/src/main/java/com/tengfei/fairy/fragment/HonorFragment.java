@@ -68,13 +68,13 @@ public class HonorFragment extends BaseFragment {
 
     @Override
     protected void initView(View mRootView) {
-        letf = btn_myView.getLeft();
-        int top = btn_myView.getTop();
-        int right = btn_myView.getRight();
-        int buttom = btn_myView.getBottom();
-        float translationX = btn_myView.getTranslationX();
-        float translationY = btn_myView.getTranslationY();
-        Log.i("View参数-initView：", "letf-" + letf);
+//        letf = btn_myView.getLeft();
+//        int top = btn_myView.getTop();
+//        int right = btn_myView.getRight();
+//        int buttom = btn_myView.getBottom();
+//        float translationX = btn_myView.getTranslationX();
+//        float translationY = btn_myView.getTranslationY();
+//        Log.i("View参数-initView：", "letf-" + letf);
 //        Log.i("View参数：", "top-" + top);
 //        Log.i("View参数：", "right-" + right);
 //        Log.i("View参数：", "buttom-" + buttom);
@@ -87,7 +87,7 @@ public class HonorFragment extends BaseFragment {
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
-                int letf = btn_myView.getLeft();
+               IntentUtils.toMyViewActivity(getContext());
                 break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
@@ -111,8 +111,10 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.btn_EventBus:
                 IntentUtils.toEventBusActivity(getContext());
+                break;
             case R.id.btn_activity:
                 IntentUtils.toConfigChenagedActivity(getContext());
+                break;
             default:
                 break;
 

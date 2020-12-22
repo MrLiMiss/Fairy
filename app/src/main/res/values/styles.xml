@@ -102,4 +102,20 @@
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
+    <style name="BaseWraps">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="NormalBlackText" parent="BaseWraps">
+        <item name="android:textColor">@color/color_111111</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+
+    <style name="testviewshouw" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">10dp</item>
+
+    </style>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.tengfei.fairy.designPattern;
+package com.tengfei.fairy.designPattern.factory;
 
 /**
  * @ Description :工厂模式

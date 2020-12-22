@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.tengfei.fairy.activity.MainActivity;
+import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.test.ConfigChangeActivity;
@@ -38,5 +39,10 @@ public class IntentUtils {
     public static void toConfigChenagedActivity(Context mContext) {
         Intent intent=new Intent(mContext, ConfigChangeActivity.class);
         mContext.startActivity(intent);
+    }
+
+    public static void toMyViewActivity(Context context) {
+        Intent intent=new Intent(context, MyViewActivity.class);
+        context.startActivity(intent);
     }
 }

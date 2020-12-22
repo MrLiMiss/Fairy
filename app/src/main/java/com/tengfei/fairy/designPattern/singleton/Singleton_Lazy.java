@@ -47,7 +47,9 @@ public class Singleton_Lazy {
         return singleton_lazy;
     }
 
-    /** 双重检查锁定
+    /** 双重检查锁定：
+     * 综合了懒汉式和饿汉式两者的优缺点整合而成。
+     * 在synchronized关键字内外都加了一层 if 条件判断，这样既保证了线程安全，又比直接上锁提高了执行效率，还节省了内存空间。
      * @return
      */
     public static  Singleton_Lazy getInstance2(){
