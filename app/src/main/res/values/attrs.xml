@@ -9,4 +9,12 @@
         <attr name="rightStrColor" format="color" />
         <attr name="rightStrSize" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="ItemView">
+        <attr name="showImg" format="boolean"/>
+        <attr name="showRight" format="boolean"/>
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
 </resources>
