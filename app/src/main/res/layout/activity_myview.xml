@@ -59,6 +59,72 @@
                 android:layout_margin="5dp"
                 app:text="组合view 内text" />
 
+            <TextView
+                style="@style/testviewshouw"
+                android:text="继承系统自定义View:为文字设置背景，并在布局中间添加一条横线" />
+
+            <View
+                style="@style/HorizontalGrayLine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+            <com.tengfei.fairy.wedget.LineTextView
+                android:layout_margin="15dp"
+                android:id="@+id/voew_lintextview"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+            <TextView
+                style="@style/testviewshouw"
+                android:text="继承View的自定义:正方形" />
+
+            <View
+                style="@style/HorizontalGrayLine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+            <com.tengfei.fairy.wedget.RectView
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/view_rectview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                style="@style/testviewshouw"
+                android:text="继承viewGroup的自定义:" />
+
+            <View
+                style="@style/HorizontalGrayLine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+            <com.tengfei.fairy.wedget.HorizontaiView
+                android:background="@drawable/btn_bg"
+                android:id="@+id/test_layout"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+                <ListView
+                    android:id="@+id/list1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </ListView>
+
+                <ListView
+                    android:id="@+id/list2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </ListView>
+
+                <ListView
+                    android:id="@+id/list3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </ListView>
+
+            </com.tengfei.fairy.wedget.HorizontaiView>
+
 
         </LinearLayout>
 

@@ -13,12 +13,13 @@ import android.view.View;
 public class VerificationCodeView extends View {
     public Context context;
 
-    public VerificationCodeView(Context context){
+    public VerificationCodeView(Context context) {
         super(context);
     }
-    public VerificationCodeView(Context context, AttributeSet attrs){
-        super(context,attrs);
-        this.context=context;
+
+    public VerificationCodeView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        this.context = context;
     }
 
 
