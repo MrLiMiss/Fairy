@@ -1,7 +1,7 @@
 package com.tengfei.fairy.fragment;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,11 +11,18 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
+import com.bjrxtd.sdk.Touch;
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.animation.AnimationActivity;
 import com.tengfei.fairy.base.BaseFragment;
+import com.tengfei.fairy.touch.CommonProperties;
+import com.tengfei.fairy.touch.TouchUtils;
 import com.tengfei.fairy.utils.IntentUtils;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -37,7 +44,18 @@ public class HonorFragment extends BaseFragment {
     @BindView(R.id.btn_activity)
     Button btn_activity;
 
+    @BindView(R.id.test_btn1)
+    Button btnInit;
+    @BindView(R.id.test_btn2)
+    Button btnTrackView;
+    @BindView(R.id.test_btn3)
+    Button btnTrackClick;
+    @BindView(R.id.test_btn4)
+    Button btnSignUp;
+
     private int letf;
+    private TouchUtils touchUtils;
+    private CommonProperties commonProperties;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -83,7 +101,8 @@ public class HonorFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity})
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
@@ -109,6 +128,43 @@ public class HonorFragment extends BaseFragment {
 ////                btn_myView.requestLayout();
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
+            case R.id.test_btn1://初始化
+//                TouchUtils touchUtils=new TouchUtils();
+//               Touch touch= touchUtils.getDebugTouch();
+                break;
+            case R.id.test_btn2://trackView
+                touchUtils = new TouchUtils(getContext());
+                Touch touch= touchUtils.getDebugTouch();
+                commonProperties = CommonProperties.getInstance();
+
+                commonProperties.set_app_name("手机银行");
+                commonProperties.set_app_version("4.0.2");
+                commonProperties.set_carrier("中国联通");
+                commonProperties.set_lib("adnroid");
+                commonProperties.set_lib_version("1.0.1");
+                commonProperties.set_ip("5.5.5.5");
+                commonProperties.set_model("huawei mate8");
+                commonProperties.set_os("android");
+                commonProperties.set_os_version("8.0.0");
+                commonProperties.set_geo("116.48927,39.89225");
+                commonProperties.set_network_type("wifi");
+                commonProperties.set_device_id("123123123123123");
+                touchUtils.register(commonProperties);
+
+                break;
+            case R.id.test_btn3://trackClick
+                Map<String ,Object > properties=new HashMap<>();
+                long timeStamp = new Date().getTime();
+                properties.put("datetime",timeStamp);
+                properties.put("is_login_id",false);
+                properties.put("_element_name","元素名称1");//元素名称
+                properties.put("_element_target_url","元素链接地址1");//元素链接地址
+                properties.put("_title","手机银行-首页");//页面标题
+                properties.put("_url","/mobile_bank_home");//页面地址
+                touchUtils.track("100000000001",false,"_APPClick", (HashMap<String, Object>) properties);
+                break;
+            case R.id.test_btn4://trackSignUp
+                break;
             case R.id.btn_EventBus:
                 IntentUtils.toEventBusActivity(getContext());
                 break;

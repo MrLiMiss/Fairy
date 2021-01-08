@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="测试2"
+                    android:text="trackView"
                     android:textSize="13sp" />
 
                 <Button
@@ -61,11 +61,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="全部功能"
+                    android:text="TrackClick"
+                    android:textSize="13sp" />
+                <Button
+                    android:id="@+id/test_btn4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TrackSignUp"
                     android:textSize="13sp" />
 
                 <Button
-                    android:id="@+id/test_btn4"
+                    android:id="@+id/test_btn5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
