@@ -17,7 +17,7 @@ import com.bjrxtd.sdk.Touch;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.base.BaseFragment;
 import com.tengfei.fairy.touch.CommonProperties;
-import com.tengfei.fairy.touch.TouchUtils;
+import com.tengfei.fairy.touch.TouchData;
 import com.tengfei.fairy.utils.IntentUtils;
 
 import java.util.Date;
@@ -54,7 +54,7 @@ public class HonorFragment extends BaseFragment {
     Button btnSignUp;
 
     private int letf;
-    private TouchUtils touchUtils;
+    private TouchData touchData;
     private CommonProperties commonProperties;
 
     @Override
@@ -129,12 +129,12 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.test_btn1://初始化
+//                TouchUtils.getInstance(getContext());
 //                TouchUtils touchUtils=new TouchUtils();
 //               Touch touch= touchUtils.getDebugTouch();
                 break;
             case R.id.test_btn2://trackView
-                touchUtils = new TouchUtils(getContext());
-                Touch touch= touchUtils.getDebugTouch();
+                Touch touch=  TouchData.getInstance(getContext()).getTouch();
                 commonProperties = CommonProperties.getInstance();
 
                 commonProperties.set_app_name("手机银行");
@@ -142,26 +142,29 @@ public class HonorFragment extends BaseFragment {
                 commonProperties.set_carrier("中国联通");
                 commonProperties.set_lib("adnroid");
                 commonProperties.set_lib_version("1.0.1");
-                commonProperties.set_ip("5.5.5.5");
+                commonProperties.set_ip(null);
                 commonProperties.set_model("huawei mate8");
                 commonProperties.set_os("android");
                 commonProperties.set_os_version("8.0.0");
                 commonProperties.set_geo("116.48927,39.89225");
                 commonProperties.set_network_type("wifi");
                 commonProperties.set_device_id("123123123123123");
-                touchUtils.register(commonProperties);
+                TouchData.getInstance(getContext()).register(commonProperties);
 
                 break;
             case R.id.test_btn3://trackClick
                 Map<String ,Object > properties=new HashMap<>();
-                long timeStamp = new Date().getTime();
-                properties.put("datetime",timeStamp);
-                properties.put("is_login_id",false);
-                properties.put("_element_name","元素名称1");//元素名称
-                properties.put("_element_target_url","元素链接地址1");//元素链接地址
-                properties.put("_title","手机银行-首页");//页面标题
-                properties.put("_url","/mobile_bank_home");//页面地址
-                touchUtils.track("100000000001",false,"_APPClick", (HashMap<String, Object>) properties);
+                for (int i=0;i<=11;i++){
+                    long timeStamp = new Date().getTime();
+                    properties.put("datetime",timeStamp);
+                    properties.put("is_login_id",false);
+                    properties.put("_element_name","元素名称"+i);//元素名称
+                    properties.put("_element_target_url","元素链接地址"+i);//元素链接地址
+                    properties.put("_title","手机银行-首页");//页面标题
+                    properties.put("_url","/mobile_bank_home");//页面地址
+                    TouchData.getInstance(getContext()).track("100000000001",false,"_APPClick", (HashMap<String, Object>) properties);
+                }
+
                 break;
             case R.id.test_btn4://trackSignUp
                 break;
