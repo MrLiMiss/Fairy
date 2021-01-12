@@ -38,38 +38,52 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/test_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="初始化"
+                    android:textSize="8sp" />
 
                 <Button
                     android:id="@+id/test_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="trackView"
-                    android:textSize="13sp" />
+                    android:text="View"
+                    android:textSize="8sp" />
 
                 <Button
                     android:id="@+id/test_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TrackClick"
-                    android:textSize="13sp" />
+                    android:text="Click"
+                    android:textSize="8sp" />
                 <Button
                     android:id="@+id/test_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TrackSignUp"
-                    android:textSize="13sp" />
+                    android:text="Event"
+                    android:textSize="8sp" />
 
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <Button
                     android:id="@+id/test_btn5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="发送数据"
-                    android:textSize="13sp" />
-
+                    android:text="SignUp"
+                    android:textSize="8sp" />
             </LinearLayout>
 
 

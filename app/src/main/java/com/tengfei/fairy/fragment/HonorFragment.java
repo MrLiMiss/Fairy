@@ -51,6 +51,8 @@ public class HonorFragment extends BaseFragment {
     @BindView(R.id.test_btn3)
     Button btnTrackClick;
     @BindView(R.id.test_btn4)
+    Button btnTrackEvent;
+    @BindView(R.id.test_btn5)
     Button btnSignUp;
 
     private int letf;
@@ -85,18 +87,6 @@ public class HonorFragment extends BaseFragment {
 
     @Override
     protected void initView(View mRootView) {
-//        letf = btn_myView.getLeft();
-//        int top = btn_myView.getTop();
-//        int right = btn_myView.getRight();
-//        int buttom = btn_myView.getBottom();
-//        float translationX = btn_myView.getTranslationX();
-//        float translationY = btn_myView.getTranslationY();
-//        Log.i("View参数-initView：", "letf-" + letf);
-//        Log.i("View参数：", "top-" + top);
-//        Log.i("View参数：", "right-" + right);
-//        Log.i("View参数：", "buttom-" + buttom);
-//        Log.i("View参数：", "translationX-" + translationX);
-//        Log.i("View参数：", "translationY-" + translationY);
 
     }
 
