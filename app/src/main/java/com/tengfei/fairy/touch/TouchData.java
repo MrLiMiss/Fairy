@@ -190,8 +190,15 @@ public class TouchData {
         properties.put("_title", _title);//页面标题
         properties.put("_url", _url);//页面地址
         //事件预置属性
-        properties.put("_ip", "1.1.1.1");
-        properties.put("_network_type", "wifi");
+        String _network_type = NetUtils.getNetworkType(context);
+        String _ip = NetUtils.getOutNetIP();
+        properties.put("_network_type", _network_type);
+        //wifi网络类型，ip设置为null
+        if (_network_type != "WIFI") {
+            properties.put("_ip", _ip);
+        } else {
+            properties.put("_ip", null);
+        }
         if (touch == null) {
             Log.e("TouchData-trackClick ", "track==null ！");
         } else {
@@ -217,8 +224,16 @@ public class TouchData {
         properties.put("_title", _title);//页面标题
         properties.put("_url", _url);//页面地址
         //事件预置属性
-        properties.put("_ip", "1.1.1.1");
-        properties.put("_network_type", "wifi");
+        String _network_type = NetUtils.getNetworkType(context);
+        String _ip = NetUtils.getOutNetIP();
+        properties.put("_network_type", _network_type);
+        //wifi网络类型，ip设置为null
+        if (_network_type != "WIFI") {
+            properties.put("_ip", _ip);
+        } else {
+            properties.put("_ip", null);
+        }
+
         if (touch == null) {
             Log.e("TouchData-trackView ", "track==null ！");
         } else {
@@ -242,8 +257,16 @@ public class TouchData {
         properties.put("_datetime", new Date());
         properties.put("is_login_id", isLoginId);
         //事件预置属性
-        properties.put("_ip", "1.1.1.1");
-        properties.put("_network_type", "wifi");
+        String _network_type = NetUtils.getNetworkType(context);
+        String _ip = NetUtils.getOutNetIP();
+        properties.put("_network_type", _network_type);
+        //wifi网络类型，ip设置为null
+        if (_network_type != "WIFI") {
+            properties.put("_ip", _ip);
+        } else {
+            properties.put("_ip", null);
+        }
+
         if (touch == null) {
             Log.e("TouchData-trackEvent ", "track==null ！");
         } else {
@@ -259,14 +282,22 @@ public class TouchData {
      * @param loginId     客户身份证号MD5 值
      * @param anonymousId 客户标识符
      */
-    public void trackSiginUp(String loginId, String anonymousId) {
+    public void trackSiginUp( String loginId, String anonymousId) {
         Map<String, Object> properties = new HashMap<>();
         long timeStamp = new Date().getTime();
 //        properties.put("_datetime", timeStamp);
         properties.put("_datetime", new Date());
+        String _network_type = NetUtils.getNetworkType(context);
+        String _ip = NetUtils.getOutNetIP();
+        properties.put("_network_type", _network_type);
+        //wifi网络类型，ip设置为null
+        if (_network_type != "WIFI") {
+            properties.put("_ip", _ip);
+        } else {
+            properties.put("_ip", null);
+        }
         //事件预置属性
-        properties.put("_ip", "1.1.1.1");
-        properties.put("_network_type", "wifi");
+
         if (touch == null) {
             Log.e("TouchData-trackSiginUp ", "track==null ！");
         } else {

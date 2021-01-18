@@ -121,6 +121,7 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.test_btn1://初始化
+                String _geo=DataUtils.getLocation(getContext());
                 Touch touch=  TouchData.getInstance(getContext()).getTouch();
                 commonProperties = CommonProperties.getInstance();
                 commonProperties.set_app_name("手机银行");
@@ -132,7 +133,7 @@ public class HonorFragment extends BaseFragment {
                 commonProperties.set_model(Build.BRAND + ":" + Build.MODEL);
                 commonProperties.set_os("android");
                 commonProperties.set_os_version(android.os.Build.VERSION.RELEASE);
-                commonProperties.set_geo(DataUtils.getLocation(getContext()));
+                commonProperties.set_geo(_geo);
                 commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
                 commonProperties.set_device_id("123123123123123");
                 TouchData.getInstance(getContext()).trackRegister(commonProperties);
