@@ -41,7 +41,7 @@ public class TouchData {
 
 
     /**
-     * 获取 测试 Touch
+     * 获取 测试 Touch（Touch为单例）
      *
      * @return
      */
