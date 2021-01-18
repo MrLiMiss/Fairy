@@ -1,5 +1,6 @@
 package com.tengfei.fairy.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -31,6 +32,8 @@ import com.tengfei.fairy.fragment.MainFragment;
 import com.tengfei.fairy.fragment.MyFragment;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.wedget.TabButton;
+import com.yanzhenjie.permission.Action;
+import com.yanzhenjie.permission.AndPermission;
 
 public class MainActivity extends BaseActivity {
     ViewPager mViewPager;
@@ -145,8 +148,44 @@ public class MainActivity extends BaseActivity {
     }
 
     protected void initData() {
+        checkCameraPermission();
+
+    }
+
+    private void checkCameraPermission() {
+        String[] reqPermissions = {Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.GET_TASKS};
+        AndPermission.with(MainActivity.this)
+                //.runtime()
+                .permission(reqPermissions)
+                //.onGranted(action)
+                .onGranted(data -> Log.e("AndPermission", "权限均允许"))
+
+                .onDenied(data -> {
+                    // Storage permission are not allowed.
+                    //* 判断用户是否点击了禁止后不再询问
+                    if (AndPermission.hasAlwaysDeniedPermission(MainActivity.this, reqPermissions)) {
+                        Log.e("AndPermission", "部分功能被禁止");
+                        //System.exit(0) ;//直接退出
+                    }
+                })
+                .start();
 
 
+        int hasCameraPermission = ContextCompat.checkSelfPermission(getApplication(),
+                Manifest.permission.ACCESS_COARSE_LOCATION);
+        if (hasCameraPermission == PackageManager.PERMISSION_GRANTED) {
+            //有权限
+//            IntentUtils.startoHotLine(mActivity);
+        } else {
+            //没有权限，申请权限。
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                    Constants.Code.PERMISSION_LOCATION);
+        }
     }
 
 

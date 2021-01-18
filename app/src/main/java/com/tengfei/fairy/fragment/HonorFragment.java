@@ -17,6 +17,8 @@ import com.bjrxtd.sdk.Touch;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.base.BaseFragment;
 import com.tengfei.fairy.touch.CommonProperties;
+import com.tengfei.fairy.touch.DataUtils;
+import com.tengfei.fairy.touch.NetUtils;
 import com.tengfei.fairy.touch.TouchData;
 import com.tengfei.fairy.utils.IntentUtils;
 
@@ -26,6 +28,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import butterknife.internal.Utils;
 
 /**
  * @ Description :Honor Fragment
@@ -122,15 +125,15 @@ public class HonorFragment extends BaseFragment {
                 commonProperties = CommonProperties.getInstance();
                 commonProperties.set_app_name("手机银行");
                 commonProperties.set_app_version("4.0.2");
-                commonProperties.set_carrier("中国联通");
+                commonProperties.set_carrier(NetUtils.getCellularOperatorType(getContext()));
                 commonProperties.set_lib("adnroid");
                 commonProperties.set_lib_version("1.0.1");
                 commonProperties.set_ip(null);
-                commonProperties.set_model("huawei mate8");
+                commonProperties.set_model(Build.BRAND + ":" + Build.MODEL);
                 commonProperties.set_os("android");
-                commonProperties.set_os_version("8.0.0");
-                commonProperties.set_geo("116.48927,39.89225");
-                commonProperties.set_network_type("wifi");
+                commonProperties.set_os_version(android.os.Build.VERSION.RELEASE);
+                commonProperties.set_geo(DataUtils.getLocation(getContext()));
+                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
                 commonProperties.set_device_id("123123123123123");
                 TouchData.getInstance(getContext()).trackRegister(commonProperties);
                 break;

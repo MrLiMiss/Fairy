@@ -4,6 +4,7 @@ package com.tengfei.fairy.touch;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
+
 import androidx.annotation.RequiresApi;
 
 import com.bjrxtd.sdk.LogConsumer;
@@ -15,7 +16,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * 数据 埋点
+ * 数据 埋点 （单例）
  */
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class TouchData {
@@ -60,34 +61,45 @@ public class TouchData {
             touchProp.setProperty(Touch.TOUCH_SDK_APP_PACK_TASK_NUM, "10");//每次发送默认条数
             touchProp.setProperty(Touch.TOUCH_SDK_APP_ADD_STEP_NUM, "10");//发送失败后，追加的步长值，默认10个
             touchProp.setProperty(Touch.TOUCH_SDK_APP_SEND_INTERVAL, "10000");//发送时间间隔 10000ms
-          Touch.init((Map) touchProp, new LogConsumer().setCallBackFunction(new LogConsumer.CallBack() {
-              @Override
-              public void log(String msg) {
-                  Log.e("TouchData",msg);
-              }
-          }));
+            Touch.init((Map) touchProp, new LogConsumer().setCallBackFunction(new LogConsumer.CallBack() {
+                @Override
+                public void log(String msg) {
+                    Log.e("TouchData", msg);
+                }
+            }));
             touch = Touch.getInstance();
         }
         return touch;
     }
 
-
+    /**
+     * 埋点初始化：
+     *
+     * @param properties 公共属性
+     */
+    public void trackInit(CommonProperties properties) {
+        //1、注册 公共属性
+        trackRegister(properties);
+        //2、时钟同步
+        touch.syncClock();
+    }
 
 
     /**
      * 注册事件 公共 属性
-     *
+     * <p>
      * •//公共事件属性
-     *     "_app_name":"手机银行",//项目应用名称
-     *     "_app_version":"1.0.1",//项目应用版本
-     *     "_lib":"andriod",
-     *     "_lib_version":"1.0",//埋点SDK版本
-     *     "_os":"andriod",//操作系统
-     *     "_os_version":"andriod 8",//操作系统
-     *     "_model":"huawei p30 pro",//手机型号
-     *     "_geo":"120.33143,34.56985",//坐标
-     *     "_carrier":"中国联通",//运营商
-     *     "_device_id"："123123123123" 设备唯一标识符
+     * "_app_name":"手机银行",//项目应用名称
+     * "_app_version":"1.0.1",//项目应用版本
+     * "_lib":"andriod",
+     * "_lib_version":"1.0",//埋点SDK版本
+     * "_os":"andriod",//操作系统
+     * "_os_version":"andriod 8",//操作系统
+     * "_model":"huawei p30 pro",//手机型号
+     * "_geo":"120.33143,34.56985",//坐标
+     * "_carrier":"中国联通",//运营商
+     * "_device_id"："123123123123" 设备唯一标识符
+     *
      * @param properties
      */
     public void trackRegister(CommonProperties properties) {
@@ -115,13 +127,56 @@ public class TouchData {
     }
 
     /**
+     * 时钟同步：
+     */
+    public void syncClock() {
+        if (touch != null) {
+            touch.syncClock();
+        } else {
+            Log.e("TouchData-syncClock ", "track==null ！");
+        }
+
+    }
+
+
+    /**
+     * 场景举例:如在后台切前后时,重新获取_ip时是一个异步获取操作,在获取_ip的时间段内
+     *
+     * @param startDateTime 开始异步获取参数时间戳
+     * @param endDateTime   获取到参数时间戳
+     * @param field         参数名
+     * @param value         参数值
+     */
+    public void reSetProp(Date startDateTime, Date endDateTime, String field, Object value) {
+        if (touch != null) {
+            touch.reSetProp(startDateTime, endDateTime, field, value);
+        } else {
+            Log.e("TouchData-reSetProp ", "track==null ！");
+        }
+
+    }
+
+    /**
+     * 发送所有数据：
+     * 调用此方法时刻:APP端被kill掉前触发
+     */
+    public void sendAll() {
+        if (touch != null) {
+            touch.sendAll();
+        } else {
+            Log.e("TouchData-sendAll ", "track==null ！");
+        }
+    }
+
+    /**
      * 点击事件埋点
+     *
      * @param distinctId          isLoginId为false时，distinct_id代表的是匿名标示，true时distinct_id代表的是登录账号
      * @param isLoginId           是否登录
-     * @param _element_name        点击元素name
-     * @param _element_target_url  点击元素链接
-     * @param _title               点击时页面title
-     * @param _url                 点击时页面url
+     * @param _element_name       点击元素name
+     * @param _element_target_url 点击元素链接
+     * @param _title              点击时页面title
+     * @param _url                点击时页面url
      */
     public void trackClick(String distinctId, boolean isLoginId, String _element_name, String _element_target_url, String _title, String _url) {
 
@@ -130,13 +185,13 @@ public class TouchData {
         //事件属性
         properties.put("_datetime", new Date());
         properties.put("is_login_id", isLoginId);
-        properties.put("_element_name",_element_name );//元素名称
+        properties.put("_element_name", _element_name);//元素名称
         properties.put("_element_target_url", _element_target_url);//元素链接地址
-        properties.put("_title",_title);//页面标题
+        properties.put("_title", _title);//页面标题
         properties.put("_url", _url);//页面地址
         //事件预置属性
-        properties.put("_ip","1.1.1.1");
-        properties.put("_network_type","wifi");
+        properties.put("_ip", "1.1.1.1");
+        properties.put("_network_type", "wifi");
         if (touch == null) {
             Log.e("TouchData-trackClick ", "track==null ！");
         } else {
@@ -146,11 +201,12 @@ public class TouchData {
     }
 
     /**
-     *  浏览事件埋点
-     * @param distinctId          isLoginId为false时，distinct_id代表的是匿名标示，true时distinct_id代表的是登录账号
-     * @param isLoginId           是否登录
-     * @param _title               点击时页面title
-     * @param _url                 点击时页面url
+     * 浏览事件埋点
+     *
+     * @param distinctId isLoginId为false时，distinct_id代表的是匿名标示，true时distinct_id代表的是登录账号
+     * @param isLoginId  是否登录
+     * @param _title     点击时页面title
+     * @param _url       点击时页面url
      */
     public void trackView(String distinctId, boolean isLoginId, String _title, String _url) {
 
@@ -158,11 +214,11 @@ public class TouchData {
 //        long timeStamp = new Date().getTime();
         properties.put("_datetime", new Date());
         properties.put("is_login_id", isLoginId);
-        properties.put("_title",_title);//页面标题
+        properties.put("_title", _title);//页面标题
         properties.put("_url", _url);//页面地址
         //事件预置属性
-        properties.put("_ip","1.1.1.1");
-        properties.put("_network_type","wifi");
+        properties.put("_ip", "1.1.1.1");
+        properties.put("_network_type", "wifi");
         if (touch == null) {
             Log.e("TouchData-trackView ", "track==null ！");
         } else {
@@ -174,9 +230,10 @@ public class TouchData {
 
     /**
      * 启动退出事件埋点
-     * @param distinctId          isLoginId为false时，distinct_id代表的是匿名标示，true时distinct_id代表的是登录账号
-     * @param isLoginId           是否登录
-     * @param eventCode   _AppStart/_AppEnd（启动/退出）
+     *
+     * @param distinctId isLoginId为false时，distinct_id代表的是匿名标示，true时distinct_id代表的是登录账号
+     * @param isLoginId  是否登录
+     * @param eventCode  _AppStart/_AppEnd（启动/退出）
      */
     public void trackEvent(String distinctId, boolean isLoginId, String eventCode) {
 
@@ -185,8 +242,8 @@ public class TouchData {
         properties.put("_datetime", new Date());
         properties.put("is_login_id", isLoginId);
         //事件预置属性
-        properties.put("_ip","1.1.1.1");
-        properties.put("_network_type","wifi");
+        properties.put("_ip", "1.1.1.1");
+        properties.put("_network_type", "wifi");
         if (touch == null) {
             Log.e("TouchData-trackEvent ", "track==null ！");
         } else {
@@ -194,8 +251,6 @@ public class TouchData {
         }
 
     }
-
-
 
 
     /**
@@ -208,10 +263,10 @@ public class TouchData {
         Map<String, Object> properties = new HashMap<>();
         long timeStamp = new Date().getTime();
 //        properties.put("_datetime", timeStamp);
-        properties.put("_datetime",  new Date());
+        properties.put("_datetime", new Date());
         //事件预置属性
-        properties.put("_ip","1.1.1.1");
-        properties.put("_network_type","wifi");
+        properties.put("_ip", "1.1.1.1");
+        properties.put("_network_type", "wifi");
         if (touch == null) {
             Log.e("TouchData-trackSiginUp ", "track==null ！");
         } else {

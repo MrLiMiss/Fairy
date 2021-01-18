@@ -78,6 +78,9 @@ dependencies {
 
     implementation 'com.alibaba:fastjson:1.1.71.android'
 
+    //权限  andPermission
+    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
+
 
 }
 repositories {
