@@ -9,7 +9,10 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -137,11 +140,10 @@ public class NetUtils {
          */
     public static String getCellularOperatorType(Context context) {
         int opeType = -1;
-        String opType = "null";
+        String opType = null;
         // No sim
         if (!hasSim(context)) {
-            opeType = -1;
-            return opType;
+            return null;
         }
         // Mobile data disabled
         if (!isMobileDataEnabled(context)) {
@@ -485,56 +487,9 @@ public class NetUtils {
      * 1、wifi下不取ip（默认值为null）
      * 2、取外网ip，如果客户端取不到外网ip，就传"null"
      * @param context
+     * @parm  handler 异步传输处理
      */
-    public static void getOutIp(final Context context){
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                URL infoUrl = null;
-                InputStream inStream = null;
-                String line = "null";
-                try {
-                    infoUrl = new URL("http://pv.sohu.com/cityjson?ie=utf-8");
-                    URLConnection connection = infoUrl.openConnection();
-                    HttpURLConnection httpConnection = (HttpURLConnection) connection;
-                    int responseCode = httpConnection.getResponseCode();
-                    if (responseCode == HttpURLConnection.HTTP_OK) {
-                        inStream = httpConnection.getInputStream();
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(inStream, "utf-8"));
-                        StringBuilder strber = new StringBuilder();
-                        while ((line = reader.readLine()) != null)
-                            strber.append(line + "\n");
-                        inStream.close();
-                        // 从反馈的结果中提取出IP地址
-                        int start = strber.indexOf("{");
-                        int end = strber.indexOf("}");
-                        String json = strber.substring(start, end + 1);
-                        if (json != null) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(json);
-                                line = jsonObject.optString("cip");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-                        //todo：完成数据处理
-//                        Constants.outIp=line;
-                        Logs.e("Hrbbdata-outIp",line);
-                    }
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                Logs.e("Hrbbdata-outIp",line);
-            }
-        }).start();
-    }
-
-
-    public static String  getIp(Context context){
+    public static String  getIp(Context context, Handler handler){
         Date startTime=new Date();
         new Thread(new Runnable() {
             @Override
@@ -575,6 +530,14 @@ public class NetUtils {
                         //todo:如何获取自线程中结果返回主线程
                         Date time=new Date();
 //                        Constants.outIp=line;
+                        Message message=new Message();
+                        Bundle bundle=new Bundle();
+                        bundle.putString("outip", outIp);
+                        message.setData(bundle);//bundle传值，耗时，效率低
+                        handler.sendMessage(message);//发送message信息
+                        message.what=1001;//标志是哪个线程传数据
+                        //补齐异步操作导致埋点数据  部分参数未赋值问题
+                        TouchData.reSetProp(startTime,time,"_ip",outIp);
                         ToastTools.showCenterToast(context,"outIp:"+outIp);
                         Logs.e("TOUCH-outIp",outIp);
 

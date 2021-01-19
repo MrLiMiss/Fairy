@@ -189,27 +189,27 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    /**
-     * 处理权限申请的回调。
-     */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == Constants.Code.PERMISSION_CALL_PHONE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {//允许权限
-//                IntentUtils.startoHotLine(mActivity);
-                Log.e("onRequestPermissions", "允许权限");
-            } else {//拒绝权限
-
-                if (!ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissions[0])) {
-                    //不再提示
-                    Log.e("onRequestPermissions", "拒绝不再提示");
-
-                } else {//不再提示--deny
-//                    ToastTools.showLong(this,"请允许权限");
-                }
-            }
-        }
-    }
+//    /**
+//     * 处理权限申请的回调。
+//     */
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        if (requestCode == Constants.Code.PERMISSION_CALL_PHONE) {
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {//允许权限
+////                IntentUtils.startoHotLine(mActivity);
+//                Log.e("onRequestPermissions", "允许权限");
+//            } else {//拒绝权限
+//
+//                if (!ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissions[0])) {
+//                    //不再提示
+//                    Log.e("onRequestPermissions", "拒绝不再提示");
+//
+//                } else {//不再提示--deny
+////                    ToastTools.showLong(this,"请允许权限");
+//                }
+//            }
+//        }
+//    }
 
 
     @Override     //startActivityforresult(requestcode),跳转到其他界面返回结果（resultCode）进行处理

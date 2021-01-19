@@ -3,6 +3,9 @@ package com.tengfei.fairy.touch;
 
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import androidx.annotation.RequiresApi;
@@ -24,6 +27,23 @@ public class TouchData {
     private static Touch touch = null;
     public static Context context = null;
     public static String distinctId;
+    public static String ip;
+
+    private final static Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage( Message msg ) {
+
+            // TODO Auto-generated method stub
+            super.handleMessage( msg );
+            switch( msg.what ) {
+                case 1001://用于区分线程
+                  ip=msg.getData().getString("outip") ;
+                    Log.d("TouchData", "outip: "+ip);
+            }
+        }
+
+    };
 
     private TouchData(Context context) {
         this.context = context;
@@ -147,7 +167,7 @@ public class TouchData {
      * @param field         参数名
      * @param value         参数值
      */
-    public void reSetProp(Date startDateTime, Date endDateTime, String field, Object value) {
+    public static void reSetProp(Date startDateTime, Date endDateTime, String field, Object value) {
         if (touch != null) {
             touch.reSetProp(startDateTime, endDateTime, field, value);
         } else {
@@ -193,11 +213,10 @@ public class TouchData {
             properties.put("_url", _url);//页面地址
             //事件预置属性
             String _network_type = NetUtils.getNetworkType(context);
-            String _ip = NetUtils.getOutNetIP();
             properties.put("_network_type", _network_type);
             //wifi网络类型，ip设置为null
             if (_network_type != "WIFI") {
-                properties.put("_ip", _ip);
+                properties.put("_ip", ip);
             } else {
                 properties.put("_ip", null);
             }
@@ -227,11 +246,12 @@ public class TouchData {
             properties.put("_url", _url);//页面地址
             //事件预置属性
             String _network_type = NetUtils.getNetworkType(context);
-            String _ip = NetUtils.getOutNetIP();
             properties.put("_network_type", _network_type);
+
+            NetUtils.getIp(context,mHandler);
             //wifi网络类型，ip设置为null
             if (_network_type != "WIFI") {
-                properties.put("_ip", _ip);
+                properties.put("_ip", ip);
             } else {
                 properties.put("_ip", null);
             }
@@ -259,12 +279,12 @@ public class TouchData {
             properties.put("_datetime", new Date());
             properties.put("is_login_id", isLoginId);
             //事件预置属性
+            NetUtils.getIp(context,mHandler);
             String _network_type = NetUtils.getNetworkType(context);
-            String _ip = NetUtils.getOutNetIP();
             properties.put("_network_type", _network_type);
             //wifi网络类型，ip设置为null
             if (_network_type != "WIFI") {
-                properties.put("_ip", _ip);
+                properties.put("_ip", ip);
             } else {
                 properties.put("_ip", null);
             }
@@ -291,11 +311,11 @@ public class TouchData {
 //        properties.put("_datetime", timeStamp);
             properties.put("_datetime", new Date());
             String _network_type = NetUtils.getNetworkType(context);
-            String _ip = NetUtils.getOutNetIP();
+            NetUtils.getIp(context,mHandler);
             properties.put("_network_type", _network_type);
             //wifi网络类型，ip设置为null
             if (_network_type != "WIFI") {
-                properties.put("_ip", _ip);
+                properties.put("_ip", ip);
             } else {
                 properties.put("_ip", null);
             }

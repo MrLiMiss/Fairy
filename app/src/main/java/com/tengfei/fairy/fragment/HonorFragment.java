@@ -123,19 +123,19 @@ public class HonorFragment extends BaseFragment {
             case R.id.test_btn1://初始化
                 String _geo=DataUtils.getLocation(getContext());
                 Touch touch=  TouchData.getInstance(getContext().getApplicationContext()).getTouch();
-                NetUtils.getIp(getContext());
+
                 commonProperties = CommonProperties.getInstance();
                 commonProperties.set_app_name("手机银行");
                 commonProperties.set_app_version("4.0.2");
                 commonProperties.set_carrier(NetUtils.getCellularOperatorType(getContext()));
                 commonProperties.set_lib("adnroid");
                 commonProperties.set_lib_version("1.0.1");
-                commonProperties.set_ip(null);
+//                commonProperties.set_ip(null);
                 commonProperties.set_model(Build.BRAND + ":" + Build.MODEL);
                 commonProperties.set_os("android");
                 commonProperties.set_os_version(android.os.Build.VERSION.RELEASE);
                 commonProperties.set_geo(_geo);
-                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
+//                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
                 commonProperties.set_device_id("123123123123123");
                 TouchData.trackRegister(commonProperties);
                 break;

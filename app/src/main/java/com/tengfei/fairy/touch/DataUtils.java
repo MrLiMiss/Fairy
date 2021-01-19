@@ -54,8 +54,8 @@ public class DataUtils {
             //如果是Network
             locationProvider = LocationManager.NETWORK_PROVIDER;
         } else {
-            Log.e("getLocation：", "没有可用定位器");
-            return "null";
+            Log.e("Hrbbdata：", "没有可用定位器");
+            return null;
         }
         //获取Location
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && PackageManager.PERMISSION_GRANTED != context.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -81,7 +81,7 @@ public class DataUtils {
                     Constants.latitude = formatFour.format(location.getLatitude()) + "";
                     locationStr = Constants.altitude + "," + Constants.latitude;
                 } else {
-                    return "null";
+                    return null;
                 }
 
             }
