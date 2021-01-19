@@ -9,14 +9,15 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Looper;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
-
 import com.tengfei.fairy.utils.Logs;
 import com.tengfei.fairy.utils.StringUtil;
+import com.tengfei.fairy.utils.ToastTools;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +34,7 @@ import java.net.MalformedURLException;
 import java.net.NetworkInterface;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Date;
 import java.util.Enumeration;
 
 import static android.content.ContentValues.TAG;
@@ -484,18 +486,71 @@ public class NetUtils {
      * 2、取外网ip，如果客户端取不到外网ip，就传"null"
      * @param context
      */
-    public String  getOutIp(final Context context){
+    public static void getOutIp(final Context context){
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 URL infoUrl = null;
                 InputStream inStream = null;
-                String outIp =null;
+                String line = "null";
                 try {
                     infoUrl = new URL("http://pv.sohu.com/cityjson?ie=utf-8");
                     URLConnection connection = infoUrl.openConnection();
                     HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                    int responseCode = httpConnection.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        inStream = httpConnection.getInputStream();
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(inStream, "utf-8"));
+                        StringBuilder strber = new StringBuilder();
+                        while ((line = reader.readLine()) != null)
+                            strber.append(line + "\n");
+                        inStream.close();
+                        // 从反馈的结果中提取出IP地址
+                        int start = strber.indexOf("{");
+                        int end = strber.indexOf("}");
+                        String json = strber.substring(start, end + 1);
+                        if (json != null) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(json);
+                                line = jsonObject.optString("cip");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                        //todo：完成数据处理
+//                        Constants.outIp=line;
+                        Logs.e("Hrbbdata-outIp",line);
+                    }
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Logs.e("Hrbbdata-outIp",line);
+            }
+        }).start();
+    }
+
+
+    public static String  getIp(Context context){
+        Date startTime=new Date();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                URL infoUrl = null;
+                InputStream inStream = null;
+                String outIp =null;
+                Looper.prepare();
+                try {
+                    infoUrl = new URL("http://pv.sohu.com/cityjson?ie=utf-8");
+                    URLConnection connection = infoUrl.openConnection();
+                    HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                    //设置连接超时时间10s
+                    httpConnection.setConnectTimeout(10000);
+                    //设置读取超时时间10s
+                    httpConnection.setReadTimeout(10000);
                     int responseCode = httpConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK) {
                         inStream = httpConnection.getInputStream();
@@ -518,7 +573,9 @@ public class NetUtils {
 
                         }
                         //todo:如何获取自线程中结果返回主线程
+                        Date time=new Date();
 //                        Constants.outIp=line;
+                        ToastTools.showCenterToast(context,"outIp:"+outIp);
                         Logs.e("TOUCH-outIp",outIp);
 
                     }
@@ -529,8 +586,9 @@ public class NetUtils {
                 }
             }
         }).start();
-       return null;
+        return null;
     }
+
 
 
 

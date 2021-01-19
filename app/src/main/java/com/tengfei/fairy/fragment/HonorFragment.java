@@ -123,6 +123,7 @@ public class HonorFragment extends BaseFragment {
             case R.id.test_btn1://初始化
                 String _geo=DataUtils.getLocation(getContext());
                 Touch touch=  TouchData.getInstance(getContext()).getTouch();
+                NetUtils.getIp(getContext());
                 commonProperties = CommonProperties.getInstance();
                 commonProperties.set_app_name("手机银行");
                 commonProperties.set_app_version("4.0.2");
