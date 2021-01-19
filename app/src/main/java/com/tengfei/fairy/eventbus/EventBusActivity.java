@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.base.BaseActivity;
+import com.tengfei.fairy.touch.TouchData;
 import com.tengfei.fairy.utils.IntentUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -31,6 +32,8 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
     Button btn_unregester;
     @BindView(R.id.btn_to_eventBus2)
     Button btn_to_eventBus2;
+    @BindView(R.id.btn_testTouch)
+    Button btn_testTouch;
     @BindView(R.id.tv_Logo)
     TextView tv_Logo;
 
@@ -51,6 +54,7 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
         btn_regester_event.setOnClickListener(this);
         btn_unregester.setOnClickListener(this);
         btn_to_eventBus2.setOnClickListener(this);
+        btn_testTouch.setOnClickListener(this);
     }
 
     @Override
@@ -111,6 +115,10 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
             case R.id.btn_unregester:
                 EventBus.getDefault().unregister(this);
                 break;
+            case R.id.btn_testTouch:
+                TouchData.trackView("eventbustrackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
+                TouchData.trackClick("eventbusdistinctideventbus",false,"elemrnt-url","element-title","eventbus","eventbus-url");
+                TouchData.trackEvent("eventbusMD5123123123start",false,"_AppStart");
             default:
                 break;
         }

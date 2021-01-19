@@ -53,6 +53,13 @@
         style="@style/testButton"
         android:layout_gravity="left"
         android:text="toEventBus2Activity" />
+    <Button
+        android:id="@+id/btn_testTouch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/testButton"
+        android:layout_gravity="left"
+        android:text="testTouch" />
 
 
 </LinearLayout>

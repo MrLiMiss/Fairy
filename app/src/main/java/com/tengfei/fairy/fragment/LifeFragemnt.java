@@ -108,20 +108,20 @@ public class LifeFragemnt extends BaseFragment {
                 commonProperties.set_geo("116.48927,39.89225");
                 commonProperties.set_network_type("wifi");
                 commonProperties.set_device_id("123123123123123");
-                TouchData.getInstance(getContext()).trackRegister(commonProperties);
+                TouchData.trackRegister(commonProperties);
                 break;
             case R.id.test_btn2://trackView
                 Map<String ,Object > propertiesView=new HashMap<>();
-                TouchData.getInstance(getContext()).trackView("trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
+                TouchData.trackView("life-trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
                 break;
             case R.id.test_btn3://trackClick
-                TouchData.getInstance(getContext()).trackClick("trackClickdintinctied",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");
+                TouchData.trackClick("life-trackContradistinction",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");
                 break;
             case R.id.test_btn4://trackEvent
-                TouchData.getInstance(getContext()).trackEvent("MD5123123123start",false,"_AppStart");
+                TouchData.trackEvent("life-MD5123123123start",false,"_AppStart");
                 break;
             case R.id.test_btn5://trackSignUp
-                TouchData.getInstance(getContext()).trackSiginUp("MD5123123123123123","123anonymousId");
+                TouchData.trackSiginUp("life-MD5123123123123123","123anonymousId");
                 break;
             default:
                 break;

@@ -122,7 +122,7 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.test_btn1://初始化
                 String _geo=DataUtils.getLocation(getContext());
-                Touch touch=  TouchData.getInstance(getContext()).getTouch();
+                Touch touch=  TouchData.getInstance(getContext().getApplicationContext()).getTouch();
                 NetUtils.getIp(getContext());
                 commonProperties = CommonProperties.getInstance();
                 commonProperties.set_app_name("手机银行");
@@ -137,20 +137,20 @@ public class HonorFragment extends BaseFragment {
                 commonProperties.set_geo(_geo);
                 commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
                 commonProperties.set_device_id("123123123123123");
-                TouchData.getInstance(getContext()).trackRegister(commonProperties);
+                TouchData.trackRegister(commonProperties);
                 break;
             case R.id.test_btn2://trackView
                 Map<String ,Object > propertiesView=new HashMap<>();
-                    TouchData.getInstance(getContext()).trackView("trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
+                    TouchData.trackView("honor-trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
                 break;
             case R.id.test_btn3://trackClick
-                    TouchData.getInstance(getContext()).trackClick("trackClickdintinctied",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");
+                    TouchData.trackClick("honor-trackClickdintinctied",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");
                 break;
             case R.id.test_btn4://trackEvent
-                 TouchData.getInstance(getContext()).trackEvent("MD5123123123start",false,"_AppStart");
+                 TouchData.trackEvent("honor-MD5123123123start",false,"_AppStart");
                 break;
             case R.id.test_btn5://trackSignUp
-                TouchData.getInstance(getContext()).trackSiginUp("MD5123123123123123","123anonymousId");
+                TouchData.trackSiginUp("honor-MD5123123123123123","123anonymousId");
                 break;
             case R.id.btn_EventBus:
                 IntentUtils.toEventBusActivity(getContext());
