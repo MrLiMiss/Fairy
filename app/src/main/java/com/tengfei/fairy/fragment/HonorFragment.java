@@ -137,11 +137,12 @@ public class HonorFragment extends BaseFragment {
                 commonProperties.set_geo(_geo);
 //                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
                 commonProperties.set_device_id("123123123123123");
-                TouchData.trackRegister(commonProperties);
+//                TouchData.trackRegister(commonProperties);
+                  TouchData.getInstance(getContext().getApplicationContext()).trackInit(commonProperties);
                 break;
             case R.id.test_btn2://trackView
-                Map<String ,Object > propertiesView=new HashMap<>();
-                    TouchData.trackView("honor-trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
+//                Map<String ,Object > propertiesView=new HashMap<>();
+//                    TouchData.trackView("honor-trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
                 break;
             case R.id.test_btn3://trackClick
                     TouchData.trackClick("honor-trackClickdintinctied",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");

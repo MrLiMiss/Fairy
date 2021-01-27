@@ -101,7 +101,13 @@ public class TouchData {
         //1、注册 公共属性
         trackRegister(properties);
         //2、时钟同步
-        touch.syncClock();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                touch.syncClock();
+            }
+        }).start();
+
     }
 
 
@@ -151,7 +157,13 @@ public class TouchData {
      */
     public void syncClock() {
         if (touch != null) {
-            touch.syncClock();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    touch.syncClock();
+                }
+            }).start();
+
         } else {
             Log.e("TouchData-syncClock ", "track==null ！");
         }
@@ -182,7 +194,14 @@ public class TouchData {
      */
     public static void sendAll() {
         if (touch != null) {
-            touch.sendAll();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    touch.sendAll();
+                }
+            }).start();
+
         } else {
             Log.e("TouchData-sendAll ", "track==null ！");
         }
