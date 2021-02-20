@@ -157,7 +157,8 @@ public class HonorFragment extends BaseFragment {
                 IntentUtils.toEventBusActivity(getContext());
                 break;
             case R.id.btn_activity:
-                IntentUtils.toConfigChenagedActivity(getContext());
+                IntentUtils.toAboutActivity(getContext());
+//                IntentUtils.toConfigChenagedActivity(getContext());
                 break;
             default:
                 break;

@@ -1,4 +1,4 @@
-package com.tengfei.fairy.test;
+package com.tengfei.fairy.activityLificycle;
 
 import android.app.Activity;
 import android.content.res.Configuration;

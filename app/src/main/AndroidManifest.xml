@@ -56,9 +56,14 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".eventbus.EventBusActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".test.ConfigChangeActivity"
+        <activity android:name=".activityLificycle.ConfigChangeActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"/>
         <activity android:name=".activity.myView.MyViewActivity" />
+        <activity android:name=".activityLificycle.Aactivity"
+            android:launchMode="standard"/>
+        <activity android:name=".activityLificycle.Bactivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".activityLificycle.AboutActivity" />
     </application>
 
 </manifest>
