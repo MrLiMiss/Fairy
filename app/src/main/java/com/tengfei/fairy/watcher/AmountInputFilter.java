@@ -43,6 +43,17 @@ public class AmountInputFilter implements InputFilter {
         this.maxLength = maxLength;
     }
 
+    /**
+     *完成过滤逻辑
+     *
+     * @param source 输入的文字
+     * @param start  开始位置
+     * @param end  结束位置
+     * @param dest  当前显示的内容
+     * @param dstart  当前开始的位置
+     * @param dend    当前结束的位置
+     * @return
+     */
     @Override
     public CharSequence filter(CharSequence source,
                                int start,

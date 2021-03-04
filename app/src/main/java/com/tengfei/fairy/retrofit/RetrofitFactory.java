@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tengfei.fairy.test.http.okhttp.CommonInterceptor;
+import com.tengfei.fairy.javaBase.http.okhttp.CommonInterceptor;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
