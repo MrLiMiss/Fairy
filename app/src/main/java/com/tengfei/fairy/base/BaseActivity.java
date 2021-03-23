@@ -77,27 +77,19 @@ public abstract class BaseActivity extends AppCompatActivity  {
     /**
      * 初始化UI
      *
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2013-6-18
      */
     protected abstract void initGui();
 
     /**
      * 初始化事件
      *
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2013-6-18
      */
     protected abstract void initAction();
 
     /**
      * 初始化数据
      *
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2013-6-18
+
      */
     protected abstract void initData();
 
@@ -114,8 +106,6 @@ public abstract class BaseActivity extends AppCompatActivity  {
      * @param resId
      * @return
      * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2012-7-18
      */
     protected String getResString(int resId) {
         return activity.getResources().getString(resId);
@@ -125,54 +115,10 @@ public abstract class BaseActivity extends AppCompatActivity  {
         return activity.getResources().getColor(resId);
     }
 
-    /**
-     * 长提示
-     *
-     * @param msg
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2012-7-18
-     */
-    protected void toastLong(String msg) {
-        Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
-    }
 
-    /**
-     * 长提示
-     *
-     * @param resId    文本资源ID
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2012-7-19
-     */
-    protected void toastLong(int resId) {
-        Toast.makeText(activity, getResString(resId), Toast.LENGTH_LONG).show();
-    }
 
-    /**
-     * 短提示
-     *
-     * @param msg
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2012-7-18
-     */
-    protected void toastShort(String msg) {
-        Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
-    }
 
-    /**
-     * 短提示
-     *
-     * @param resId    文本资源ID
-     * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2012-7-19
-     */
-    protected void toastShort(int resId) {
-        Toast.makeText(activity, getResString(resId), Toast.LENGTH_SHORT)
-                .show();
-    }
+
 
     private long lastClickTime;
 
@@ -181,8 +127,6 @@ public abstract class BaseActivity extends AppCompatActivity  {
      *
      * @return
      * @Description
-     * @author 刘国山 lgs@yitong.com.cn
-     * @version 1.0 2013年7月22日
      */
     public boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
