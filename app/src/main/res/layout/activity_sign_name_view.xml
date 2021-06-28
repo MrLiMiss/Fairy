@@ -41,7 +41,7 @@
             android:background="@drawable/bg_sign_signatureview_bg"
             android:orientation="vertical">
 
-            <SignatureView
+            <com.tengfei.fairy.wedget.sign.SignatureView
                 android:id="@+id/signatureView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

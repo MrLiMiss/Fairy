@@ -1,6 +1,5 @@
 package com.tengfei.fairy.config;
-
-import com.tengfei.fairy.app.MyApplication;
+import com.tengfei.fairy.application.FairyApplication;
 
 /**
  * @ Description :配置类
@@ -10,7 +9,7 @@ import com.tengfei.fairy.app.MyApplication;
  */
 public class Constans {
     //电子签名保存地址
-    public static String SIGN_FILE_PATH = MyApplication.getInstance().getExternalCacheDir().getPath();
+    public static String SIGN_FILE_PATH = FairyApplication.getInstance().getExternalCacheDir().getPath();
     /**
      * inteng跳转flag
      */

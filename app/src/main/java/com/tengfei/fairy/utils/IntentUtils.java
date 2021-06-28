@@ -11,6 +11,7 @@ import com.tengfei.fairy.activityLificycle.AboutActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.wedget.sign.SignNameActivity;
 
 /**
  * @ Description :intent 跳转工具类
@@ -64,6 +65,14 @@ public class IntentUtils {
      */
     public static void toLifeCycleActivity(Context context) {
         Intent intent=new Intent(context, Aactivity.class);
+        context.startActivity(intent);
+    }
+
+    /**签名控件
+     * @param context
+     */
+    public static void toSignActivity(Context context) {
+        Intent intent=new Intent(context, SignNameActivity.class);
         context.startActivity(intent);
     }
 }

@@ -3,15 +3,21 @@ package com.tengfei.fairy.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.tengfei.fairy.R;
 import com.tengfei.fairy.utils.Logs;
+
 import butterknife.ButterKnife;
 
 /**
@@ -20,7 +26,7 @@ import butterknife.ButterKnife;
  * @ Time 2020-09-04   10:01
  * @ Version :
  */
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener  {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     protected Activity activity;
 
     @Override
@@ -37,59 +43,36 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         initData();
     }
 
+    @Override
+    public Resources getResources() {
+        Resources res = super.getResources();
+        if (res.getConfiguration().fontScale != 1) {
+            Configuration newConfig = new Configuration();
+            newConfig.setToDefaults();
+            res.updateConfiguration(newConfig, res.getDisplayMetrics());
+        }
+        return res;
+    }
+
 
     /*
      * 初始化布局
      */
     protected abstract int getContentLayout();
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Logs.i("lifecycle-BaseActivity", "onStart()");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Logs.i("lifecycle-BaseActivity", "onResume()");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Logs.i("lifecycle-BaseActivity", "onPause()");
-    }
-
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Logs.i("lifecycle-BaseActivity", "onStop()");
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Logs.i("lifecycle-BaseActivity", "onDestroy()");
-    }
 
     /**
      * 初始化UI
-     *
      */
     protected abstract void initGui();
 
     /**
      * 初始化事件
-     *
      */
     protected abstract void initAction();
 
     /**
      * 初始化数据
-     *
-
      */
     protected abstract void initData();
 
@@ -99,6 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         fragmentManager.popBackStack(null,
                 FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
+
 
     /**
      * 根据资源id获取值
@@ -114,10 +98,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected int getColorId(int resId) {
         return activity.getResources().getColor(resId);
     }
-
-
-
-
 
 
     private long lastClickTime;
@@ -174,6 +154,37 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Logs.i("lifecycle-BaseActivity", "onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Logs.i("lifecycle-BaseActivity", "onResume()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Logs.i("lifecycle-BaseActivity", "onPause()");
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Logs.i("lifecycle-BaseActivity", "onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Logs.i("lifecycle-BaseActivity", "onDestroy()");
+    }
 
 
 }
