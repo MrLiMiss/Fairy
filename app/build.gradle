@@ -42,16 +42,10 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    implementation 'com.android.support:support-v4:28.0.2'
 
     //butternife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
-
-    implementation 'com.android.support:design:28.+'
-    implementation 'com.android.support:support-v4:28.+'
-    implementation 'com.android.support:appcompat-v7:28.+'
-
     // retrofit 2 + rxjava + gson + converter (数据解析器)
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -68,7 +62,6 @@ dependencies {
     //recyclerview-adapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     //support-annotations
-    implementation 'com.android.support:support-annotations:27.0.2'
     //glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     //eventBUS
