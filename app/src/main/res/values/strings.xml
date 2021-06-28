@@ -2,4 +2,13 @@
     <string name="app_name">Fairy</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_photo">PhotoActivity</string>
+    <!--签名-->
+    <string name="sign_tips">为保证投、被保人的保险合同权益不受影响，请保证签名为<u>投保人本人亲笔签名</u>。如果被保人签名与真实情况不符，保险公司有权进行追责处理。</string>
+    <string name="clear_screen">清屏</string>
+    <string name="sign_error">签名异常</string>
+    <string name="reset_sign">重签</string>
+    <string name="sign_title">投保人签名</string>
+    <string name="cancel">取消</string>
+    <string name="finish">完成</string>
+
 </resources>

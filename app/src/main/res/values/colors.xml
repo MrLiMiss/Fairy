@@ -31,6 +31,8 @@
     <color name="color_transparent_66">#66000000</color>
     <color name="color_4C4C4C">#4C4C4C</color>
     <color name="color_70_white">#B3FFFFFF</color>
+    <color name="color_99FF6D26">#99FF6D26</color>
+    <color name="color_1AFF6D26">#1AFF6D26</color>
 
     <!-- 透明色 -->
     <color name="white">#FFFFFF</color>
