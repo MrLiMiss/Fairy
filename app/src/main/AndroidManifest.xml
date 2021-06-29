@@ -64,7 +64,8 @@
         <activity android:name=".activityLificycle.Bactivity"
             android:launchMode="singleTask"/>
         <activity android:name=".activityLificycle.AboutActivity" />
-        <activity android:name=".wedget.sign.SignNameActivity" />
+        <activity android:name=".wedget.sign.SignNameActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
