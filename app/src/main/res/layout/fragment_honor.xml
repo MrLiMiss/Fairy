@@ -210,14 +210,6 @@
                     android:text="组合view"
                     android:textSize="10sp" />
 
-                <Button
-                    android:id="@+id/btn_sign"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="签名控件"
-                    android:textSize="10sp" />
-
             </LinearLayout>
 
             <TextView

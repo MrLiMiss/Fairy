@@ -8,9 +8,11 @@ import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.activityLificycle.Aactivity;
 import com.tengfei.fairy.activityLificycle.AboutActivity;
+import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.wedget.CustomViewPager;
 import com.tengfei.fairy.wedget.sign.SignNameActivity;
 
 /**
@@ -68,6 +70,15 @@ public class IntentUtils {
         context.startActivity(intent);
     }
 
+    /**
+     * 跳转到自定义view
+     * @param context
+     */
+    public static void toCustomActivity(Context context) {
+        Intent intent=new Intent(context, CustomViewActivity.class);
+        context.startActivity(intent);
+    }
+
     /**签名控件
      * @param context
      */
@@ -75,4 +86,6 @@ public class IntentUtils {
         Intent intent=new Intent(context, SignNameActivity.class);
         context.startActivity(intent);
     }
+
+
 }

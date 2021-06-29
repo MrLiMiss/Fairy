@@ -12,7 +12,7 @@
         android:background="@color/colorWhite"
         app:hideSearch="true"
         app:showDividers="none"
-        app:titleStr="自定义view" />
+        app:titleStr="view test" />
 
     <ScrollView
         android:id="@+id/view_scrollview"

@@ -94,11 +94,11 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5,R.id.btn_sign})
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
-               IntentUtils.toMyViewActivity(getContext());
+               IntentUtils.toCustomActivity(getContext());
                 break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
@@ -159,9 +159,6 @@ public class HonorFragment extends BaseFragment {
             case R.id.btn_activity:
                 IntentUtils.toAboutActivity(getContext());
 //                IntentUtils.toConfigChenagedActivity(getContext());
-                break;
-            case R.id.btn_sign:
-                IntentUtils.toSignActivity(getContext());
                 break;
             default:
                 break;

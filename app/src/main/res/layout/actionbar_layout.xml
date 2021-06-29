@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="@dimen/spacing_normal"
                 android:paddingRight="@dimen/spacing_normal"
-                android:src="@drawable/ic_back_left" />
+                android:src="@drawable/back_login_new" />
 
 
         </LinearLayout>

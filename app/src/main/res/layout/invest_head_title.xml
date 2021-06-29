@@ -6,7 +6,7 @@
     android:background="@color/white">
 
     <LinearLayout
-        android:id="@+id/ivLogin"
+        android:id="@+id/iv_back"
         android:layout_width="44dp"
         android:layout_height="43dp"
         android:gravity="center">
@@ -23,7 +23,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/ivLogin"
+        android:layout_toRightOf="@id/iv_back"
         android:src="@drawable/icon_close"
         android:text="关闭"
         android:visibility="gone" />

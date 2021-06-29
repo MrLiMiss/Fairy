@@ -66,6 +66,7 @@
         <activity android:name=".activityLificycle.AboutActivity" />
         <activity android:name=".wedget.sign.SignNameActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".customView.CustomViewActivity" />
     </application>
 
 </manifest>
