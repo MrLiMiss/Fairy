@@ -1,8 +1,6 @@
 package com.tengfei.fairy.mvp;
 
-import android.view.View;
-
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.utils.SPUtils;
 
 import java.lang.ref.WeakReference;

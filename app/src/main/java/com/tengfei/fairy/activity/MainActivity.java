@@ -4,35 +4,29 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.adapter.ViewPagerAdapter;
 import com.tengfei.fairy.base.BaseActivity;
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.fragment.HonorFragment;
 import com.tengfei.fairy.fragment.LifeFragemnt;
 import com.tengfei.fairy.fragment.MainFragment;
 import com.tengfei.fairy.fragment.MyFragment;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.wedget.TabButton;
-import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 
 public class MainActivity extends BaseActivity {

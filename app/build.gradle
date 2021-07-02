@@ -81,6 +81,8 @@ dependencies {
     implementation "android.arch.lifecycle:viewmodel:1.1.0"
     // alternatively, just LiveData
     implementation "android.arch.lifecycle:livedata:1.1.0"
+    //闪烁动画刷新
+    implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
 
 
 }

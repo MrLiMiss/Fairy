@@ -10,9 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.constant.Constants;
 import com.tengfei.fairy.utils.AppUtils;
-import com.tengfei.fairy.utils.IntentUtils;
 import com.tengfei.fairy.utils.SharePreferenceUtil;
 
 /**

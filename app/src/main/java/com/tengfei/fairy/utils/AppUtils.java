@@ -28,7 +28,7 @@ import android.webkit.WebViewClient;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 
 import java.io.ByteArrayOutputStream;
 

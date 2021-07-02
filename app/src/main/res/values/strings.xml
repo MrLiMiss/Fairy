@@ -11,4 +11,18 @@
     <string name="cancel">取消</string>
     <string name="finish">完成</string>
 
+    <!--搜索-->
+    <string name="search_no_data">抱歉暂无搜索结果</string>
+    <string name="search_change_key">换个关键词试试？</string>
+    <string name="search_customer_hint">请输入客户名称</string>
+    <!--http-->
+    <string name="http_connect_fail">网络连接异常</string>
+    <string name="http_click_refresh">点击重试</string>
+    <string name="http_no_data">暂无数据</string>
+    <!--客户列表-->
+    <string name="custom_no_data_1">暂无客户，需要加油啦</string>
+    <string name="custom_no_data_2">暂无需补登信息的客户</string>
+    <string name="custom_gray_id"><Data><![CDATA[<font color="#666666" size="30px">身份证号：</font><font color="#111111" size="17px">%1$s</font>]]></Data></string>
+    <string name="custom_gray_name"><Data><![CDATA[<font color="#666666" size="30px">客户姓名：</font><font color="#111111" size="17px">%1$s</font>]]></Data></string>
+
 </resources>

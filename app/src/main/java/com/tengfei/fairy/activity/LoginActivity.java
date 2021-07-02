@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.constant.Constants;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.utils.SharePreferenceUtil;
 

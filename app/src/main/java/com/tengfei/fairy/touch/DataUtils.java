@@ -6,17 +6,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
 import android.util.Log;
 
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.utils.Logs;
 
-import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.util.List;
 

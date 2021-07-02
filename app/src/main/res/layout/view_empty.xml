@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="50dp">
+
+
+    <TextView
+        android:id="@+id/tv_hint"
+        style="@style/NormalGrayText"
+        android:drawableTop="@drawable/ic_http_error"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:gravity="center"
+        android:text="网络连接异常"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_normal" />
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        style="@style/NormalBlackText"
+        android:layout_height="@dimen/view_height_middle"
+        android:layout_marginTop="@dimen/spacing_7"
+        android:background="@drawable/shape_5185fa_line_white_bg_4_angle"
+        android:gravity="center"
+        android:paddingStart="@dimen/spacing_normal"
+        android:paddingEnd="@dimen/spacing_normal"
+        android:text="@string/http_click_refresh"
+        android:textColor="@color/color_5184FA"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_hint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_small" />
+
+</LinearLayout>

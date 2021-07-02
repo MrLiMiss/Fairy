@@ -1,7 +1,6 @@
 package com.tengfei.fairy.mvp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
@@ -17,10 +16,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.tengfei.fairy.base.BaseFragment;
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.utils.AppUtils;
 import com.tengfei.fairy.utils.DialogHelper;
-import com.tengfei.fairy.utils.IntentUtils;
 import com.tengfei.fairy.utils.LogUtils;
 import com.tengfei.fairy.utils.ToastUtils;
 import com.tengfei.fairy.wedget.Dialog.CustomLoadingDialog;

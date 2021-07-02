@@ -1,4 +1,6 @@
-package com.tengfei.fairy.constant;
+package com.tengfei.fairy.config;
+
+import com.tengfei.fairy.application.FairyApplication;
 
 /**
  * @ Description :
@@ -7,6 +9,24 @@ package com.tengfei.fairy.constant;
  * @ Version :
  */
 public class Constants {
+
+    //电子签名保存地址
+    public static String SIGN_FILE_PATH = FairyApplication.getInstance().getExternalCacheDir().getPath();
+    /**
+     * inteng跳转flag
+     */
+    public static String INTENG_FLAG = "intengFlag";
+    public static String INTENG_CALLBACK_FLAG = "intengCallBackFlag";
+
+
+    /**
+     * RecyclerView 基类相关配置
+     */
+    public static class MyRecyclerViewSetting {
+        public static final int PAGE_SIZE = 20;
+        public static final int PAGE_FIRST = 1;
+
+    }
 
     public static Boolean isNeedLog=false;//是否需要日志
     public static String appkey="";//项目ID

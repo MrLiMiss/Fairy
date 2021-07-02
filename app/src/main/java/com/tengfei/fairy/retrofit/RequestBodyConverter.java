@@ -6,7 +6,7 @@ import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
-import com.tengfei.fairy.constant.Constants;
+import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.utils.Base64Util;
 import com.tengfei.fairy.utils.Logs;
 

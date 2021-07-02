@@ -1,14 +1,5 @@
 package com.tengfei.fairy.mvp;
 
-import android.text.TextUtils;
-
-import com.google.gson.Gson;
-import com.tengfei.fairy.constant.Constants;
-import com.tengfei.fairy.utils.LogUtils;
-
-import java.net.ConnectException;
-import java.util.ArrayList;
-
 /**
  * @ Description :MVP  数据请求model 基类
  * @ Author 李腾飞
