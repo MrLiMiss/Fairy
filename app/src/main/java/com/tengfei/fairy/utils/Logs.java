@@ -1,23 +1,13 @@
 package com.tengfei.fairy.utils;
 
-import android.util.Log;
 
 /**
- * @ Description :
+ * @ Description :日志管理工具类
  * @ Author 李腾飞
  * @ Time 2020-09-04   10:09
  * @ Version :
  */
 
-
-import com.tengfei.fairy.BuildConfig;
-
-import java.util.Locale;
-
-/**
- * 日志管理工具类
- *
- */
 public class Logs {
 
     private static final boolean VERBOSE = true;
@@ -43,7 +33,7 @@ public class Logs {
     }
 
     // public static final String TAG_PREFIX = "elife";
-    public static boolean isShow = BuildConfig.DEBUG;
+    public static boolean isShow = true;
 
     public static void v(String tag, String msg) {
         if (VERBOSE&isShow) {

@@ -14,7 +14,7 @@ public abstract class BaseListPresenter<M extends BaseListModel,V extends BaseLi
         if (null == getView()) {
             return;
         }
-//        getModel().requestRefreshData();
+        getModel().requestRefreshData();
     }
 
 }

@@ -10,5 +10,19 @@ import com.tengfei.fairy.mvp.BasePresenter;
  * @ Version :
  */
 public abstract class BaseListModel<P extends BasePresenter> extends BaseModel {
+    
+    public BaseListModel(P presenter) {
+        super(presenter);
+    }
 
+    public void requestLoadmoreData(int page){
+        loadMoreData(page);
+    }
+
+    public void requestRefreshData(){
+        refreshData();
+    }
+    protected abstract void refreshData();
+
+    protected abstract void loadMoreData(int page);
 }

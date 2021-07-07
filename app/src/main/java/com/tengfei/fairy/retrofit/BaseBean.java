@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @ Version :
  */
 public class BaseBean<T> implements Serializable {
-    //    public String code;
+    public String code;
     public String msg;
     //    public String cmd;
 //    public String fail;

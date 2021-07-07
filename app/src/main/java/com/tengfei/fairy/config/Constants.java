@@ -2,6 +2,8 @@ package com.tengfei.fairy.config;
 
 import com.tengfei.fairy.application.FairyApplication;
 
+import java.util.ArrayList;
+
 /**
  * @ Description :
  * @ Author 李腾飞
@@ -17,6 +19,12 @@ public class Constants {
      */
     public static String INTENG_FLAG = "intengFlag";
     public static String INTENG_CALLBACK_FLAG = "intengCallBackFlag";
+
+
+    public static class JSONData {
+        public static ArrayList<String> requestData = new ArrayList<>();
+        public static ArrayList<String> responseData = new ArrayList<>();
+    }
 
 
     /**

@@ -9,4 +9,7 @@ import com.tengfei.fairy.mvp.BaseModel;
  * @ Version :
  */
 class AnimationModel extends BaseModel<AnimationPresenter> {
+    public AnimationModel(AnimationPresenter presenter) {
+        super(presenter);
+    }
 }
