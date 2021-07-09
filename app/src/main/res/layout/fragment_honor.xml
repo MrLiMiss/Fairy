@@ -86,6 +86,13 @@
                 android:gravity="center"
                 android:text="SignUp"
                 android:textSize="8sp" />
+            <Button
+                android:id="@+id/test_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="测试专用"
+                android:textSize="8sp" />
         </LinearLayout>
 
             <TextView

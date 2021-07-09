@@ -20,6 +20,7 @@ import com.tengfei.fairy.touch.CommonProperties;
 import com.tengfei.fairy.touch.DataUtils;
 import com.tengfei.fairy.touch.NetUtils;
 import com.tengfei.fairy.touch.TouchData;
+import com.tengfei.fairy.utils.FileUtil;
 import com.tengfei.fairy.utils.IntentUtils;
 
 import java.util.Date;
@@ -59,7 +60,7 @@ public class HonorFragment extends BaseFragment {
     Button btnSignUp;
 
     private int letf;
-    private CommonProperties commonProperties;
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -94,11 +95,17 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5})
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5,R.id.test_test})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
                IntentUtils.toCustomActivity(getContext());
+                break;
+            case R.id.test_test:
+                Context mContext=getContext();
+                FileUtil.test(mContext);
+                FileUtil.getCachePath(mContext);
+                FileUtil.textExternal(mContext);
                 break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
@@ -121,24 +128,7 @@ public class HonorFragment extends BaseFragment {
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
             case R.id.test_btn1://初始化
-                String _geo=DataUtils.getLocation(getContext());
-                Touch touch=  TouchData.getInstance(getContext().getApplicationContext()).getTouch();
-
-                commonProperties = CommonProperties.getInstance();
-                commonProperties.set_app_name("手机银行");
-                commonProperties.set_app_version("4.0.2");
-                commonProperties.set_carrier(NetUtils.getCellularOperatorType(getContext()));
-                commonProperties.set_lib("adnroid");
-                commonProperties.set_lib_version("1.0.1");
-//                commonProperties.set_ip(null);
-                commonProperties.set_model(Build.BRAND + ":" + Build.MODEL);
-                commonProperties.set_os("android");
-                commonProperties.set_os_version(android.os.Build.VERSION.RELEASE);
-                commonProperties.set_geo(_geo);
-//                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
-                commonProperties.set_device_id("123123123123123");
-//                TouchData.trackRegister(commonProperties);
-                  TouchData.getInstance(getContext().getApplicationContext()).trackInit(commonProperties);
+                touchInit();
                 break;
             case R.id.test_btn2://trackView
 //                Map<String ,Object > propertiesView=new HashMap<>();
@@ -164,6 +154,31 @@ public class HonorFragment extends BaseFragment {
                 break;
 
         }
+    }
+
+    /**
+     * 初始化埋点
+     */
+    private void touchInit() {
+        CommonProperties commonProperties;
+        String _geo=DataUtils.getLocation(getContext());
+        Touch touch=  TouchData.getInstance(getContext().getApplicationContext()).getTouch();
+
+        commonProperties = CommonProperties.getInstance();
+        commonProperties.set_app_name("手机银行");
+        commonProperties.set_app_version("4.0.2");
+        commonProperties.set_carrier(NetUtils.getCellularOperatorType(getContext()));
+        commonProperties.set_lib("adnroid");
+        commonProperties.set_lib_version("1.0.1");
+//                commonProperties.set_ip(null);
+        commonProperties.set_model(Build.BRAND + ":" + Build.MODEL);
+        commonProperties.set_os("android");
+        commonProperties.set_os_version(android.os.Build.VERSION.RELEASE);
+        commonProperties.set_geo(_geo);
+//                commonProperties.set_network_type( NetUtils.getNetworkType(getContext()));
+        commonProperties.set_device_id("123123123123123");
+//                TouchData.trackRegister(commonProperties);
+        TouchData.getInstance(getContext().getApplicationContext()).trackInit(commonProperties);
     }
 
     @Override

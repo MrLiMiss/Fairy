@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
+import com.tengfei.fairy.config.FileConfig;
+
 /**
  * @ Description :全局application
  * @ Author 李腾飞
@@ -29,6 +31,8 @@ public class FairyApplication extends MultiDexApplication implements Application
         super.onCreate();
         mApplication = this;
         context = this;
+        //初始化FileConfig
+        FileConfig.getInstance().initFileConf(this);
 
     }
 

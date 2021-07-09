@@ -33,16 +33,108 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import static android.content.Context.MODE_PRIVATE;
+
+/**
+ * android 文件处理utils
+ */
 public class FileUtil {
+    public static  String TAG=FileUtil.class.getSimpleName();
 
     public static final String SDCARD = FileConfig.getInstance().getDownloadFilePath() + "/";
 
     //图库绝对地址
-    public static final String SDCARD_CHILD_GALLERY = File.separator + "Hrbb";
+    public static final String SDCARD_CHILD_GALLERY = File.separator + "Fairy";
     public static final String SDCARD_GALLERY = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath() + SDCARD_CHILD_GALLERY;
     public static final String SDCARD_GALLERY_Q = Environment.DIRECTORY_PICTURES + SDCARD_CHILD_GALLERY;
 
 
+
+    /**
+     * 概念区分：
+     * （1）内部存储、外部存储
+     * 4.4（Build.VERSION_CODES.KITKAT）版本以前的手机，手机内部存储就是手机的rom，手机外部存储就是外插SD卡的存储
+     * 4.4版本手机以后，内部存储为手机系统的一个特殊位置，文件存储在内部存储，文件默认只能被你的app访问。
+     * 4.4以上手机ROM 分为内部存储internal  +  外部存储external。外置SD也属于外部存储。
+     *
+     * 应用在被用户卸载后，SDCard/Android/data/你的应用的包名/ 这个目录下的所有文件都会被删除
+     *
+     * /storage/emulated/0 对应手机内部SD卡目录   /storage/emulated/1 对应手机外部SD卡目录
+     *
+     * 1、Context.getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，
+     * 一般放一些长时间保存的数据，app删除数据删除，设置->应用->应用详情里面的”清除数据“
+     * 2、Context.getExternalCacheDir()方法可以获取到 SDCard/Android/data/你的应用包名/cache/目录，
+     * 一般存放临时缓存数据，app删除数据删除，设置->应用->应用详情里面的”清除缓存“，此方法需要判断外部SD卡状态是否可用
+     *
+     * 3、getCacheDir()方法用于获取/data/data/<application package>/cache目录
+     * 4、getFilesDir()方法用于获取/data/data/<application package>/files目录
+     */
+
+    public static void test(Context context){
+
+        try {
+            //访问内部存储空间
+            Log.d(TAG,"内部存储根路径 Environment.getDataDirectory(): "+Environment.getDataDirectory());
+            Log.d(TAG,"内部存储Cache路径 getCacheDir: "+context.getCacheDir().getAbsolutePath());
+            Log.d(TAG,"内部存储files路径 getFilesDir: "+context.getFilesDir().getAbsolutePath());
+            Log.d(TAG,"Environment.getDataDirectory():"+Environment.getDataDirectory());
+            Log.d(TAG,"内部存储自定义路径（myFile） context.getDir(\"myFile\", MODE_PRIVATE):"+context.getDir("myFile", MODE_PRIVATE).getAbsolutePath());
+
+            //访问外部存储空间
+            Log.d(TAG,"外部存储根路径 Environment.getExternalStorageDirectory():"+Environment.getExternalStorageDirectory());
+            //  getExternalCacheDir  getExternalFilesDir  4.4 以下版本返回null
+            Log.d(TAG,"外部存储files路径 getExternalCacheDir: "+context.getExternalCacheDir().getAbsolutePath());
+            Log.d(TAG,"外部存储Cache路径 getExternalFilesDir: "+ context.getExternalFilesDir(null).getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 遍历外部存储控件
+     * @param context
+     */
+    public static void testExternal(Context context){
+        File[] files;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            files = context.getExternalFilesDirs(Environment.MEDIA_MOUNTED);
+            for(File file:files){
+                Log.e(TAG,"外部存储空间："+file.getAbsolutePath());
+            }
+        }
+
+    }
+
+
+    /**
+     * 测试沙箱存储机制
+     */
+    public  static void testSandbox(){
+
+    }
+
+
+    /**
+     * 获取app缓存路径
+     * getExternalCacheDir() 需外部SD卡状态可用
+     * @param context
+     * @return
+     */
+    public static String getCachePath( Context context ){
+        String cachePath ;
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+                || !Environment.isExternalStorageRemovable()) {
+            //外部存储可用
+            cachePath = context.getExternalCacheDir().getPath() ;
+            Logs.d(TAG,"外部存储可用:"+cachePath);
+        }else {
+            //外部存储不可用
+            cachePath = context.getCacheDir().getPath() ;
+            Logs.d(TAG,"外部存储不可用"+cachePath);
+        }
+        return cachePath ;
+    }
 
     /**
      * 在SD卡上创建文件
@@ -224,7 +316,7 @@ public class FileUtil {
     }
 
     /**
-     * @param path
+     * @param
      * @return
      * @Description 文件重命名
      * @Author zhaoqianpeng(zqp @ yitong.com.cn) 2014-4-15
