@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 
 import com.tengfei.fairy.config.FileConfig;
@@ -59,7 +60,7 @@ public class FileUtil {
      *
      * 应用在被用户卸载后，SDCard/Android/data/你的应用的包名/ 这个目录下的所有文件都会被删除
      *
-     * /storage/emulated/0 对应手机内部SD卡目录   /storage/emulated/1 对应手机外部SD卡目录
+     * /storage/emulated/0 对应手机内部SD卡目录(实际为手机机身存储空间中单独划分出的空间)   /storage/emulated/1 对应手机外部SD卡目录
      *
      * 1、Context.getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，
      * 一般放一些长时间保存的数据，app删除数据删除，设置->应用->应用详情里面的”清除数据“
@@ -82,7 +83,7 @@ public class FileUtil {
 
             //访问外部存储空间
             Log.d(TAG,"外部存储根路径 Environment.getExternalStorageDirectory():"+Environment.getExternalStorageDirectory());
-            //  getExternalCacheDir  getExternalFilesDir  4.4 以下版本返回null
+            //  getExternalCacheDir  getExternalFilesDir  4.4 以下版本返回null,
             Log.d(TAG,"外部存储files路径 getExternalCacheDir: "+context.getExternalCacheDir().getAbsolutePath());
             Log.d(TAG,"外部存储Cache路径 getExternalFilesDir: "+ context.getExternalFilesDir(null).getAbsolutePath());
         } catch (Exception e) {
@@ -108,12 +109,29 @@ public class FileUtil {
 
 
     /**
-     * 测试沙箱存储机制
+     * 测试沙箱存储机制：
+     * 1、应用进入沙盒模式,应用只能在getExternalFilesDir()目录（应用沙箱目录）下通过文件路径创建的文件，
+     * 另外应用卸载的时候默认这个目录下的所有文件是会被删除的，应用无法直接通过路径的方式在其他目录下创建文件；
+     * 2、共享集合：不希望应用卸载删除的文件，需要应用通过MediaStore或者SAF的方式保存在公共共享集合目录，
+     * 公共集合目录包括：多媒体文件集合（音频、视频和图片）以及下载文件集合
+     * 3、读公共集合目录文件：多媒体文件，需要申请存储权限（READ_EXTERNAL_STORAGE）并通过MediaStore和SAF的方式读取不删除，删除app文件；
+     * 读取下载目录的文件（不需要权限）只能使用SAF的方式，删除app文件不删除；
      */
     public  static void testSandbox(){
 
     }
 
+
+    /**
+     * 判断应用是否处于沙盒模式
+     */
+    @RequiresApi(api = 29)
+    public static void isSandboxModel() {
+        if (Environment.isExternalStorageLegacy()) {
+            Log.e(TAG, "is legacy model");
+        } else {
+            Log.e(TAG, "is sandbox model");
+        } }
 
     /**
      * 获取app缓存路径
