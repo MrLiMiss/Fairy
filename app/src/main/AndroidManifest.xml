@@ -67,6 +67,9 @@
         <activity android:name=".wedget.sign.SignNameActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".customView.CustomViewActivity" />
+        <activity android:name=".service.ServiceTestActivity" />
+
+        <service android:name=".service.MusicService" />
     </application>
 
 </manifest>

@@ -16,10 +16,12 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 
+import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.config.FileConfig;
 
 import java.io.BufferedInputStream;
@@ -119,6 +121,42 @@ public class FileUtil {
      */
     public  static void testSandbox(){
 
+    }
+
+
+    /**   bitmap 保存到共享媒体文件夹中DCIM （相册）test
+     * @param context
+     * @param bitmap
+     */
+    private void saveAppDCIMFils(Context context,Bitmap bitmap) {
+        Uri uri =null;
+        ContentResolver contentResolver = context.getContentResolver();
+        ContentValues contentValues =new ContentValues();
+        contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, "刘亦菲.jpg");
+        contentValues.put(MediaStore.Images.Media.DESCRIPTION, "刘亦菲.jpg");
+        //兼容Android Q和以下版本
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            //android Q中不再使用DATA字段，而用RELATIVE_PATH代替
+            //RELATIVE_PATH是相对路径不是绝对路径
+            //DCIM是系统文件夹，关于系统文件夹可以到系统自带的文件管理器中查看，不可以写没存在的名字
+            contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, "DCIM/MNMZ");
+            //contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, "Music/signImage");
+        } else {
+            contentValues.put(MediaStore.Images.Media.DATA, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath());
+        }
+        contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+        uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+        OutputStream outputStream =null;
+        try {
+            outputStream = context.getContentResolver().openOutputStream(uri);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 80, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            Logs.d(TAG,"保存成功");
+        }catch (IOException e) {
+            e.printStackTrace();
+            Logs.d(TAG,"保存失败");
+        }
     }
 
 

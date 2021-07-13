@@ -1,8 +1,13 @@
 package com.tengfei.fairy.utils;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.nfc.Tag;
+import android.os.IBinder;
+import android.util.Log;
 
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
@@ -12,8 +17,12 @@ import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.service.MusicService;
+import com.tengfei.fairy.service.ServiceTestActivity;
 import com.tengfei.fairy.wedget.CustomViewPager;
 import com.tengfei.fairy.wedget.sign.SignNameActivity;
+
+import static android.content.Context.BIND_AUTO_CREATE;
 
 /**
  * @ Description :intent 跳转工具类
@@ -88,4 +97,67 @@ public class IntentUtils {
     }
 
 
+    /**
+     * 启动serviceTestActivity
+     * @param context
+     */
+    public static void toServiceActivity(Context context) {
+        Intent intent=new Intent(context,ServiceTestActivity.class);
+        context.startActivity(intent);
+    }
+
+
+    /** 启动 音乐service
+     * @param context
+     */
+    public static void startMusicService(Context context) {
+        Intent startIntent=new Intent(context,MusicService.class);
+        //startService 调用者与service 不绑定，访问者退出，service 仍运行（bindService 与service绑定，访问者退出 service 也终止）
+        context.startService(startIntent);
+    }
+
+    /** 关闭 音乐service
+     * @param context
+     */
+    public static void endMusicService(Context context) {
+        Intent stopIntent=new Intent(context,MusicService.class);
+        context.stopService(stopIntent);
+
+    }
+
+
+    private static MusicService.SimpleBinder mBinder;
+    public static final ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {//当activity 与 service链接成功时执行
+            mBinder = (MusicService.SimpleBinder) service;
+            mBinder.doTask();
+            Logs.d("MusicService","ServiceConnection-onServiceConnected");
+        }
+        @Override
+        public void onServiceDisconnected(ComponentName name) {////当activity 与 service断开时执行
+            Logs.d("MusicService","ServiceConnection-onServiceDisconnected");
+        }
+    };
+
+    /**绑定 MusicService
+     * @param context
+     */
+    public static void bindMusicService(Context context) {
+        Intent bindIntent=new Intent(context,MusicService.class);
+        //BIND_AUTO_CREATE标记，此标记表示在Activity和Service建立关联后自动创建Service，
+        // 并执行Service中的onCreate方法，并不会执行onStartCommand方法。
+        context.bindService(bindIntent,mConnection,BIND_AUTO_CREATE);
+
+    }
+
+
+    /**解绑 MusicService
+     * @param context
+     */
+    public static void unBindMusicService(Context context) {
+             //service 必须处于绑定状态，才可执行unbindService，否则报错 service  not registered
+            context.unbindService(mConnection);
+
+    }
 }

@@ -95,7 +95,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5,R.id.test_test})
+    @OnClick({R.id.btn_myView,R.id.btn_EventBus,R.id.btn_activity,R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5,R.id.test_test,R.id.btn_service})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_myView://自定义view
@@ -105,7 +105,10 @@ public class HonorFragment extends BaseFragment {
                 Context mContext=getContext();
                 FileUtil.test(mContext);
                 FileUtil.getCachePath(mContext);
-                FileUtil.textExternal(mContext);
+                FileUtil.testExternal(mContext);
+                break;
+            case R.id.btn_service:
+                IntentUtils.toServiceActivity(getContext());
                 break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
