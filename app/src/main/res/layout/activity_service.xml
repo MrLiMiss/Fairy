@@ -17,27 +17,19 @@
         <Button
             android:id="@+id/btn_start_service"
             style="@style/mybutton"
-            android:text="开启service"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="开启service" />
         <Button
             android:id="@+id/btn_end_service"
             style="@style/mybutton"
-            android:text="关闭service"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="关闭service" />
         <Button
             android:id="@+id/btn_bind_service"
             style="@style/mybutton"
-            android:text="绑定service"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="绑定service" />
         <Button
             android:id="@+id/btn_unbind_service"
             style="@style/mybutton"
-            android:text="解绑service"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="解绑service" />
 
 </LinearLayout>
     <LinearLayout
@@ -47,15 +39,11 @@
         <Button
             android:id="@+id/btn_start_intent_service"
             style="@style/mybutton"
-            android:text="开启Intentservice"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="开启Intentservice" />
         <Button
             android:id="@+id/btn_end_intent_service"
             style="@style/mybutton"
-            android:text="关闭Intentservice"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:text="关闭Intentservice" />
 
 
     </LinearLayout>
