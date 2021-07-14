@@ -2,6 +2,7 @@ package com.tengfei.fairy.customView;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tengfei.fairy.R;
@@ -26,6 +27,8 @@ public class CustomViewActivity extends BaseActivity {
     public Button btnSign;
     @BindView(R.id.btn_cropPicyure)
     public Button btnCropPicture;
+    @BindView(R.id.iv_back)
+    LinearLayout ll_back;
 
     @Override
     protected int getContentLayout() {
@@ -35,6 +38,14 @@ public class CustomViewActivity extends BaseActivity {
     @Override
     protected void initGui() {
         tv_Logo.setText("自定义VIEW");
+        ll_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v!=null){
+                    finish();
+                }
+            }
+        });
 
     }
 

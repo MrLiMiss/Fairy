@@ -1,8 +1,17 @@
 package com.tengfei.fairy.manager;
 
 
+import android.os.Build;
+import android.view.View;
+
+import androidx.annotation.RequiresApi;
+
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
+import com.tengfei.fairy.wedget.ActionBarView;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @ Description :系统manager 测试
@@ -11,6 +20,9 @@ import com.tengfei.fairy.mvp.BaseMvpActivity;
  * @ Version :
  */
 public class ManagerTestActivity extends BaseMvpActivity<ManagerTestPresenter> implements IManagerView {
+    @BindView(R.id.view_actionbar)
+    ActionBarView actionBarView ;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_manager;
@@ -24,6 +36,15 @@ public class ManagerTestActivity extends BaseMvpActivity<ManagerTestPresenter> i
     @Override
     protected void initView() {
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @OnClick({R.id.view_actionbar})
+    void click(View view){
+       switch(view.getId()){
+           default:
+               break;
+       }
     }
 
     @Override

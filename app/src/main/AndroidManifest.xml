@@ -68,6 +68,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".service.ServiceTestActivity" />
+        <activity android:name=".manager.ManagerTestActivity" />
 
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

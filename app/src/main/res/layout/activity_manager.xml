@@ -5,65 +5,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <com.tengfei.fairy.wedget.ActionBarView
+        android:id="@+id/view_actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
         app:hideSearch="true"
         app:showDividers="none"
         app:titleStr="系统Manager" />
-    <Button
-        android:id="@+id/btn_ActivityManager"
-        style="@style/mybutton"
-        android:text="ActivityManager-正在运行的所有活动管理器" />
-    <Button
-        android:id="@+id/btn_FragmentManager"
-        style="@style/mybutton"
-        android:text="FragmentManager-Fragment管理器" />
-    <Button
-        android:id="@+id/btn_DownLoadManager"
-        style="@style/mybutton"
-        android:text="DownLoadManager-下载管理器" />
-    <Button
-        android:id="@+id/btn_ConnectivityManager"
-        style="@style/mybutton"
-        android:text="ConnectivityManager-网络状态管理器" />
-    <Button
-        android:id="@+id/btn_WindowManager"
-        style="@style/mybutton"
-        android:text="WindowManager-窗口管理器" />
-    <Button
-        android:id="@+id/btn_NotificationManager"
-        style="@style/mybutton"
-        android:text="NotificationManager-通知管理器" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_ActivityManager"
+            style="@style/mybutton"
+            android:text="ActivityManager-正在运行的所有活动管理器" />
+        <Button
+            android:id="@+id/btn_FragmentManager"
+            style="@style/mybutton"
+            android:text="FragmentManager-Fragment管理器" />
+        <Button
+            android:id="@+id/btn_DownLoadManager"
+            style="@style/mybutton"
+            android:text="DownLoadManager-下载管理器" />
+        <Button
+            android:id="@+id/btn_ConnectivityManager"
+            style="@style/mybutton"
+            android:text="ConnectivityManager-网络状态管理器" />
+        <Button
+            android:id="@+id/btn_WindowManager"
+            style="@style/mybutton"
+            android:text="WindowManager-窗口管理器" />
+        <Button
+            android:id="@+id/btn_NotificationManager"
+            style="@style/mybutton"
+            android:text="NotificationManager-通知管理器" />
 
-    <Button
-        android:id="@+id/btn_LocationManager"
-        style="@style/mybutton"
-        android:text="LocationManager-位置管理器" />
+        <Button
+            android:id="@+id/btn_LocationManager"
+            style="@style/mybutton"
+            android:text="LocationManager-位置管理器" />
 
-    <Button
-        android:id="@+id/btn_TelephoneManager"
-        style="@style/mybutton"
-        android:text="TelephoneManager-电话管理器" />
+        <Button
+            android:id="@+id/btn_TelephoneManager"
+            style="@style/mybutton"
+            android:text="TelephoneManager-电话管理器" />
 
-    <Button
-        android:id="@+id/btn_SmsManager"
-        style="@style/mybutton"
-        android:text="SmsManager-手机信息管理器" />
+        <Button
+            android:id="@+id/btn_SmsManager"
+            style="@style/mybutton"
+            android:text="SmsManager-手机信息管理器" />
 
-    <Button
-        android:id="@+id/btn_AudioManager"
-        style="@style/mybutton"
-        android:text="AudioManager-音频管理器" />
+        <Button
+            android:id="@+id/btn_AudioManager"
+            style="@style/mybutton"
+            android:text="AudioManager-音频管理器" />
 
-    <Button
-        android:id="@+id/btn_AlarmManager"
-        style="@style/mybutton"
-        android:text="AlarmManager-闹钟管理器" />
-    <Button
-        android:id="@+id/btn_PackageManager"
-        style="@style/mybutton"
-        android:text="PackageManager-包管理器" />
+        <Button
+            android:id="@+id/btn_AlarmManager"
+            style="@style/mybutton"
+            android:text="AlarmManager-闹钟管理器" />
+        <Button
+            android:id="@+id/btn_PackageManager"
+            style="@style/mybutton"
+            android:text="PackageManager-包管理器" />
+
+    </LinearLayout>
 
 
 
