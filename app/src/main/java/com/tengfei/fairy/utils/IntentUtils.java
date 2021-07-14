@@ -18,6 +18,7 @@ import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
 import com.tengfei.fairy.service.MusicService;
+import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
 import com.tengfei.fairy.wedget.CustomViewPager;
 import com.tengfei.fairy.wedget.sign.SignNameActivity;
@@ -145,7 +146,7 @@ public class IntentUtils {
      */
     public static void bindMusicService(Context context) {
         Intent bindIntent=new Intent(context,MusicService.class);
-        //BIND_AUTO_CREATE标记，此标记表示在Activity和Service建立关联后自动创建Service，
+        //BIND_AUTO_CREATE标记，此标记表示在Activity和Service建立关联后自动创建Service，该参数的值可指定为0（不自动创建）
         // 并执行Service中的onCreate方法，并不会执行onStartCommand方法。
         context.bindService(bindIntent,mConnection,BIND_AUTO_CREATE);
 
@@ -159,5 +160,21 @@ public class IntentUtils {
              //service 必须处于绑定状态，才可执行unbindService，否则报错 service  not registered
             context.unbindService(mConnection);
 
+    }
+
+    /** 启动 IntentService
+     * @param context
+     */
+    public static void startIntentService(Context context) {
+        Intent intent=new Intent(context, MyIntentService.class);
+        context.startService(intent);
+    }
+
+    /** 关闭 IntentService
+     * @param context
+     */
+    public static void endIntentService(Context context) {
+        Intent intent=new Intent(context,MyIntentService.class);
+        context.stopService(intent);
     }
 }

@@ -52,6 +52,7 @@ public class MusicService  extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {//应用程序通过IBinder 与service 组件  通信
+        Log.d(TAG, "onBind");
         if (mBinder != null) {
             return mBinder;
         }
@@ -60,6 +61,7 @@ public class MusicService  extends Service {
 
     @Override
     public boolean onUnbind(Intent intent) {//当service上绑定的所有客户端都断开连接时回调该方法
+        Log.d(TAG, "onUnbind");
         return super.onUnbind(intent);
     }
 

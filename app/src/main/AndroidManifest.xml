@@ -70,6 +70,7 @@
         <activity android:name=".service.ServiceTestActivity" />
 
         <service android:name=".service.MusicService" />
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>

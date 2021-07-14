@@ -23,7 +23,7 @@ public class ServiceTestActivity extends BaseActivity {
         return R.layout.activity_service;
     }
 
-    @OnClick({R.id.btn_start_service,R.id.btn_end_service,R.id.btn_bind_service,R.id.btn_unbind_service})
+    @OnClick({R.id.btn_start_service,R.id.btn_end_service,R.id.btn_bind_service,R.id.btn_unbind_service,R.id.btn_start_intent_service,R.id.btn_end_intent_service})
     void click(View view){
        switch (view.getId()){
            case R.id.btn_start_service://启动service
@@ -38,6 +38,13 @@ public class ServiceTestActivity extends BaseActivity {
            case R.id.btn_unbind_service://解绑service
                IntentUtils.unBindMusicService(this);
                break;
+           case R.id.btn_start_intent_service:
+               IntentUtils.startIntentService(this);
+               break;
+           case R.id.btn_end_intent_service:
+               IntentUtils.endIntentService(this);
+               break;
+
 
            default:
                break;
