@@ -17,6 +17,7 @@ import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
@@ -176,5 +177,13 @@ public class IntentUtils {
     public static void endIntentService(Context context) {
         Intent intent=new Intent(context,MyIntentService.class);
         context.stopService(intent);
+    }
+
+    /** 跳转到 系统 Manager 测试页面
+     * @param context
+     */
+    public static void toManagerActivity(Context context) {
+        Intent intent =new Intent(context, ManagerTestActivity.class);
+        context.startActivity(intent);
     }
 }
