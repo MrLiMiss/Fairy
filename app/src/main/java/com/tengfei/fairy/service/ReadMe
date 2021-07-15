@@ -1,0 +1,3 @@
+自定义测试 service
+
+activity  与 service   通过广播完成数据交互，完成歌曲切换等

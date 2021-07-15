@@ -31,7 +31,7 @@
             style="@style/mybutton"
             android:text="解绑service" />
 
-</LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,5 +47,66 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/angle_5"
+        android:padding="@dimen/angle_5"
+        android:background="@drawable/btn_my_bg"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_5184FA"
+            android:textSize="18sp"
+            android:text="音乐播放器"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_startmusic"
+                style="@style/mybutton"
+                android:text="开始"/>
+            <Button
+                android:id="@+id/btn_suspendmusic"
+                android:layout_toRightOf="@+id/btn_startmusic"
+                style="@style/mybutton"
+                android:text="暂停"/>
+            <Button
+                android:id="@+id/btn_nextmusic"
+                android:layout_toRightOf="@+id/btn_suspendmusic"
+                style="@style/mybutton"
+                android:text="上一首"/>
+            <Button
+                android:id="@+id/btn_premusic"
+                android:layout_toRightOf="@+id/btn_nextmusic"
+                style="@style/mybutton"
+                android:text="下一首"/>
+            <TextView
+                android:textColor="@color/color_5184FA"
+                android:id="@+id/tv_music_name"
+                android:padding="@dimen/angle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_startmusic"
+                android:text="歌曲名"/>
+            <TextView
+                android:textColor="@color/color_5184FA"
+                android:id="@+id/tv_music_singer"
+                android:padding="@dimen/angle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/tv_music_name"
+                android:text=" 歌手名"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
