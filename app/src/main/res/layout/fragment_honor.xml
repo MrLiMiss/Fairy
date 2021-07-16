@@ -34,57 +34,18 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
 
-            <LinearLayout
-                android:id="@+id/ll_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/test_btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="初始化"
-                    android:textSize="8sp" />
-
-                <Button
-                    android:id="@+id/test_btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="View"
-                    android:textSize="8sp" />
-
-                <Button
-                    android:id="@+id/test_btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Click"
-                    android:textSize="8sp" />
-                <Button
-                    android:id="@+id/test_btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Event"
-                    android:textSize="8sp" />
-
-
-
-            </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/test_btn5"
+                android:id="@+id/btn_touch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="SignUp"
+                android:text="Touch"
                 android:textSize="8sp" />
             <Button
                 android:id="@+id/test_test"
@@ -96,86 +57,15 @@
         </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_triparty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/textview_background"
                 android:padding="5dp"
-                android:text="三方库"
+                android:text="三方库相关"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
-
-            <LinearLayout
-                android:id="@+id/ll_sanfang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_EventBus"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="EventBus" />
-
-                <Button
-                    android:id="@+id/btn_GreenDao"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="GreenDao" />
-
-                <Button
-                    android:id="@+id/btn_glide"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Glide" />
-
-                <Button
-                    android:id="@+id/btn_Butterknife"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Butterknife" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_http"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_okhttp"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="okhttp" />
-
-                <Button
-                    android:id="@+id/btn_retrofit"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="retrofit" />
-
-                <Button
-                    android:id="@+id/btn_volley"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="volley" />
-
-                <Button
-                    android:id="@+id/btn_async-http"
-                    style="@style/testButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="async-http" />
-
-            </LinearLayout>
 
 
             <TextView

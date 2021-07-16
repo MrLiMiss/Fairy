@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import com.tengfei.fairy.activity.MainActivity;
+import com.tengfei.fairy.activity.TripartyActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.activityLificycle.Aactivity;
 import com.tengfei.fairy.activityLificycle.AboutActivity;
@@ -17,10 +18,12 @@ import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
+import com.tengfei.fairy.touch.TouchDataActivity;
 import com.tengfei.fairy.wedget.CustomViewPager;
 import com.tengfei.fairy.wedget.sign.SignNameActivity;
 
@@ -184,6 +187,33 @@ public class IntentUtils {
      */
     public static void toManagerActivity(Context context) {
         Intent intent =new Intent(context, ManagerTestActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到liveData 相关测试Activity
+     * @param context
+     */
+    public static void toLiveDataActivity(Context context) {
+        Intent intent =new Intent(context, LiveDataTestActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到 Touch 测试相关页面
+     * @param context
+     */
+    public static void toTouchActivity(Context context) {
+        Intent intent =new Intent(context, TouchDataActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到第三方框架测试页面
+     * @param context
+     */
+    public static void toTripartyActivity(Context context) {
+        Intent intent =new Intent(context, TripartyActivity.class);
         context.startActivity(intent);
     }
 }

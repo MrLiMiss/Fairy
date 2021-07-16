@@ -69,6 +69,9 @@
         <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".service.ServiceTestActivity" />
         <activity android:name=".manager.ManagerTestActivity" />
+        <activity android:name=".liveData.LiveDataTestActivity" />
+        <activity android:name=".touch.TouchDataActivity" />
+        <activity android:name=".activity.TripartyActivity" />
 
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

@@ -3,6 +3,7 @@ package com.tengfei.fairy.eventbus;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import butterknife.BindView;
  * @ Version :
  */
 public class EventBusActivity extends BaseActivity implements View.OnClickListener {
+    @BindView(R.id.iv_back)
+    LinearLayout iv_back;
     @BindView(R.id.tv_event)
     TextView tv_event;
     @BindView(R.id.btn_regester_event)
@@ -46,6 +49,12 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void initGui() {
         tv_Logo.setText("EventBusActivity");
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
