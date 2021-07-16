@@ -36,18 +36,7 @@ import butterknife.OnClick;
  */
 public class LifeFragemnt extends BaseFragment {
 
-    @BindView(R.id.test_btn1)
-    Button btnInit;
-    @BindView(R.id.test_btn2)
-    Button btnTrackView;
-    @BindView(R.id.test_btn3)
-    Button btnTrackClick;
-    @BindView(R.id.test_btn4)
-    Button btnTrackEvent;
-    @BindView(R.id.test_btn5)
-    Button btnSignUp;
 
-    private CommonProperties commonProperties;
 
     @Override
     public void onAttach(Context context){
@@ -90,39 +79,9 @@ public class LifeFragemnt extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.test_btn1,R.id.test_btn2,R.id.test_btn3,R.id.test_btn4, R.id.test_btn5})
+    @OnClick({})
     void click(View view) {
         switch (view.getId()) {
-            case R.id.test_btn1://初始化
-                Touch touch=  TouchData.getInstance(getContext()).getTouch();
-                commonProperties = CommonProperties.getInstance();
-                commonProperties.set_app_name("手机银行");
-                commonProperties.set_app_version("4.0.2");
-                commonProperties.set_carrier("中国联通");
-                commonProperties.set_lib("adnroid");
-                commonProperties.set_lib_version("1.0.1");
-                commonProperties.set_ip(null);
-                commonProperties.set_model("huawei mate8");
-                commonProperties.set_os("android");
-                commonProperties.set_os_version("8.0.0");
-                commonProperties.set_geo("116.48927,39.89225");
-                commonProperties.set_network_type("wifi");
-                commonProperties.set_device_id("123123123123123");
-                TouchData.trackRegister(commonProperties);
-                break;
-            case R.id.test_btn2://trackView
-                Map<String ,Object > propertiesView=new HashMap<>();
-                TouchData.trackView("life-trackViewdistinctId",false,"手机银行_理财","/mobile_bank_business");
-                break;
-            case R.id.test_btn3://trackClick
-                TouchData.trackClick("life-trackContradistinction",false,"点击元素1","url_target_click","手机银行——首页","mobile_bank_home");
-                break;
-            case R.id.test_btn4://trackEvent
-                TouchData.trackEvent("life-MD5123123123start",false,"_AppStart");
-                break;
-            case R.id.test_btn5://trackSignUp
-                TouchData.trackSiginUp("life-MD5123123123123123","123anonymousId");
-                break;
             default:
                 break;
 

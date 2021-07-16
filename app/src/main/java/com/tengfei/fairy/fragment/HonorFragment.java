@@ -124,9 +124,6 @@ public class HonorFragment extends BaseFragment {
 ////                btn_myView.requestLayout();
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
-            case R.id.test_btn5://trackSignUp
-                TouchData.trackSiginUp("honor-MD5123123123123123","123anonymousId");
-                break;
             case R.id.btn_activity://activity相关测试
                 IntentUtils.toAboutActivity(getContext());
 //                IntentUtils.toConfigChenagedActivity(getContext());

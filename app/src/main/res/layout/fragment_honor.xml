@@ -176,35 +176,23 @@
 
                 <Button
                     android:id="@+id/btn_activity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="activity"
-                    android:textSize="8sp" />
+                    style="@style/testButton"
+                    android:text="activity" />
 
                 <Button
                     android:id="@+id/btn_service"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="service"
-                    android:textSize="8sp" />
+                    style="@style/testButton"
+                    android:text="service" />
 
                 <Button
                     android:id="@+id/btn_ContentProvider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="contentProvider"
-                    android:textSize="8sp" />
+                    style="@style/testButton"
+                    android:text="contentProvider" />
 
                 <Button
                     android:id="@+id/btn_BroadcastReceiver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="BroadCastReceiver"
-                    android:textSize="8sp" />
+                    style="@style/testButton"
+                    android:text="BroadCastReceiver" />
 
             </LinearLayout>
             <LinearLayout
