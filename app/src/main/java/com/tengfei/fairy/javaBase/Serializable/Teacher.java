@@ -27,7 +27,7 @@ public class Teacher implements Serializable {
 
     public static void main(String[] args) throws Exception {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("teacher.txt"))) {
-            Person person = new Person("路飞", 20);
+            Person person = new Person("路飞", 20,"nanjing");
             Teacher teacher = new Teacher("雷利", person);
             oos.writeObject(teacher);
         }

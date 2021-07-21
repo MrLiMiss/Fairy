@@ -14,7 +14,7 @@ public class WriteObject {
         try (//创建一个ObjectOutputStream输出流
              ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("object.txt"))) {
             //将对象序列化到文件s
-            Person person = new Person("9龙", 23);
+            Person person = new Person("9龙", 23,"hebeidaxue");
             oos.writeObject(person);
         } catch (Exception e) {
             e.printStackTrace();
