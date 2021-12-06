@@ -6,5 +6,5 @@ package com.tengfei.fairy.muti_thread;
  * @ Time 2020/12/10   11:13
  * @ Version :
  */
-class HandlerTest {
+public class HandlerTest {
 }

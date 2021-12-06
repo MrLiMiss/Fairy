@@ -7,5 +7,5 @@ package com.tengfei.fairy.muti_thread.ThreadPoolTest;
  * @ Time 2020/12/10   11:18
  * @ Version :
  */
-class CachedThreadPoolTest {
+public class CachedThreadPoolTest {
 }
