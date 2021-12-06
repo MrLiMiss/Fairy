@@ -66,7 +66,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     //eventBUS
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation "androidx.core:core-ktx:+"
+    //Kotlin 的扩展库
+    implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.alibaba:fastjson:1.1.71.android'
