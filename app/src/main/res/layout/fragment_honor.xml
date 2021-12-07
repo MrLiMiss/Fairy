@@ -55,7 +55,10 @@
                 android:text="测试专用"
                 android:textSize="8sp" />
         </LinearLayout>
-
+            <TextView
+                style="@style/SortTextView"
+                android:id="@+id/tv_base_android"
+                android:text="基础知识"></TextView>
             <TextView
                 android:id="@+id/tv_triparty"
                 android:layout_width="wrap_content"
@@ -304,11 +307,11 @@
                     android:textSize="8sp" />
 
                 <Button
-                    android:id="@+id/btn_多线程"
+                    android:id="@+id/btn_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="多线程"
+                    android:text="启动优化"
                     android:textSize="8sp" />
 
             </LinearLayout>

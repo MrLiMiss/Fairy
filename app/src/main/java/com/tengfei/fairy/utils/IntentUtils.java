@@ -14,10 +14,12 @@ import com.tengfei.fairy.activity.TripartyActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.activityLificycle.Aactivity;
 import com.tengfei.fairy.activityLificycle.AboutActivity;
+import com.tengfei.fairy.base.BaseActivity;
 import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
+import com.tengfei.fairy.konwledge.KnowledgeActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;
@@ -223,6 +225,14 @@ public class IntentUtils {
      */
     public static void toMutiThread(Context context) {
         Intent intent=new Intent(context, MultiThreadActivity.class);
+        context.startActivity(intent);
+    }
+
+    /** 跳转到基础知识
+     * @param context
+     */
+    public static void toKnowledgeActivity(Context context) {
+        Intent intent=new Intent(context, KnowledgeActivity.class);
         context.startActivity(intent);
     }
 }
