@@ -238,11 +238,11 @@
                     android:textSize="8sp" />
 
                 <Button
-                    android:id="@+id/btn_jizhi1"
+                    android:id="@+id/btn_muti_thread"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="机制1"
+                    android:text="多线程"
                     android:textSize="8sp" />
 
                 <Button

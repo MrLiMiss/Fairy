@@ -1,6 +1,7 @@
 package com.tengfei.fairy.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -81,7 +82,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_triparty,R.id.btn_myView,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager})
+    @OnClick({R.id.btn_touch,R.id.tv_triparty,R.id.btn_myView,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_triparty:
@@ -128,6 +129,8 @@ public class HonorFragment extends BaseFragment {
                 IntentUtils.toAboutActivity(getContext());
 //                IntentUtils.toConfigChenagedActivity(getContext());
                 break;
+            case R.id.btn_muti_thread://多线程
+                IntentUtils.toMutiThread(getContext());
             default:
                 break;
 

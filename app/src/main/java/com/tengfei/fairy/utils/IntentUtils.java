@@ -20,6 +20,7 @@ import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
+import com.tengfei.fairy.muti_thread.MultiThreadActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
@@ -214,6 +215,14 @@ public class IntentUtils {
      */
     public static void toTripartyActivity(Context context) {
         Intent intent =new Intent(context, TripartyActivity.class);
+        context.startActivity(intent);
+    }
+
+    /** 跳转多线程
+     * @param context
+     */
+    public static void toMutiThread(Context context) {
+        Intent intent=new Intent(context, MultiThreadActivity.class);
         context.startActivity(intent);
     }
 }

@@ -72,6 +72,7 @@
         <activity android:name=".liveData.LiveDataTestActivity" />
         <activity android:name=".touch.TouchDataActivity" />
         <activity android:name=".activity.TripartyActivity" />
+        <activity android:name=".muti_thread.MultiThreadActivity" />
 
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

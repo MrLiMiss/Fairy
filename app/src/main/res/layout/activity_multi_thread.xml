@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_intent_service"
+        style="@style/myText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:text="IntentService"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_handler_thread"
+        style="@style/myText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="HandlerThread"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_intent_service"
+        app:layout_constraintLeft_toRightOf="@+id/tv_intent_service"/>
+
+    <TextView
+        android:id="@+id/tv_asyncTask"
+        style="@style/myText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="AsycTask"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_handler_thread"
+        app:layout_constraintLeft_toRightOf="@+id/tv_handler_thread"/>
+
+    <TextView
+        android:id="@+id/tv_Handler"
+        style="@style/myText"
+        android:text="Handler"
+        app:layout_constraintCircle="@id/tv_intent_service"
+        app:layout_constraintCircleAngle="150"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tv_thread"
+       style="@style/myText"
+        app:layout_constraintLeft_toRightOf="@+id/tv_Handler"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_Handler"
+        android:layout_marginLeft="20dp"
+        android:text="Thread"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
