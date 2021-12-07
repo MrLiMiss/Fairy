@@ -53,7 +53,7 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
 
 
     /**
-     * 1、Html.fromHtml Android 不支持size标签的解析，即不能通过默认string完成字体大小的哦哦控制
+     * 1、Html.fromHtml Android 系统不支持字体大小和加粗样式，即不能通过默认string完成字体大小的哦哦控制
      * 2、Html.fromHtml(String) 已过时
      * 3、html 格式的 String 如果存储在String.xml 文件中需要转义HTML标签，不然的话 经过Android处理后 所有的HTML标签都给过滤掉了(需要把所有的“<”用“&lt;”替换)。
      * 这种情况下可以使用XML的CDATA标记:
@@ -72,7 +72,7 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
 
         String strHtml = "<font color=\"#EE2C2C\"size=\"40px\">字体变大,色值变化</font>"
                         + "<font color=\"#CD8500\"size=\"80px\">字体变大,色值也变化了</font>" + "</span>";
-        mTvHtmlForHtml.setText(Html.fromHtml(htmlStr2));
+        mTvHtmlForHtml.setText(Html.fromHtml(String.format(getResouseString(R.string.type),"无知无畏")));
 
         String strHtml2 =
                 "<font color='#4F94CD' size='40px'>我已经完成</font>" +
