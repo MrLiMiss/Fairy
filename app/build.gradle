@@ -1,15 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+def config = rootProject.ext.android
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
     defaultConfig {
         applicationId "com.tengfei.fairy"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

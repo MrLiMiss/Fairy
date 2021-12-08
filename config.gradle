@@ -1,0 +1,21 @@
+ext{
+
+    android = [
+            // 编译 SDK 版本
+            compileSdkVersion: 30,
+            // 最低兼容 Android 版本
+            minSdkVersion    : 21,
+            // 最高兼容 Android 版本
+            targetSdkVersion : 30,
+            //构建工具版本
+            buildToolsVersion :"29.0.3",
+            // 当前版本编号
+            versionCode      : 1,
+            // 当前版本信息
+            versionName      : "1.0.0"
+    ]
+
+    //组件独立调试开关, 每次更改值后要同步工程
+    isDebug = true
+
+}
