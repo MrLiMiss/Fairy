@@ -1,4 +1,4 @@
-package com.tengfei.fairy.konwledge;
+package com.tengfei.fairy.androidBase.konwledge;
 
 import android.os.Build;
 import android.text.Html;
@@ -11,7 +11,6 @@ import androidx.annotation.RequiresApi;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
 import com.tengfei.fairy.mvp.BasePresenter;
-import com.tengfei.fairy.utils.Logs;
 
 import butterknife.BindView;
 import butterknife.OnClick;

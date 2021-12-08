@@ -74,7 +74,7 @@
         <activity android:name=".activity.TripartyActivity" />
         <activity android:name=".muti_thread.MultiThreadActivity" />
         <!--基础知识 activity-->
-        <activity android:name=".konwledge.KnowledgeActivity" />
+        <activity android:name=".androidBase.konwledge.KnowledgeActivity" />
 
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

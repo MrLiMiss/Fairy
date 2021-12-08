@@ -1,25 +1,21 @@
 package com.tengfei.fairy.utils;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.nfc.Tag;
 import android.os.IBinder;
-import android.util.Log;
 
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.TripartyActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.activityLificycle.Aactivity;
 import com.tengfei.fairy.activityLificycle.AboutActivity;
-import com.tengfei.fairy.base.BaseActivity;
 import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.activityLificycle.ConfigChangeActivity;
-import com.tengfei.fairy.konwledge.KnowledgeActivity;
+import com.tengfei.fairy.androidBase.konwledge.KnowledgeActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;
@@ -27,7 +23,6 @@ import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
 import com.tengfei.fairy.touch.TouchDataActivity;
-import com.tengfei.fairy.wedget.CustomViewPager;
 import com.tengfei.fairy.wedget.sign.SignNameActivity;
 
 import static android.content.Context.BIND_AUTO_CREATE;
