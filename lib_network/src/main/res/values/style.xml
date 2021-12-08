@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">#F9F9F9</item>
+        <!--<item name="android:windowAnimationStyle">@style/activityStyle</item>-->
+
+    </style>
+
+    <style name="ButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Application theme. -->
+
+    <style name="AppTheme" parent="ActBaseTheme">
+        <item name="colorAccent">#FF6D26</item>
+        <item name="android:textAppearanceButton">@style/ButtonTheme</item>
+
+    </style>
+</resources>
