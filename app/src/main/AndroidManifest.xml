@@ -56,14 +56,14 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".eventbus.EventBusActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activityLificycle.ConfigChangeActivity"
+        <activity android:name=".androidBase.lificycle.ConfigChangeActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"/>
         <activity android:name=".activity.myView.MyViewActivity" />
-        <activity android:name=".activityLificycle.Aactivity"
+        <activity android:name=".androidBase.lificycle.Aactivity"
             android:launchMode="standard"/>
-        <activity android:name=".activityLificycle.Bactivity"
+        <activity android:name=".androidBase.lificycle.Bactivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".activityLificycle.AboutActivity" />
+        <activity android:name=".androidBase.lificycle.AboutActivity" />
         <activity android:name=".wedget.sign.SignNameActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".customView.CustomViewActivity" />
@@ -73,9 +73,9 @@
         <activity android:name=".touch.TouchDataActivity" />
         <activity android:name=".activity.TripartyActivity" />
         <activity android:name=".muti_thread.MultiThreadActivity" />
+
         <!--基础知识 activity-->
         <activity android:name=".androidBase.konwledge.KnowledgeActivity" />
-
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />
     </application>

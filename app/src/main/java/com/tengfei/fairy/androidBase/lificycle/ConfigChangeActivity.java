@@ -1,6 +1,5 @@
-package com.tengfei.fairy.activityLificycle;
+package com.tengfei.fairy.androidBase.lificycle;
 
-import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
