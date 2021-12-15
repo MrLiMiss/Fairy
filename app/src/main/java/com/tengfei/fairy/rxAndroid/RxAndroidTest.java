@@ -1,4 +1,4 @@
-package com.tengfei.fairy.RXJAVA;
+package com.tengfei.fairy.rxAndroid;
 
 /**
  * @ Description :

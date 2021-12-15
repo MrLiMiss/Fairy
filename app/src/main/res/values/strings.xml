@@ -25,5 +25,6 @@
     <string name="custom_gray_id"><Data><![CDATA[<font color="#666666" size="30px">身份证号：</font><font color="#111111" size="17px">%1$s</font>]]></Data></string>
     <string name="custom_gray_name"><Data><![CDATA[<font color="#666666" size="30px">客户姓名：</font><font color="#111111" size="17px">%1$s</font>]]></Data></string>
     <string name="type"><Data><![CDATA[<font color="#999999" size="30px">类型：</font><font color="#FF6D26" size="80px">%1$s</font>]]></Data></string>
+    <string name="asynctask">AsyncTaskDemo</string>
 
 </resources>
