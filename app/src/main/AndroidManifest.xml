@@ -78,6 +78,7 @@
         <activity android:name=".androidBase.konwledge.KnowledgeActivity" />
         <!--AsyncTask test-->
         <activity android:name=".muti_thread.AsyncTaskActivity" />
+        <activity android:name=".muti_thread.handlertext.HandlerActivity" />
         <!--音乐service test-->
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

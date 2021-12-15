@@ -20,6 +20,7 @@ import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.AsyncTaskActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;
+import com.tengfei.fairy.muti_thread.handlertext.HandlerActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
@@ -237,6 +238,14 @@ public class IntentUtils {
      */
     public static void toAsyncTask(Context context) {
         Intent intent=new Intent(context, AsyncTaskActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**跳转到 Handler text
+     * @param context
+     */
+    public static void toHandlerActivity(Context context) {
+        Intent intent=new Intent(context, HandlerActivity.class);
         context.startActivity(intent);
     }
 }

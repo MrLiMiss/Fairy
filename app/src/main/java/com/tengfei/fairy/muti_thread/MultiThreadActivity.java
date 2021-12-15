@@ -23,6 +23,10 @@ public class MultiThreadActivity extends BaseMvpActivity<MultiThreadPresenter> {
             case R.id.tv_asyncTask://AsyncTask
                 IntentUtils.toAsyncTask(this);
                 break;
+            case R.id.tv_Handler://handler
+                IntentUtils.toHandlerActivity(this);
+                break;
+
         }
     }
 
