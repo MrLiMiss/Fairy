@@ -82,7 +82,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_triparty,R.id.btn_myView,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread})
+    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_triparty,R.id.btn_myView,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_base_android://Android 基础知识
@@ -108,6 +108,7 @@ public class HonorFragment extends BaseFragment {
                 break;
             case R.id.btn_manager://系统manager 测试
                 IntentUtils.toManagerActivity(getContext());
+                break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
 //                break;
@@ -128,6 +129,9 @@ public class HonorFragment extends BaseFragment {
 ////                btn_myView.requestLayout();
 //                btn_animator4.setLayoutParams(layoutParams);
 //                btn_animator4.setLayoutParams(marginLayoutParams);
+            case R.id.tv_http:
+                IntentUtils.toSocketActivity(getContext());
+                break;
             case R.id.btn_activity://activity相关测试
                 IntentUtils.toAboutActivity(getContext());
 //                IntentUtils.toConfigChenagedActivity(getContext());

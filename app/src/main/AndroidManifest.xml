@@ -79,6 +79,7 @@
         <!--AsyncTask test-->
         <activity android:name=".muti_thread.AsyncTaskActivity" />
         <activity android:name=".muti_thread.handlertext.HandlerActivity" />
+        <activity android:name=".httpBase.socket.SocketTextActivity" />
         <!--音乐service test-->
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

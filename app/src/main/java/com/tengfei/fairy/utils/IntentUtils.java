@@ -1,5 +1,6 @@
 package com.tengfei.fairy.utils;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,8 @@ import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;
 import com.tengfei.fairy.androidBase.konwledge.KnowledgeActivity;
+import com.tengfei.fairy.fragment.HonorFragment;
+import com.tengfei.fairy.httpBase.socket.SocketTextActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.AsyncTaskActivity;
@@ -246,6 +249,15 @@ public class IntentUtils {
      */
     public static void toHandlerActivity(Context context) {
         Intent intent=new Intent(context, HandlerActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     *跳转到 Socket 相关
+     * @param context
+     */
+    public static void toSocketActivity(Context context) {
+        Intent intent=new Intent(context, SocketTextActivity.class);
         context.startActivity(intent);
     }
 }
