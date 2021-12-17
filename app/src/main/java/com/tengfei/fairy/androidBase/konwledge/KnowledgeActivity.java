@@ -35,7 +35,7 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.tv_html, R.id.tv_pattern, R.id.tv_throwable})
+    @OnClick({R.id.tv_html, R.id.tv_pattern, R.id.tv_throwable,R.id.tv_bitmap})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_html:
@@ -47,7 +47,56 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
             case R.id.tv_throwable:
                 detailThrowable();
                 break;
+            case R.id.tv_bitmap:
+                detailBitmap();
+                break;
+            case R.id.tv_rotate:
+                bitmaoRotate();
+                break;
+            case R.id.tv_enlarge:
+                bitmapEnlarge();
+                break;
+            case R.id.tv_narrow:
+                bitmapNarrow();
+            case R.id.tv_cutting:
+                bitmapCutting();
+            default:
+                break;
         }
+    }
+
+    /**
+     * bitmap 裁剪
+     */
+    private void bitmapCutting() {
+    }
+
+    /**
+     * bitmap 缩小
+     */
+    private void bitmapNarrow() {
+    }
+
+    /**
+     * bitmap 放大
+     */
+    private void bitmapEnlarge() {
+    }
+
+    /**
+     * bitmap 旋转
+     */
+    private void bitmaoRotate() {
+    }
+
+    /**
+     * Bitmap 相关demo
+     * 1、 Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！
+     * 2、 Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！
+     * 3、 Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！
+     * 4、 Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！
+     */
+    private void detailBitmap() {
     }
 
     /**
