@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.wedget.ActionBarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:titleStr="Bitmap测试"
+        app:hideSearch="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                style="@style/myText"
+                android:id="@+id/tv_bitmap"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="Bitmap操作"></TextView>
+            <ImageView
+                android:id="@+id/img_bitmap"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/socket"/>
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/normalText"
+                    android:id="@+id/tv_rotate"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="旋转"/>
+                <TextView
+                    style="@style/normalText"
+                    android:id="@+id/tv_enlarge"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="放大"/>
+                <TextView
+                    style="@style/normalText"
+                    android:id="@+id/tv_narrow"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="缩小"/>
+                <TextView
+                    style="@style/normalText"
+                    android:id="@+id/tv_cutting"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="裁剪"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

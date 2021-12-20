@@ -10,6 +10,7 @@ import android.os.IBinder;
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.TripartyActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
+import com.tengfei.fairy.androidBase.bitmap.BitmapTestActivity;
 import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
 import com.tengfei.fairy.customView.CustomViewActivity;
@@ -258,6 +259,15 @@ public class IntentUtils {
      */
     public static void toSocketActivity(Context context) {
         Intent intent=new Intent(context, SocketTextActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到 Bitmap 相关
+     * @param context
+     */
+    public static void toBitmapActivity(Context context) {
+        Intent intent=new Intent(context, BitmapTestActivity.class);
         context.startActivity(intent);
     }
 }

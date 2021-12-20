@@ -1,9 +1,13 @@
 package com.tengfei.fairy.androidBase.konwledge;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -11,6 +15,7 @@ import androidx.annotation.RequiresApi;
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
 import com.tengfei.fairy.mvp.BasePresenter;
+import com.tengfei.fairy.utils.IntentUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -48,56 +53,15 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
                 detailThrowable();
                 break;
             case R.id.tv_bitmap:
-                detailBitmap();
+                IntentUtils.toBitmapActivity(this);
                 break;
-            case R.id.tv_rotate:
-                bitmaoRotate();
-                break;
-            case R.id.tv_enlarge:
-                bitmapEnlarge();
-                break;
-            case R.id.tv_narrow:
-                bitmapNarrow();
-            case R.id.tv_cutting:
-                bitmapCutting();
+
             default:
                 break;
         }
     }
 
-    /**
-     * bitmap 裁剪
-     */
-    private void bitmapCutting() {
-    }
 
-    /**
-     * bitmap 缩小
-     */
-    private void bitmapNarrow() {
-    }
-
-    /**
-     * bitmap 放大
-     */
-    private void bitmapEnlarge() {
-    }
-
-    /**
-     * bitmap 旋转
-     */
-    private void bitmaoRotate() {
-    }
-
-    /**
-     * Bitmap 相关demo
-     * 1、 Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！
-     * 2、 Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！
-     * 3、 Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！
-     * 4、 Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！
-     */
-    private void detailBitmap() {
-    }
 
     /**
      * Throwable：
@@ -118,6 +82,7 @@ public class KnowledgeActivity extends BaseMvpActivity<BasePresenter> {
      *
      */
     private void detailThrowable() {
+
 
     }
 
