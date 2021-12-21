@@ -11,33 +11,96 @@
         app:hideSearch="true"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                style="@style/myText"
-                android:id="@+id/tv_bitmap"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:text="Bitmap操作"></TextView>
-            <ImageView
-                android:id="@+id/img_bitmap"
-                android:layout_margin="@dimen/dp_10"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/socket"/>
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/myText"
+                    android:id="@+id/tv_bitmap"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="Bitmap操作"></TextView>
+                <TextView
+                    style="@style/myText"
+                    android:id="@+id/tv_capture_screen"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="截屏"></TextView>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/img_bitmap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:src="@drawable/socket" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_cutting_des"
+                    style="@style/myText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="裁剪效果"/>
+                <ImageView
+                    android:id="@+id/img_bitmap2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/tv_cutting_des"
+                    android:layout_toEndOf="@+id/tv_cutting_des"
+                    android:layout_margin="@dimen/dp_10"
+                    android:src="@drawable/img_cat"/>
+                <ImageView
+                    android:id="@+id/img_bitmap3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/img_bitmap2"
+                    android:layout_alignTop="@+id/img_bitmap2"
+                    android:layout_margin="@dimen/dp_10"
+                    android:src="@drawable/img_cat"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/myText"
+                    android:id="@+id/tv_rotate"
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="旋转效果"/>
+                <ImageView
+                    android:id="@+id/img_rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_rotate"
+                    android:src="@drawable/image_flower"
+                    android:layout_margin="@dimen/dp_10"/>
+                <ImageView
+                    android:id="@+id/img_rotate_after"
+                    android:layout_below="@+id/img_rotate"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"/>
+
+            </RelativeLayout>
+
+
             <LinearLayout
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    style="@style/normalText"
-                    android:id="@+id/tv_rotate"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:text="旋转"/>
                 <TextView
                     style="@style/normalText"
                     android:id="@+id/tv_enlarge"
@@ -48,11 +111,7 @@
                     android:id="@+id/tv_narrow"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:text="缩小"/>
-                <TextView
-                    style="@style/normalText"
-                    android:id="@+id/tv_cutting"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:text="裁剪"/>
+
 
             </LinearLayout>
         </LinearLayout>
