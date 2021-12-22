@@ -49,6 +49,12 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
     @BindView(R.id.img_bitmap3)
     ImageView imageView3;//转换后的效果展示
 
+    @BindView(R.id.img_enlarge_after)
+    ImageView mEnlargeAfter;
+
+    @BindView(R.id.img_narrow_after)
+    ImageView mNarrowAfter;
+
 
     @Override
     protected int getLayoutId() {
@@ -72,7 +78,7 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
             case R.id.tv_narrow:
                 bitmapNarrow();
                 break;
-            case R.id.tv_cutting_des:
+            case R.id.tv_cutting_des://裁剪
                 bitmapCutting();
                 break;
             case R.id.tv_capture_screen://截屏
@@ -157,14 +163,48 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
 
     /**
      * bitmap 缩小
+     *
+     * 1、options.inJustDecodeBounds = false/true;
+     * Options.inJustDecodeBounds=true,这时候decode的bitmap为null,只是把图片的宽高放在Options里，然后第二步就是设置合适的压缩比例inSampleSize
+     * 2、options.inSampleSize = ssize;//图片压缩比例.
      */
     private void bitmapNarrow() {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        // 通过这个bitmap获取图片的宽和高&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.image_injustdecodebounds, options);
+        if (bitmap == null)
+        {
+            System.out.println("bitmap为空");
+        }
+        float realWidth = options.outWidth;
+        float realHeight = options.outHeight;
+        System.out.println("真实图片高度：" + realHeight + "宽度:" + realWidth);
+        // 计算缩放比&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        int scale = (int) ((realHeight > realWidth ? realHeight : realWidth) / 100);
+        if (scale <= 0)
+        {
+            scale = 1;
+        }
+        options.inSampleSize = scale;
+        options.inJustDecodeBounds = false;
+        // 注意这次要把options.inJustDecodeBounds 设为 false,这次图片是要读取出来的。&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.image_injustdecodebounds, options);
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+        System.out.println("缩略图高度：" + h + "宽度:" + w);
+        mNarrowAfter.setImageBitmap(bitmap);
     }
 
     /**
      * bitmap 放大
      */
     private void bitmapEnlarge() {
+        Bitmap bitmap =BitmapFactory.decodeResource(getResources(),R.drawable.image_flower);
+        Logs.e(TAG+"width:",bitmap.getWidth()+"");
+        Logs.e(TAG+"height:",bitmap.getHeight()+"");
+        mEnlargeAfter.setImageBitmap(bitmap.createScaledBitmap(bitmap,840,717,true));
+
     }
 
     /**

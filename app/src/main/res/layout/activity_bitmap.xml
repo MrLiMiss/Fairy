@@ -40,6 +40,7 @@
                 android:id="@+id/img_bitmap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
                 android:layout_margin="@dimen/dp_10"
                 android:src="@drawable/socket" />
             <RelativeLayout
@@ -95,25 +96,113 @@
 
             </RelativeLayout>
 
-
-            <LinearLayout
-                android:layout_marginTop="@dimen/dp_10"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
                 <TextView
-                    style="@style/normalText"
+                    style="@style/myText"
                     android:id="@+id/tv_enlarge"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:text="放大"/>
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="放大效果（bitmap）"/>
+                <ImageView
+                    android:id="@+id/img_enlarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_enlarge"
+                    android:src="@drawable/image_flower"
+                    android:layout_margin="@dimen/dp_10"/>
+                <ImageView
+                    android:id="@+id/img_enlarge_after"
+                    android:layout_below="@+id/img_enlarge"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
-                    style="@style/normalText"
+                    style="@style/myText"
                     android:id="@+id/tv_narrow"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:text="缩小"/>
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="缩小效果（options.inSampleSize）"/>
+                <ImageView
+                    android:id="@+id/img_narrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_below="@+id/tv_narrow"
+                    android:src="@drawable/image_injustdecodebounds"
+                    android:layout_margin="@dimen/dp_10"/>
+                <ImageView
+                    android:id="@+id/img_narrow_after"
+                    android:layout_below="@+id/img_narrow"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_matrix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/myText"
+                        android:id="@+id/tv_matrix"
+                        android:text="matrix操作："/>
+                    <TextView
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="缩放"></TextView>
+                    <TextView
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="位移"></TextView>
+                    <TextView
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="错切"></TextView>
+                    <TextView
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="旋转"></TextView>
+
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/img_matrix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_below="@+id/ll_matrix"
+                    android:src="@drawable/image_matrix"
+                    android:layout_margin="@dimen/dp_10"/>
+                <ImageView
+                    android:id="@+id/img_matrix_after"
+                    android:layout_below="@+id/img_matrix"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"/>
+
+            </RelativeLayout>
 
 
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
