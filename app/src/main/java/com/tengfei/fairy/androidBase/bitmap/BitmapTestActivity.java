@@ -4,6 +4,8 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
@@ -56,6 +58,10 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
     ImageView mNarrowAfter;
 
 
+    @BindView(R.id.img_matrix_after)
+    ImageView mMatrixAfter;
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_bitmap;
@@ -63,7 +69,7 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
 
 
 
-    @OnClick({R.id.img_bitmap,R.id.tv_bitmap,R.id.tv_rotate,R.id.tv_enlarge,R.id.tv_narrow,R.id.tv_cutting_des,R.id.tv_capture_screen})
+    @OnClick({R.id.img_bitmap,R.id.tv_bitmap,R.id.tv_rotate,R.id.tv_enlarge,R.id.tv_narrow,R.id.tv_cutting_des,R.id.tv_capture_screen,R.id.tv_matrix_enlarge,R.id.tv_matrix_move,R.id.tv_matrix_cutting,R.id.tv_matrix_rotate})
     void onClick(View view){
         switch (view.getId()){
             case R.id.tv_bitmap:
@@ -84,10 +90,52 @@ public class BitmapTestActivity extends BaseMvpActivity<BasePresenter> {
             case R.id.tv_capture_screen://截屏
                 captureScreen();
                 break;
+            case R.id.tv_matrix_enlarge:
+               matrixEnlarge();
+               break;
+            case R.id.tv_matrix_move:
+                matrixMove();
+                break;
+            case R.id.tv_matrix_cutting:
+                matrixCutting();
+                break;
+            case R.id.tv_matrix_rotate:
+                matrixRotate();
+                break;
             default:
                 break;
 
         }
+    }
+
+    /**
+     * matrix 旋转操作
+     */
+    private void matrixRotate() {
+        Bitmap bitmap=BitmapFactory.decodeResource(getResources(),R.drawable.image_matrix);
+        Bitmap bitmap2 = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
+        Canvas canvas = new Canvas(bitmap2);
+        //主要以这个对象调用旋转方法
+        Matrix matrix = new Matrix();
+        //以图片中心作为旋转中心，旋转180°
+        matrix.setRotate(180, bitmap2.getWidth() / 2, bitmap2.getHeight() / 2);
+        Logs.e(TAG+"width:",bitmap.getWidth()+"");
+        Logs.e(TAG+"height:",bitmap.getHeight()+"");
+        Paint paint = new Paint();
+        //设置抗锯齿,防止过多的失真
+        paint.setAntiAlias(true);
+        canvas.drawBitmap(bitmap, matrix, paint);
+        //将旋转后的图片设置到界面上
+        mMatrixAfter.setImageBitmap(bitmap2);
+    }
+
+    private void matrixCutting() {
+    }
+
+    private void matrixMove() {
+    }
+
+    private void matrixEnlarge() {
     }
 
     /**

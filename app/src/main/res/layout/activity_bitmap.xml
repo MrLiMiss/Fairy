@@ -160,24 +160,28 @@
                         android:text="matrix操作："/>
                     <TextView
                         style="@style/normalText"
+                        android:id="@+id/tv_matrix_enlarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:text="缩放"></TextView>
                     <TextView
                         style="@style/normalText"
+                        android:id="@+id/tv_matrix_move"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:text="位移"></TextView>
                     <TextView
                         style="@style/normalText"
+                        android:id="@+id/tv_matrix_cutting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:text="错切"></TextView>
                     <TextView
                         style="@style/normalText"
+                        android:id="@+id/tv_matrix_rotate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
