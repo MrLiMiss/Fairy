@@ -40,8 +40,6 @@ import butterknife.internal.Utils;
  */
 public class HonorFragment extends BaseFragment {
 
-    @BindView(R.id.btn_myView)
-    Button btn_myView;
     @BindView(R.id.btn_viewdrow)
     Button btn_viewdrow;
 
@@ -82,20 +80,20 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_triparty,R.id.btn_myView,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http})
+    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_base_android://Android 基础知识
                 IntentUtils.toKnowledgeActivity(getContext());
+                break;
+            case R.id.tv_widget://自定义组件
+                IntentUtils.toWidgetActivity(getContext());
                 break;
             case R.id.tv_triparty:
                 IntentUtils.toTripartyActivity(getContext());
                 break;
             case R.id.btn_touch:
                 IntentUtils.toTouchActivity(getContext());
-                break;
-            case R.id.btn_myView://自定义view
-               IntentUtils.toCustomActivity(getContext());
                 break;
             case R.id.test_test:
                 Context mContext=getContext();
@@ -160,50 +158,36 @@ public class HonorFragment extends BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onStart：", "letf-" + letf);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onResume：", "letf-" + letf);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onPause：", "letf-" + letf);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onStop：", "letf-" + letf);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onDestroyView：", "letf-" + letf);
 
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onDestroy：", "letf-" + letf);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        letf = btn_myView.getLeft();
-        Log.i("View参数-onDetach：", "letf-" + letf);
     }
 }

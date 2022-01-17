@@ -10,7 +10,7 @@ import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.tengfei.fairy.config.Constants;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
 import com.tengfei.fairy.utils.StringUtil;
-import com.tengfei.fairy.wedget.EmptyView;
+import com.tengfei.fairy.widget.EmptyView;
 
 import java.util.List;
 import java.util.Objects;

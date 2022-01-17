@@ -26,7 +26,7 @@ import com.tengfei.fairy.fragment.LifeFragemnt;
 import com.tengfei.fairy.fragment.MainFragment;
 import com.tengfei.fairy.fragment.MyFragment;
 import com.tengfei.fairy.utils.DialogHelper;
-import com.tengfei.fairy.wedget.TabButton;
+import com.tengfei.fairy.widget.TabButton;
 import com.yanzhenjie.permission.AndPermission;
 
 public class MainActivity extends BaseActivity {

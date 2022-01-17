@@ -2,12 +2,12 @@ package com.tengfei.fairy.activity.myView;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
-import com.tengfei.fairy.wedget.DrawView;
+import com.tengfei.fairy.widget.DrawView;
 
 import butterknife.BindView;
 
 /**
- * @ Description :自定义View activity
+ * @ Description :自定义View activity 测试
  * @ Author 李腾飞
  * @ Time 2020/12/22   14:07
  * @ Version :

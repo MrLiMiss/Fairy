@@ -21,8 +21,8 @@ import com.tengfei.fairy.utils.AppUtils;
 import com.tengfei.fairy.utils.DialogHelper;
 import com.tengfei.fairy.utils.LogUtils;
 import com.tengfei.fairy.utils.ToastUtils;
-import com.tengfei.fairy.wedget.Dialog.CustomLoadingDialog;
-import com.tengfei.fairy.wedget.LeakmLastSrvView;
+import com.tengfei.fairy.widget.Dialog.CustomLoadingDialog;
+import com.tengfei.fairy.widget.LeakmLastSrvView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

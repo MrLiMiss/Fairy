@@ -8,7 +8,7 @@ import androidx.annotation.RequiresApi;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
-import com.tengfei.fairy.wedget.ActionBarView;
+import com.tengfei.fairy.widget.ActionBarView;
 
 import butterknife.BindView;
 import butterknife.OnClick;

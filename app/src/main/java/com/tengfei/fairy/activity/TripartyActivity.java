@@ -27,14 +27,17 @@ public class TripartyActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.btn_EventBus,R.id.btn_livedata})
+    @OnClick({R.id.btn_EventBus,R.id.btn_livedata,R.id.btn_jetpack})
     void click(View view){
         switch (view.getId()){
             case R.id.btn_EventBus://eventBus测试
-                IntentUtils.toEventBusActivity(getContext());
+                IntentUtils.toEventBusActivity(activity);
                 break;
             case R.id.btn_livedata://liveData 测试
-                IntentUtils.toLiveDataActivity(getContext());
+                IntentUtils.toLiveDataActivity(activity);
+                break;
+            case R.id.btn_jetpack://jetpack测试
+                IntentUtils.toJetPackActivity(activity);
                 break;
             default:
                 break;
