@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget;
+package com.tengfei.fairy.widget;
 
 import android.app.Activity;
 import android.content.Context;

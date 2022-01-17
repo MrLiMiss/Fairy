@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.tengfei.fairy.wedget.ActionBarView
+    <com.tengfei.fairy.widget.ActionBarView
         android:id="@+id/view_actionbar_triparty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,6 +90,10 @@
         <Button
             android:id="@+id/btn_livedata"
             android:text="LiveData"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_jetpack"
+            android:text="JetPack"
             style="@style/testButton"/>
     </LinearLayout>
 

@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.tengfei.fairy.wedget.ActionBarView
+    <com.tengfei.fairy.widget.ActionBarView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:hideSearch="true"
         app:titleStr="Touch相关测试">
-    </com.tengfei.fairy.wedget.ActionBarView>
+    </com.tengfei.fairy.widget.ActionBarView>
 
     <LinearLayout
         android:id="@+id/ll_1"

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hideSearch="true"
+        app:titleStr="Widget自定义组件">
+    </com.tengfei.fairy.widget.ActionBarView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="常用控件"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btn_myView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="自定义view"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btn_zuheview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="组合view"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_my_view"
+                style="@style/mybutton"
+                android:text="自定义测试" />
+            <Button
+                android:id="@+id/btn_sign"
+                style="@style/mybutton"
+                android:text="电子签名" />
+            <Button
+                android:id="@+id/btn_cropPicyure"
+                style="@style/mybutton"
+                android:text="裁剪图片" />
+            <Button
+                android:id="@+id/btn_wrapLayout"
+                style="@style/mybutton"
+                android:text="自动换行控件 WrapLayout:" />
+            <com.tengfei.fairy.widget.wrapLayout.WrapLayout
+                android:id="@+id/view_wraplayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></com.tengfei.fairy.widget.wrapLayout.WrapLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

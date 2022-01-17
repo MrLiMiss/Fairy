@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.tengfei.fairy.wedget.TabButton
+    <com.tengfei.fairy.widget.TabButton
         android:id="@+id/tabButtun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

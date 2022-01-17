@@ -4,11 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-   <com.tengfei.fairy.wedget.ActionBarView
+   <com.tengfei.fairy.widget.ActionBarView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        app:hideSearch="true"
-       app:titleStr="@string/sockettest"></com.tengfei.fairy.wedget.ActionBarView>
+       app:titleStr="@string/sockettest"></com.tengfei.fairy.widget.ActionBarView>
     <Button
         android:id="@+id/btn_accept"
         style="@style/mybutton"

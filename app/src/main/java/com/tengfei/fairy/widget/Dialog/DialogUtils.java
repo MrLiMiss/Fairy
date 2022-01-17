@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget.window;
+package com.tengfei.fairy.widget.Dialog;
 
 /**
  * @ Description :
@@ -6,5 +6,5 @@ package com.tengfei.fairy.wedget.window;
  * @ Time 2020-09-03   16:14
  * @ Version :
  */
-public class WindowUtils {
+public class DialogUtils {
 }

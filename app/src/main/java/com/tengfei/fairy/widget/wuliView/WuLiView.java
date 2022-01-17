@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget.wuliView;
+package com.tengfei.fairy.widget.wuliView;
 
 /**
  * @ Description :
@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.utils.IntentUtils;
 import com.tengfei.fairy.utils.ToastUtils;
 
 import java.util.List;

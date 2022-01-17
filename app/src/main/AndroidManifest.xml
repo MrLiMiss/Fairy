@@ -64,7 +64,7 @@
         <activity android:name=".androidBase.lificycle.Bactivity"
             android:launchMode="singleTask"/>
         <activity android:name=".androidBase.lificycle.AboutActivity" />
-        <activity android:name=".wedget.sign.SignNameActivity"
+        <activity android:name=".widget.sign.SignNameActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".service.ServiceTestActivity" />
@@ -81,6 +81,9 @@
         <activity android:name=".muti_thread.handlertext.HandlerActivity" />
         <activity android:name=".httpBase.socket.SocketTextActivity" />
         <activity android:name=".androidBase.bitmap.BitmapTestActivity" />
+        <!--jetpack 相关-->
+        <activity android:name=".jetpack.JetPackActivity" />
+        <activity android:name=".widget.WidgetActivity" />
         <!--音乐service test-->
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget.wuliView;
+package com.tengfei.fairy.widget.wuliView;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;

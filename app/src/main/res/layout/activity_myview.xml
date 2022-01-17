@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_f9f9f9"
     android:orientation="vertical">
-    <com.tengfei.fairy.wedget.ActionBarView
+    <com.tengfei.fairy.widget.ActionBarView
         android:id="@+id/actionBarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
                 style="@style/HorizontalGrayLine"
                 android:layout_marginTop="10dp" />
 
-            <com.tengfei.fairy.wedget.DrawView
+            <com.tengfei.fairy.widget.DrawView
                 android:id="@+id/view_drawView"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -52,7 +52,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp" />
 
-            <com.tengfei.fairy.wedget.ItemView
+            <com.tengfei.fairy.widget.ItemView
                 android:id="@+id/view_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp" />
 
-            <com.tengfei.fairy.wedget.LineTextView
+            <com.tengfei.fairy.widget.LineTextView
                 android:layout_margin="15dp"
                 android:id="@+id/voew_lintextview"
                 android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp" />
 
-            <com.tengfei.fairy.wedget.RectView
+            <com.tengfei.fairy.widget.RectView
                 android:layout_marginLeft="15dp"
                 android:layout_marginBottom="15dp"
                 android:id="@+id/view_rectview"
@@ -97,7 +97,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp" />
 
-            <com.tengfei.fairy.wedget.HorizontaiView
+            <com.tengfei.fairy.widget.HorizontaiView
                 android:background="@drawable/btn_bg"
                 android:id="@+id/test_layout"
                 android:layout_width="match_parent"
@@ -123,7 +123,7 @@
 
                 </ListView>
 
-            </com.tengfei.fairy.wedget.HorizontaiView>
+            </com.tengfei.fairy.widget.HorizontaiView>
 
 
         </LinearLayout>

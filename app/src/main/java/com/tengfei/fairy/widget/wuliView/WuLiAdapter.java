@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget.wuliView;
+package com.tengfei.fairy.widget.wuliView;
 
 import android.content.Context;
 import android.view.View;

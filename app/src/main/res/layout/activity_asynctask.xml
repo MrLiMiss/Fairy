@@ -29,13 +29,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         app:layout_constraintTop_toBottomOf="@+id/actionbar"></ProgressBar>
 
-    <com.tengfei.fairy.wedget.ActionBarView
+    <com.tengfei.fairy.widget.ActionBarView
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleStr="@string/asynctask"></com.tengfei.fairy.wedget.ActionBarView>
+        app:titleStr="@string/asynctask"></com.tengfei.fairy.widget.ActionBarView>
     <TextView
         style="@style/myText"
         android:id="@+id/tv_result"

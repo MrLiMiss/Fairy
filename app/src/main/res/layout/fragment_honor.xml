@@ -72,45 +72,10 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/textview_background"
-                android:padding="5dp"
-                android:text="widget"
-                android:textColor="@color/colorAccent"
-                android:textSize="15sp" />
+                android:id="@+id/tv_widget"
+               style="@style/SortTextView"
+                android:text="自定义组件widget"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_widget"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="常用控件"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/btn_myView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="自定义view"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/btn_zuheview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="组合view"
-                    android:textSize="10sp" />
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_animation"

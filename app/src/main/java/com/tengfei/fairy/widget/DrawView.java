@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget;
+package com.tengfei.fairy.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,8 +7,6 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-
-import java.util.jar.Attributes;
 
 /**
  * @ Description :跟随手指移动简单小球

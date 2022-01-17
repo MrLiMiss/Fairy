@@ -4,11 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.tengfei.fairy.wedget.ActionBarView
+    <com.tengfei.fairy.widget.ActionBarView
         android:id="@+id/ac_handler"
         android:layout_width="match_parent"
         app:titleStr="HandlerTestDemo"
         app:hideSearch="true"
-        android:layout_height="wrap_content"></com.tengfei.fairy.wedget.ActionBarView>
+        android:layout_height="wrap_content"></com.tengfei.fairy.widget.ActionBarView>
 
 </LinearLayout>

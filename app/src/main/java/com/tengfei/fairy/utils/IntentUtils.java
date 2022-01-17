@@ -1,6 +1,5 @@
 package com.tengfei.fairy.utils;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -13,13 +12,12 @@ import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.androidBase.bitmap.BitmapTestActivity;
 import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
-import com.tengfei.fairy.customView.CustomViewActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;
 import com.tengfei.fairy.androidBase.konwledge.KnowledgeActivity;
-import com.tengfei.fairy.fragment.HonorFragment;
 import com.tengfei.fairy.httpBase.socket.SocketTextActivity;
+import com.tengfei.fairy.jetpack.JetPackActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.AsyncTaskActivity;
@@ -29,7 +27,8 @@ import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
 import com.tengfei.fairy.touch.TouchDataActivity;
-import com.tengfei.fairy.wedget.sign.SignNameActivity;
+import com.tengfei.fairy.widget.WidgetActivity;
+import com.tengfei.fairy.widget.sign.SignNameActivity;
 
 import static android.content.Context.BIND_AUTO_CREATE;
 
@@ -65,8 +64,12 @@ public class IntentUtils {
         mContext.startActivity(intent);
     }
 
+    /** 自定义组件测试activity
+     * @param context
+     */
     public static void toMyViewActivity(Context context) {
         Intent intent=new Intent(context, MyViewActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }
 
@@ -88,20 +91,13 @@ public class IntentUtils {
         context.startActivity(intent);
     }
 
-    /**
-     * 跳转到自定义view
-     * @param context
-     */
-    public static void toCustomActivity(Context context) {
-        Intent intent=new Intent(context, CustomViewActivity.class);
-        context.startActivity(intent);
-    }
 
     /**签名控件
      * @param context
      */
     public static void toSignActivity(Context context) {
         Intent intent=new Intent(context, SignNameActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }
 
@@ -268,6 +264,24 @@ public class IntentUtils {
      */
     public static void toBitmapActivity(Context context) {
         Intent intent=new Intent(context, BitmapTestActivity.class);
+        context.startActivity(intent);
+    }
+
+    /** 跳转到JetPack 相关
+     * @param context
+     */
+    public static void toJetPackActivity(Context context) {
+        Intent intent=new Intent(context, JetPackActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        context.startActivity(intent);
+    }
+
+    /** 跳转到自定义组件widget
+     * @param context
+     */
+    public static void toWidgetActivity(Context context) {
+        Intent intent=new Intent(context, WidgetActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }
 }

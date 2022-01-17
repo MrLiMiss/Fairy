@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget;
+package com.tengfei.fairy.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

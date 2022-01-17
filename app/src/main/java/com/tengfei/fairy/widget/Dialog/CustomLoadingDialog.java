@@ -1,4 +1,4 @@
-package com.tengfei.fairy.wedget.Dialog;
+package com.tengfei.fairy.widget.Dialog;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
