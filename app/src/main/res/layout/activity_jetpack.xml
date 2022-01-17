@@ -14,7 +14,7 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">
          <LinearLayout
-             android:layout_width="wrap_content"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="vertical">
              <ImageView
@@ -28,38 +28,42 @@
                  android:src="@drawable/img_jetpack"></ImageView>
              <TextView
                  style="@style/SortTextView"
-                 android:text="Architecture:" />
+                 android:text="Architecture架构组件:" />
 
              <LinearLayout
-                 android:layout_width="wrap_content"
+                 android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:orientation="horizontal">
+                 android:orientation="vertical">
 
                  <TextView
                      android:id="@+id/tv_data_binding"
                      style="@style/myText"
-                     android:text="Data Binding" />
+                     android:text="Data Binding：MVVM 的一种实践" />
 
                  <TextView
                      android:id="@+id/tv_lifecycles"
                      style="@style/myText"
-                     android:text="LifeCycles" />
+                     android:text="LifeCycles 管理你的 Activity 和 Fragment 生命周期" />
 
                  <TextView
                      android:id="@+id/tv_livedata"
                      style="@style/myText"
-                     android:text="LiveData" />
+                     android:text="LiveData（三方框架页面已存在） 通过观察者模式感知数据变化，类比 RxJava" />
                  <TextView
                      android:id="@+id/tv_navigation"
                      style="@style/myText"
-                     android:text="Navigation" />
+                     android:text="Navigation 处理 Fragment 导航相关逻辑" />
+                 <TextView
+                     android:id="@+id/tv_paging"
+                     style="@style/myText"
+                     android:text=" Paging：分页数据加载方案" />
+
+                 <TextView
+                     android:id="@+id/tv_workmanager"
+                     style="@style/myText"
+                     android:text="WorkManager：管理后台任务" />
 
              </LinearLayout>
-             <com.tengfei.fairy.widget.wrapLayout.WrapLayout
-                 android:id="@+id/act_wrap"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-             </com.tengfei.fairy.widget.wrapLayout.WrapLayout>
          </LinearLayout>
 
 
