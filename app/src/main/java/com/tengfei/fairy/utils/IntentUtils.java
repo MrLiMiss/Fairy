@@ -1,5 +1,6 @@
 package com.tengfei.fairy.utils;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;
 import com.tengfei.fairy.androidBase.konwledge.KnowledgeActivity;
 import com.tengfei.fairy.httpBase.socket.SocketTextActivity;
 import com.tengfei.fairy.jetpack.JetPackActivity;
+import com.tengfei.fairy.jetpack.lifecycle.LifeCycleActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.AsyncTaskActivity;
@@ -282,5 +284,13 @@ public class IntentUtils {
         Intent intent=new Intent(context, WidgetActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
+    }
+
+    /** 跳转到LifeCycle 测试activity
+     * @param mActivity
+     */
+    public static void toLifeCycleAct(Activity mActivity) {
+        Intent intent=new Intent(mActivity, LifeCycleActivity.class);
+        mActivity.startActivity(intent);
     }
 }
