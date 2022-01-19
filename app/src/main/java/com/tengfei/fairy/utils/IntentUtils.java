@@ -19,6 +19,7 @@ import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;
 import com.tengfei.fairy.androidBase.konwledge.KnowledgeActivity;
 import com.tengfei.fairy.httpBase.socket.SocketTextActivity;
 import com.tengfei.fairy.jetpack.JetPackActivity;
+import com.tengfei.fairy.jetpack.MyService;
 import com.tengfei.fairy.jetpack.lifecycle.LifeCycleActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
@@ -292,5 +293,14 @@ public class IntentUtils {
     public static void toLifeCycleAct(Activity mActivity) {
         Intent intent=new Intent(mActivity, LifeCycleActivity.class);
         mActivity.startActivity(intent);
+    }
+
+    /**
+     * 跳转 service lifecycle
+     * @param mActivity
+     */
+    public static void startLifeCycleService(Activity mActivity) {
+        Intent intent=new Intent(mActivity, MyService.class);
+        mActivity.startService(intent);
     }
 }

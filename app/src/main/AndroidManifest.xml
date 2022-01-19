@@ -66,7 +66,6 @@
         <activity android:name=".androidBase.lificycle.AboutActivity" />
         <activity android:name=".widget.sign.SignNameActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".service.ServiceTestActivity" />
         <activity android:name=".manager.ManagerTestActivity" />
         <activity android:name=".liveData.LiveDataTestActivity" />
@@ -85,6 +84,7 @@
         <activity android:name=".jetpack.JetPackActivity" />
         <activity android:name=".widget.WidgetActivity" />
         <activity android:name=".jetpack.lifecycle.LifeCycleActivity" />
+        <service android:name=".jetpack.MyService" />
         <!--音乐service test-->
         <service android:name=".service.MusicService" />
         <service android:name=".service.MyIntentService" />

@@ -6,9 +6,14 @@
     android:layout_height="match_parent">
     <com.tengfei.fairy.widget.ActionBarView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:titleStr="LifeCycle"
         app:hideSearch="true">
     </com.tengfei.fairy.widget.ActionBarView>
+
+    <TextView
+        android:id="@+id/tv_service"
+       style="@style/myText"
+        android:text="service lifecycle"></TextView>
 
 </LinearLayout>

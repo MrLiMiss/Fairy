@@ -7,10 +7,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
 import com.tengfei.fairy.config.FileConfig;
+import com.tengfei.fairy.jetpack.lifecycle.AppWorkUtils;
 
 /**
  * @ Description :全局application
@@ -31,6 +33,8 @@ public class FairyApplication extends MultiDexApplication implements Application
         super.onCreate();
         mApplication = this;
         context = this;
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppWorkUtils());
+
         //初始化FileConfig
         FileConfig.getInstance().initFileConf(this);
 
