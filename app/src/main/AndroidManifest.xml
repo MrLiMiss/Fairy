@@ -84,6 +84,8 @@
         <activity android:name=".jetpack.JetPackActivity" />
         <activity android:name=".widget.WidgetActivity" />
         <activity android:name=".jetpack.lifecycle.LifeCycleActivity" />
+        <activity android:name=".jni.aesJni.JniActivity" />
+
         <service android:name=".jetpack.MyService" />
         <!--音乐service test-->
         <service android:name=".service.MusicService" />

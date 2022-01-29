@@ -21,6 +21,7 @@ import com.tengfei.fairy.httpBase.socket.SocketTextActivity;
 import com.tengfei.fairy.jetpack.JetPackActivity;
 import com.tengfei.fairy.jetpack.MyService;
 import com.tengfei.fairy.jetpack.lifecycle.LifeCycleActivity;
+import com.tengfei.fairy.jni.aesJni.JniActivity;
 import com.tengfei.fairy.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.AsyncTaskActivity;
@@ -302,5 +303,16 @@ public class IntentUtils {
     public static void startLifeCycleService(Activity mActivity) {
         Intent intent=new Intent(mActivity, MyService.class);
         mActivity.startService(intent);
+    }
+
+    /**
+     * jni
+     * 实现AES加密 解密
+     * @param context
+     */
+    public static void toJniActivity(Context context) {
+        Intent intent=new Intent(context, JniActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        context.startActivity(intent);
     }
 }

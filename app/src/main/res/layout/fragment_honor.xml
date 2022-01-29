@@ -234,6 +234,70 @@
 
 
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_background"
+                android:padding="5dp"
+                android:text="进阶"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_jni"
+                     style ="@style/testButton"
+                    android:text="JNI" />
+
+                <Button
+                    android:id="@+id/btn_flutter"
+                    style ="@style/testButton"
+                    android:text="Flutter" />
+
+                <Button
+                    android:id="@+id/btn_kotlin"
+                    style ="@style/testButton"
+                    android:text="Kotlin" />
+
+                <Button
+                    android:id="@+id/btn_weex"
+                    style ="@style/testButton"
+                    android:text="WEEX" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_hotfix"
+                    style ="@style/testButton"
+                    android:text="热修复" />
+
+                <Button
+                    android:id="@+id/btn_daggerr"
+                    style ="@style/testButton"
+                    android:text="Flutter" />
+
+                <Button
+                    android:id="@+id/btn_ams"
+                    style ="@style/testButton"
+                    android:text="AMS（ActivityManagerService）" />
+
+                <Button
+                    android:id="@+id/btn_svg"
+                    style ="@style/testButton"
+                    android:text="SVG矢量图形" />
+
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
