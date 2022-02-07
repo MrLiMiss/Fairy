@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.threadText;
+package com.tengfei.fairy.muti_thread.threadTest;
 
 /**
  * @ Description :
