@@ -76,8 +76,8 @@
         <!--基础知识 activity-->
         <activity android:name=".androidBase.konwledge.KnowledgeActivity" />
         <!--AsyncTask test-->
-        <activity android:name=".muti_thread.AsyncTaskActivity" />
-        <activity android:name=".muti_thread.handlertext.HandlerActivity" />
+        <activity android:name=".muti_thread.asyncTaskTest.AsyncTaskActivity" />
+        <activity android:name=".muti_thread.handlerTest.HandlerActivity" />
         <activity android:name=".httpBase.socket.SocketTextActivity" />
         <activity android:name=".androidBase.bitmap.BitmapTestActivity" />
         <!--jetpack 相关-->

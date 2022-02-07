@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread;
+package com.tengfei.fairy.muti_thread.synchronizedTest;
 
 /**
  * @ Description : synchronized

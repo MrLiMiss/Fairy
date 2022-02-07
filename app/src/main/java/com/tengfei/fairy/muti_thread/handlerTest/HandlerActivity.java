@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.handlertext;
+package com.tengfei.fairy.muti_thread.handlerTest;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;
