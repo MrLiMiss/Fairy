@@ -26,6 +26,21 @@ public class DateUtils {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(new Date(Long.valueOf(seconds+"000")));
     }
+
+
+    /**
+     * 时间戳 转 时间字符串
+     * @param time
+     * @return
+     */
+    public static String getDateToString(long time) {
+        SimpleDateFormat sf = null;
+        Date d = new Date(time);
+        sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sf.format(d);
+    }
+
+
     /**
      * 日期格式字符串转换成时间戳
      * @param date_str 字符串日期
@@ -51,6 +66,9 @@ public class DateUtils {
         String t = String.valueOf(time/1000);
         return t;
     }
+
+
+
 
     public static void main(String[] args) {
         String timeStamp = timeStamp();
