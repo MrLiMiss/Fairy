@@ -1,12 +1,12 @@
-package com.tengfei.fairy.muti_thread.threadTest;
+package com.tengfei.fairy.muti_thread.threadTest.joinSleepWaitTest;
 
 /**
- * @ Description :
+ * @ Description :wait（）  notify（）  notifyAll（） demo
  * @ Author 李腾飞
  * @ Time 1/29/22   4:43 PM
  * @ Version :
  */
-public class ThreadTest {
+public class WaitDemo {
 
     private static Object obj = new Object();
 
@@ -18,14 +18,14 @@ public class ThreadTest {
         t1.start();
         t2.start();
 
-//        //RunnableImplB notify()
-//        Thread t3 = new Thread(new RunnableImplB(obj));
-//        t3.start();
+        //RunnableImplB notify()，notify() 方法随机唤醒对象的等待池中的一个线程，进入锁池；
+        Thread t3 = new Thread(new RunnableImplB(obj));
+        t3.start();
 
 
-		//RunnableImplC notifyAll()
-		Thread t4 = new Thread(new RunnableImplC(obj));
-		t4.start();
+//		//RunnableImplC notifyAll()，notifyAll() 唤醒对象的等待池中的所有线程，进入锁池。
+//		Thread t4 = new Thread(new RunnableImplC(obj));
+//		t4.start();
     }
 
    static class RunnableImplA implements Runnable {
@@ -52,6 +52,10 @@ public class ThreadTest {
         }
     }
 
+    /**
+     * wait（）  测试notify（）
+     * notify() 方法随机唤醒对象的等待池中的一个线程，进入锁池；
+     */
     static class RunnableImplB implements Runnable {
 
         private Object obj;
@@ -77,6 +81,10 @@ public class ThreadTest {
         }
     }
 
+    /**
+     * 测试wait（）  notifyAll（）
+     * notifyAll() 唤醒对象的等待池中的所有线程，进入锁池。
+     */
     static class RunnableImplC implements Runnable {
 
         private Object obj;

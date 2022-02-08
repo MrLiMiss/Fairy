@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.threadTest.joinSleepTest;
+package com.tengfei.fairy.muti_thread.threadTest.joinSleepWaitTest;
 
 /**
  * @ Description :
@@ -28,7 +28,7 @@ public class JoinDemo {
      * @param args
      * @throws InterruptedException
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main0(String[] args) throws InterruptedException {
         //主线程
         System.out.println("---------主线程------"+Thread.currentThread().getName());
 
@@ -67,7 +67,7 @@ public class JoinDemo {
      * @param args join（）：效果原理
      * @throws InterruptedException
      */
-    public static void main2(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         //主线程
         System.out.println("主线程状态---------->"+Thread.currentThread().getState());
         System.out.println("---------主线程------"+Thread.currentThread().getName());

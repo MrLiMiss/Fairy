@@ -1,7 +1,4 @@
-package com.tengfei.fairy.muti_thread.threadTest.joinSleepTest;
-
-import java.util.Date;
-import java.text.SimpleDateFormat;
+package com.tengfei.fairy.muti_thread.threadTest.joinSleepWaitTest;
 
 import static com.tengfei.fairy.utils.DateUtils.getDateToString;
 
