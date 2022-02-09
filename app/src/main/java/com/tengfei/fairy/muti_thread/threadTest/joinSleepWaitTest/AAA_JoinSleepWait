@@ -1,4 +1,4 @@
-多线程：https://www.cnblogs.com/wxd0108/p/5479442.html
+
 
     线程在Running的过程中可能会遇到阻塞(Blocked)情况
 1、调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。

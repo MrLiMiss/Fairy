@@ -1,4 +1,4 @@
-package com.tengfei.fairy.muti_thread.threadTest;
+package com.tengfei.fairy.muti_thread.threadTest.ProductAndConsume;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,12 +1,5 @@
 package com.tengfei.fairy.widget.wuliView;
 
-/**
- * @ Description :
- * @ Author 李腾飞
- * @ Time 2020-11-18   10:41
- * @ Version :
- */
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
