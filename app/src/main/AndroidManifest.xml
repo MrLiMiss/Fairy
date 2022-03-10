@@ -85,6 +85,9 @@
         <activity android:name=".widget.WidgetActivity" />
         <activity android:name=".jetpack.lifecycle.LifeCycleActivity" />
         <activity android:name=".jni.aesJni.JniActivity" />
+        <activity android:name=".oom.singleIntense.SecondOOMActivity" />
+        <activity android:name=".oom.singleIntense.SingleOOMActivity" />
+        <activity android:name=".oom.singleIntense.LastActivity" />
 
         <service android:name=".jetpack.MyService" />
         <!--音乐service test-->

@@ -27,6 +27,7 @@ import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.asyncTaskTest.AsyncTaskActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;
 import com.tengfei.fairy.muti_thread.handlerTest.HandlerActivity;
+import com.tengfei.fairy.oom.singleIntense.SingleOOMActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
@@ -313,6 +314,15 @@ public class IntentUtils {
     public static void toJniActivity(Context context) {
         Intent intent=new Intent(context, JniActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        context.startActivity(intent);
+    }
+
+    /**
+     * oom 测试
+     * @param context
+     */
+    public static void toOOMActivity(Context context) {
+        Intent intent=new Intent(context, SingleOOMActivity.class);
         context.startActivity(intent);
     }
 }
