@@ -1,5 +1,6 @@
 package com.tengfei.fairy.androidBase.lificycle;
 
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,23 @@ import com.tengfei.fairy.R;
 public class ConfigChangeActivity extends AppCompatActivity {
 
     private static final String TAG = "onCongigChange";
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+// save the current data, for instance when changing screen orientation
+        Log.i(TAG,"执行了onSaveInstanceState方法");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedState) {
+        super.onRestoreInstanceState(savedState);
+// restore the current data, for instance when changing the screen
+// orientation
+        Log.i(TAG,"执行了onRestoreInstanceState方法");
+    }
+
 
     //Activity创建时调用
     @Override
