@@ -26,5 +26,4 @@ public class Singleton_DoubleKey {
         return instance;
     }
 
-
 }
