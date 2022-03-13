@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @ Description :具体观察者（消息发布方）
+ * @ Description :具体被观察者（消息发布方）
  * @ Author 李腾飞
  * @ Time 2022/3/13   6:21 PM
  * @ Version :
