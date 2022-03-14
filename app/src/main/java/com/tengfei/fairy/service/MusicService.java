@@ -48,7 +48,6 @@ public class MusicService extends Service {
         super.onCreate();
         Log.d(TAG, "onCreate()");
         Log.e(TAG, "MusicService-----" + Thread.currentThread().getName() + "--" + Thread.currentThread().getId());
-
         mBinder = new SimpleBinder();
 
         assetManager = getAssets();
@@ -81,6 +80,13 @@ public class MusicService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {//service 启动时呗调用
         Log.d(TAG, "onStartCommand()");
+        //模拟service ANR
+//        try {
+//            Thread.sleep(50000);
+//            Log.d(TAG, "onStartCommand-耗时操作");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         new Thread(new Runnable() {//service 处于主线程，但是可在service中起子线程，完成耗时操作。
             @Override
             public void run() {
@@ -88,6 +94,7 @@ public class MusicService extends Service {
                 Log.d(TAG, "onStartCommand-子线程");
             }
         }).start();
+        Log.d(TAG, "onStartCommand-完成");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -103,6 +110,13 @@ public class MusicService extends Service {
     @Override
     public IBinder onBind(Intent intent) {//应用程序通过IBinder 与service 组件  通信
         Log.d(TAG, "onBind");
+//        测试bindservice 耗时操作
+//        try {
+//            Thread.sleep(50000);
+//            Log.d(TAG, "onStartCommand-耗时操作");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         if (mBinder != null) {
             return mBinder;
         }

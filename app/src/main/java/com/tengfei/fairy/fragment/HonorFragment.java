@@ -80,7 +80,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom})
+    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom,R.id.btn_ANR})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_base_android://Android 基础知识
@@ -109,6 +109,9 @@ public class HonorFragment extends BaseFragment {
                 break;
             case R.id.btn_oom:
                 IntentUtils.toOOMActivity(getContext());
+                break;
+            case R.id.btn_ANR:
+                IntentUtils.toANRActivity(getContext());
                 break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);

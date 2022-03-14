@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleStr="ANR相关测试"></com.tengfei.fairy.widget.ActionBarView>
+    <Button
+        android:id="@+id/btn_inputEvent_anr"
+        style="@style/mybutton"
+        android:text="ANR inputEvent timeout"/>
+    <Button
+        android:id="@+id/btn_broadcast_anr"
+        style="@style/mybutton"
+        android:text="ANR BroadcastTimeout"/>
+    <Button
+        android:id="@+id/btn_service_anr"
+        style="@style/mybutton"
+        android:text="ANR serviceTimeout"/>
+    <Button
+        android:id="@+id/btn_contentprovider_anr"
+        style="@style/mybutton"
+        android:text="ANR ContentProvider publish"/>
+
+
+</LinearLayout>

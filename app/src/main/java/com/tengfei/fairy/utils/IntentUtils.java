@@ -13,6 +13,7 @@ import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.androidBase.bitmap.BitmapTestActivity;
 import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
+import com.tengfei.fairy.anr.ANRActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;
@@ -323,6 +324,14 @@ public class IntentUtils {
      */
     public static void toOOMActivity(Context context) {
         Intent intent=new Intent(context, SingleOOMActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**  ANR 测试
+     * @param context
+     */
+    public static void toANRActivity(Context context) {
+        Intent intent =new Intent(context, ANRActivity.class);
         context.startActivity(intent);
     }
 }

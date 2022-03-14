@@ -70,10 +70,10 @@ public class ServiceTestActivity extends BaseActivity {
            case R.id.btn_unbind_service://解绑service
                IntentUtils.unBindMusicService(this);
                break;
-           case R.id.btn_start_intent_service:
+           case R.id.btn_start_intent_service://启动IntentService
                IntentUtils.startIntentService(this);
                break;
-           case R.id.btn_end_intent_service:
+           case R.id.btn_end_intent_service://关闭IntentService
                IntentUtils.endIntentService(this);
                break;
            case R.id.btn_startmusic:
