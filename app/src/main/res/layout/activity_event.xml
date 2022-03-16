@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleStr="事件分发相关测试"></com.tengfei.fairy.widget.ActionBarView>
+    <Button
+        android:id="@+id/btn_conflict_out"
+        style="@style/mybutton"
+        android:text="滑动冲突 方向不同 外部处理"/>
+    <Button
+        android:id="@+id/btn_btn_conflict_in"
+        style="@style/mybutton"
+        android:text="滑动冲突 方向不同 内部处理"/>
+    <Button
+        android:id="@+id/btn_conflict_common"
+        style="@style/mybutton"
+        android:text="滑动冲突 滑动方向相同"/>
+    <Button
+        android:id="@+id/btn_conflict_mix"
+        style="@style/mybutton"
+        android:text="滑动冲突 混合模式"/>
+
+
+</LinearLayout>
