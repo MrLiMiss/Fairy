@@ -89,9 +89,9 @@
         <activity android:name=".oom.singleIntense.SingleOOMActivity" />
         <activity android:name=".oom.singleIntense.LastActivity" />
         <activity android:name=".anr.ANRActivity" />
-        <activity android:name=".event_conflict.out.OutEventActivity" />
+        <activity android:name=".event_conflict.different.out.OutEventActivity" />
         <activity android:name=".event_conflict.EventActivity" />
-        <activity android:name=".event_conflict.in.InEventActivity" />
+        <activity android:name=".event_conflict.different.in.InEventActivity" />
 
         <service android:name=".jetpack.MyService" />
         <!--音乐service test-->

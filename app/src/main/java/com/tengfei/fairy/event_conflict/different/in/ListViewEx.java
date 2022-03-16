@@ -1,4 +1,4 @@
-package com.tengfei.fairy.event_conflict.in;
+package com.tengfei.fairy.event_conflict.different.in;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -46,6 +46,8 @@ public class ListViewEx extends ListView {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN: {
+                //ViewGroup有一个disallowIntercept开关，可以设置此ViewGroup是否屏蔽onInterceptTouchEvent事件。
+                //如果开启此开关，则此ViewGroup跳过自身的onInterceptTouchEvent事件，直接dispatchTouchEvent到子View
                 mHorizontalScrollViewEx2.requestDisallowInterceptTouchEvent(true);
                 break;
             }

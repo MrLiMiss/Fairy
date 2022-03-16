@@ -5,7 +5,7 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <com.tengfei.fairy.event_conflict.in.HorizontalScrollViewEx2
+    <com.tengfei.fairy.event_conflict.different.in.HorizontalScrollViewEx2
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />

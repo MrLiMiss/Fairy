@@ -1,4 +1,4 @@
-package com.tengfei.fairy.event_conflict.in;
+package com.tengfei.fairy.event_conflict.different.in;
 
 import android.app.Activity;
 import android.graphics.Color;

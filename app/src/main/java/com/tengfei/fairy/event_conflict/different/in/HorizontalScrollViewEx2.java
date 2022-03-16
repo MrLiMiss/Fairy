@@ -1,4 +1,4 @@
-package com.tengfei.fairy.event_conflict.in;
+package com.tengfei.fairy.event_conflict.different.in;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 /**
- * @ Description :内部view 处理点击事件，但是外部view  分发ACTION_DOWN 事件
+ * @ Description :内部view 处理点击事件，但是外部viewgroup 必须分发ACTION_DOWN 事件
  * @ Author 李腾飞
  * @ Time 2022/3/16   3:31 PM
  * @ Version :
