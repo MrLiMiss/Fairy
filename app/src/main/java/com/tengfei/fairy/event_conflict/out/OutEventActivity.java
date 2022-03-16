@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tengfei.fairy.R;
-import com.tengfei.fairy.base.BaseActivity;
 import com.tengfei.fairy.event_conflict.MyUtils;
 
 import android.widget.AdapterView.OnItemClickListener;
@@ -23,7 +22,10 @@ import java.util.ArrayList;
 
 /**
  * @ Description :处理方向不一致的 滑动冲突
- *   按照外部拦截法
+ *   外部拦截法：1、点击事件都先经过父容器的拦截处理，如果父容器需要此事件就拦截，如果不需要此事件就不拦截。
+ *             2、这种处理方法比较符合点击事件的分发机制，外部拦截发需要重写父容器的onInterceptTouchEvent（）
+ *             3、onInterceptTouchEvent（）方法父容器不拦截ACTION_DOWN事件，如果拦截ACTION_DOWN事件后续的ACTION_MOVE和ACTION_UP会直接交给父容器处理。
+ *             4、对于ACTION_UP 作为最后一个事件必定会传递给父容器，即使onInterceptTouchEvent（） ACTION_UP 返回了false
  * @ Author 李腾飞
  * @ Time 2022/3/16   9:29 AM
  * @ Version :

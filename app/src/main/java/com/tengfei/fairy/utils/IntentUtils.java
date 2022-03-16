@@ -15,6 +15,7 @@ import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
 import com.tengfei.fairy.anr.ANRActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
+import com.tengfei.fairy.event_conflict.in.InEventActivity;
 import com.tengfei.fairy.event_conflict.out.OutEventActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
@@ -350,6 +351,15 @@ public class IntentUtils {
      */
     public static void toOutEventActivity(Context context) {
         Intent intent =new Intent(context, OutEventActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        context.startActivity(intent);
+    }
+
+    /**
+     * @param context 滑动冲突（同方向），内部view处理
+     */
+    public static void toInEventActivity(Context context) {
+        Intent intent =new Intent(context, InEventActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }

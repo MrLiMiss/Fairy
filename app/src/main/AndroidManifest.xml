@@ -91,6 +91,7 @@
         <activity android:name=".anr.ANRActivity" />
         <activity android:name=".event_conflict.out.OutEventActivity" />
         <activity android:name=".event_conflict.EventActivity" />
+        <activity android:name=".event_conflict.in.InEventActivity" />
 
         <service android:name=".jetpack.MyService" />
         <!--音乐service test-->

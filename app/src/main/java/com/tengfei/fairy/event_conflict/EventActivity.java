@@ -26,11 +26,14 @@ public class EventActivity extends BaseActivity {
     @BindView(R.id.btn_conflict_out)
     Button mBtnConflictOut;
 
-    @OnClick({R.id.btn_conflict_out})
+    @OnClick({R.id.btn_conflict_out,R.id.btn_btn_conflict_in})
     void click(View view){
         switch (view.getId()) {
             case R.id.btn_conflict_out://同方向 外部view处理
                 IntentUtils.toOutEventActivity(getContext());
+                break;
+            case R.id.btn_btn_conflict_in:
+                IntentUtils.toInEventActivity(getContext());
                 break;
 //            case R.id.btn_service_anr://服务超时ANR
 //                Intent intent =new Intent(ANRActivity.this, MusicService.class);
