@@ -103,6 +103,7 @@ public class MusicService extends Service {
     public void onDestroy() {
         super.onDestroy();
         //只有在即没有和任何Activity绑定又处于停止状态下的时候，才可以被摧毁。
+        mediaPlayer.release();
         Log.d(TAG, "onDestroy");
     }
 
@@ -177,7 +178,7 @@ public class MusicService extends Service {
                         mediaPlayer.stop();
                         status = 0x11;
                     }
-                break;
+                    break;
                 case 3:
                     current--;
                     if (current < 0)
@@ -189,6 +190,18 @@ public class MusicService extends Service {
                     if (current > musics.length - 1)
                         current = 0;
                     prepareAndPlay(musics[current]);
+                    break;
+                case 5:
+                    try {
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
+                    } catch (Exception e) {
+
+                        e.printStackTrace();
+
+                    }
+
+
                     break;
             }
             // 广播通知Activity更改图标、文本框

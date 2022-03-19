@@ -26,16 +26,16 @@ import butterknife.OnClick;
 public class ServiceTestActivity extends BaseActivity {
 
 
-    public static final String CTL_ACTION="org.crazyit.action.CTL_ACTION";
-    public static final String UPDATE_ACTION="org.crazyit.action.UPDATE_ACTION";
+    public static final String CTL_ACTION = "org.crazyit.action.CTL_ACTION";
+    public static final String UPDATE_ACTION = "org.crazyit.action.UPDATE_ACTION";
 
     @BindView(R.id.btn_startmusic)
     Button btn_start_music;//开始音乐
     @BindView(R.id.btn_suspendmusic)
     Button btn_suspend_music;//暂停音乐
 
-    String[] titleStrs = new String[] { "NotAngry", "卡农", "summertime" };
-    String[] authorStrs = new String[] { "任舒瞳", "孙昊天", "熊同学" };
+    String[] titleStrs = new String[]{"NotAngry", "卡农", "summertime"};
+    String[] authorStrs = new String[]{"任舒瞳", "孙昊天", "熊同学"};
 
     //ox开头表示十六进制，0开头表示8进制
     public int status = 0x11;//定义音乐播放状态 0x11 未播放，0x12 正在播放，0x13 暂停播放
@@ -47,60 +47,61 @@ public class ServiceTestActivity extends BaseActivity {
     @BindView(R.id.tv_music_singer)
     TextView tv_music_singer;
 
-    public static String TAG=ServiceTestActivity.class.getSimpleName();
+    public static String TAG = ServiceTestActivity.class.getSimpleName();
+    private Intent intent;
 
     @Override
     protected int getContentLayout() {
         return R.layout.activity_service;
     }
 
-    @OnClick({R.id.btn_start_service,R.id.btn_end_service,R.id.btn_bind_service,R.id.btn_unbind_service,R.id.btn_start_intent_service,R.id.btn_end_intent_service,R.id.btn_startmusic,R.id.btn_suspendmusic,R.id.btn_nextmusic,R.id.btn_premusic})
-    void click(View view){
-        Intent intent =new Intent("org.crazyit.action.CTL_ACTION");
-       switch (view.getId()){
-           case R.id.btn_start_service://启动service
-               IntentUtils.startMusicService(this);
-               break;
-           case R.id.btn_end_service://关闭service
-               IntentUtils.endMusicService(this);
-               break;
-           case R.id.btn_bind_service://绑定service
-               IntentUtils.bindMusicService(this);
-               break;
-           case R.id.btn_unbind_service://解绑service
-               IntentUtils.unBindMusicService(this);
-               break;
-           case R.id.btn_start_intent_service://启动IntentService
-               IntentUtils.startIntentService(this);
-               break;
-           case R.id.btn_end_intent_service://关闭IntentService
-               IntentUtils.endIntentService(this);
-               break;
-           case R.id.btn_startmusic:
-               Logs.d(TAG,"开始音乐");
-               intent.putExtra("control", 1);
-               // 发送广播，将被Service组件中的BroadcastReceiver接收到
-               sendBroadcast(intent);
-               break;
-           case R.id.btn_suspendmusic:
-               intent.putExtra("control", 2);
-               sendBroadcast(intent);
-               Logs.d(TAG,"暂停音乐");
-               break;
-           case R.id.btn_nextmusic:
-               intent.putExtra("control", 3);
-               sendBroadcast(intent);
-               Logs.d(TAG,"下一首音乐");
-               break;
-           case R.id.btn_premusic:
-               intent.putExtra("control", 4);
-               sendBroadcast(intent);
-               Logs.d(TAG,"上一首音乐");
-               break;
+    @OnClick({R.id.btn_start_service, R.id.btn_end_service, R.id.btn_bind_service, R.id.btn_unbind_service, R.id.btn_start_intent_service, R.id.btn_end_intent_service, R.id.btn_startmusic, R.id.btn_suspendmusic, R.id.btn_nextmusic, R.id.btn_premusic})
+    void click(View view) {
+        intent = new Intent("org.crazyit.action.CTL_ACTION");
+        switch (view.getId()) {
+            case R.id.btn_start_service://启动service
+                IntentUtils.startMusicService(this);
+                break;
+            case R.id.btn_end_service://关闭service
+                IntentUtils.endMusicService(this);
+                break;
+            case R.id.btn_bind_service://绑定service
+                IntentUtils.bindMusicService(this);
+                break;
+            case R.id.btn_unbind_service://解绑service
+                IntentUtils.unBindMusicService(this);
+                break;
+            case R.id.btn_start_intent_service://启动IntentService
+                IntentUtils.startIntentService(this);
+                break;
+            case R.id.btn_end_intent_service://关闭IntentService
+                IntentUtils.endIntentService(this);
+                break;
+            case R.id.btn_startmusic:
+                Logs.d(TAG, "开始音乐");
+                intent.putExtra("control", 1);
+                // 发送广播，将被Service组件中的BroadcastReceiver接收到
+                sendBroadcast(intent);
+                break;
+            case R.id.btn_suspendmusic:
+                intent.putExtra("control", 2);
+                sendBroadcast(intent);
+                Logs.d(TAG, "暂停音乐");
+                break;
+            case R.id.btn_nextmusic:
+                intent.putExtra("control", 3);
+                sendBroadcast(intent);
+                Logs.d(TAG, "下一首音乐");
+                break;
+            case R.id.btn_premusic:
+                intent.putExtra("control", 4);
+                sendBroadcast(intent);
+                Logs.d(TAG, "上一首音乐");
+                break;
 
-           default:
-               break;
-       }
+            default:
+                break;
+        }
     }
 
     @Override
@@ -111,7 +112,7 @@ public class ServiceTestActivity extends BaseActivity {
     @Override
     protected void initAction() {
 
-        musicReceiver=new MusicReceiver();
+        musicReceiver = new MusicReceiver();
         // 创建IntentFilter，动态注册Brocasteceiver  无需AndroidMainfest.xml 再次注册
         IntentFilter filter = new IntentFilter();
         // 指定BroadcastReceiver监听的Action
@@ -142,13 +143,11 @@ public class ServiceTestActivity extends BaseActivity {
             int update = intent.getIntExtra("update", -1);
             // 获取Intent中的current消息，current代表当前正在播放的歌曲
             int current = intent.getIntExtra("current", -1);
-            if (current >= 0)
-            {
+            if (current >= 0) {
                 tv_music_name.setText(titleStrs[current]);
                 tv_music_singer.setText(authorStrs[current]);
             }
-            switch (update)
-            {
+            switch (update) {
                 case 0x11:
 //                    play.setImageResource(R.drawable.play);
                     status = 0x11;
@@ -170,5 +169,13 @@ public class ServiceTestActivity extends BaseActivity {
             }
 
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        intent.putExtra("control", 5);
+        sendBroadcast(intent);
+        Logs.d(TAG, "处理service");
     }
 }
