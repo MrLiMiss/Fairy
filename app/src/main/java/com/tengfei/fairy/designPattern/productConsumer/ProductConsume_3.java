@@ -1,5 +1,9 @@
 package com.tengfei.fairy.designPattern.productConsumer;
 
+import android.webkit.JavascriptInterface;
+import android.webkit.ValueCallback;
+import android.webkit.WebSettings;
+
 /**
  * @ Description : 多生产者  多消费者 ，生产消费者模式（单面包,生产一个，消费一个）
  * @ Author 李腾飞
@@ -101,4 +105,15 @@ public class ProductConsume_3 {
             }
         }
     }
+
+
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+
+    }
+
+
+
+
 }

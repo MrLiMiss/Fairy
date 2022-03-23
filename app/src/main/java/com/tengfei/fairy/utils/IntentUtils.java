@@ -26,7 +26,7 @@ import com.tengfei.fairy.jetpack.JetPackActivity;
 import com.tengfei.fairy.jetpack.MyService;
 import com.tengfei.fairy.jetpack.lifecycle.LifeCycleActivity;
 import com.tengfei.fairy.jni.aesJni.JniActivity;
-import com.tengfei.fairy.liveData.LiveDataTestActivity;
+import com.tengfei.fairy.jetpack.liveData.LiveDataTestActivity;
 import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.asyncTaskTest.AsyncTaskActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;

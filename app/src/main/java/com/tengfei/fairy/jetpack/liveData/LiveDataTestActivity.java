@@ -1,4 +1,4 @@
-package com.tengfei.fairy.liveData;
+package com.tengfei.fairy.jetpack.liveData;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.mvp.BaseMvpActivity;

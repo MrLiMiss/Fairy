@@ -17,7 +17,7 @@ import butterknife.OnClick;
 import static com.tengfei.fairy.application.FairyApplication.getContext;
 
 /**
- * @ Description :
+ * @ Description :事件分发，滑动冲突解决
  * @ Author 李腾飞
  * @ Time 2022/3/16   10:42 AM
  * @ Version :
