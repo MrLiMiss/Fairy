@@ -58,12 +58,9 @@ public class AsyncTaskActivity extends BaseMvpActivity<BasePresenter> {
          * <p>
          * 执行流程：
          * 1.onPreExecute():执行后台耗时操作之前被调用，用于用于一些初始化操作。
-         * 2.doInBackground()-->onProgressUpdate()     doInBackground（）调用onProgressUpdate()方法 实时更新耗时任务进度
-         * 3.onPostExecute();后台耗时操作完成后，UI线程调用该方法，完成耗时操作结果传递给UI线程
+         * 2.doInBackground() 完成后，return  。如果想实时更新进度可在doInBackground（）中调用publishProgress()方法 实时更新耗时任务进度
+         * 3.onPostExecute();后台耗时操作完成后（doInBackground() return），UI线程调用该方法，完成耗时操作结果传递给UI线程
          */
-
-
-
 
         @Override
         protected void onProgressUpdate(Integer... values)//执行操作中，发布进度后
@@ -86,6 +83,9 @@ public class AsyncTaskActivity extends BaseMvpActivity<BasePresenter> {
             int i = 0;
             for (i = 10; i <= 100; i += 10) {
                 dop.delay();
+                /** AsyncTask publishProgress(Progress...)来发布一个或多个进度单位(unitsof progress)。
+                这些值将会在onProgressUpdate(Progress...)中被发布到UI线程。
+                 */
                 publishProgress(i);
             }
             return i + params[0].intValue() + "";
