@@ -10,7 +10,7 @@ package com.tengfei.fairy.designPattern.singleton;
  * @ Version :
  */
 public class Singleton_DoubleKey {
-    private static Singleton_DoubleKey instance;
+    private volatile static Singleton_DoubleKey instance;//于instance = new Singleton()这句，这并非是一个原子操作
 
     private Singleton_DoubleKey() {
     }
