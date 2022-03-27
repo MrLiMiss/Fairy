@@ -31,6 +31,7 @@ import com.tengfei.fairy.manager.ManagerTestActivity;
 import com.tengfei.fairy.muti_thread.asyncTaskTest.AsyncTaskActivity;
 import com.tengfei.fairy.muti_thread.MultiThreadActivity;
 import com.tengfei.fairy.muti_thread.handlerTest.HandlerActivity;
+import com.tengfei.fairy.muti_thread.handlerthreadTest.HandlerThreadActivity;
 import com.tengfei.fairy.muti_thread.intentService.MyIntentServiceActivity;
 import com.tengfei.fairy.oom.singleIntense.SingleOOMActivity;
 import com.tengfei.fairy.service.MusicService;
@@ -371,6 +372,15 @@ public class IntentUtils {
      */
     public static void toIntentService(Context context) {
         Intent intent =new Intent(context, MyIntentServiceActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        context.startActivity(intent);
+    }
+
+    /**   handlerThread demo
+     * @param context
+     */
+    public static void toHandlerThreadActivity(Context context) {
+        Intent intent =new Intent(context, HandlerThreadActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }

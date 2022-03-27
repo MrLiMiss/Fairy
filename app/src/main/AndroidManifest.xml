@@ -86,6 +86,8 @@
         <activity android:name=".event_conflict.EventActivity" />
         <activity android:name=".event_conflict.different.in.InEventActivity" />
         <activity android:name=".muti_thread.intentService.MyIntentServiceActivity" />
+        <activity android:name=".muti_thread.handlerthreadTest.HandlerThreadActivity" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/tv_bg" />
