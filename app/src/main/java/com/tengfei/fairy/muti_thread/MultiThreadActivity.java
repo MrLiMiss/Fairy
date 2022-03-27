@@ -26,6 +26,9 @@ public class MultiThreadActivity extends BaseMvpActivity<MultiThreadPresenter> {
             case R.id.tv_Handler://handler
                 IntentUtils.toHandlerActivity(this);
                 break;
+            case R.id.tv_intent_service://IntentService 测试
+                IntentUtils.toIntentService(this);
+                break;
 
         }
     }

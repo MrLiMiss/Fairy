@@ -1,6 +1,7 @@
 package com.tengfei.fairy.widget.wrapLayout;
 
 import android.content.Context;
+import android.os.HandlerThread;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
