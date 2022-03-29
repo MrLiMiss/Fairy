@@ -32,6 +32,12 @@ public class Aactivity extends Activity  implements View.OnClickListener {
     }
 
     @Override
+    public void onRestart(){
+        super.onRestart();
+        Log.d("aclife","A-onRestart");
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
         Log.d("aclife","A-onResume");
