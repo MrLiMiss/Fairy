@@ -19,6 +19,13 @@
         android:id="@+id/btn_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="跳转到 Activity" />
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/btn_a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/btn_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="跳转到B Activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

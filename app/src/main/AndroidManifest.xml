@@ -51,10 +51,10 @@
         <activity android:name=".activity.myView.MyViewActivity" />
         <activity
             android:name=".androidBase.lificycle.Aactivity"
-            android:launchMode="standard" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".androidBase.lificycle.Bactivity"
-            android:launchMode="singleTask" />
+            android:launchMode="standard" />
         <activity android:name=".androidBase.lificycle.AboutActivity" />
         <activity
             android:name=".widget.sign.SignNameActivity"
