@@ -30,7 +30,7 @@ public class WidgetActivity extends BaseMvpActivity<BasePresenter> {
         return R.layout.activity_weidget;
     }
 
-    @OnClick({R.id.btn_wrapLayout,R.id.btn_my_view,R.id.btn_sign,R.id.btn_cropPicyure})
+    @OnClick({R.id.btn_wrapLayout,R.id.btn_my_view,R.id.btn_sign,R.id.btn_cropPicyure,R.id.btn_myView})
     void click(View view){
         switch (view.getId()){
             case R.id.btn_wrapLayout://自定义wrapLayout
@@ -41,6 +41,9 @@ public class WidgetActivity extends BaseMvpActivity<BasePresenter> {
                 break;
             case R.id.btn_sign:
                 IntentUtils.toSignActivity(getContext());
+                break;
+            case R.id.btn_myView://自定义 view  viewgroup
+                IntentUtils.toViewActivity(this);
                 break;
             case R.id.btn_cropPicyure:
                 break;

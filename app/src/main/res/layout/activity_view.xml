@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hideSearch="true"
+        app:titleStr="自定义 view   viewGroup">
+    </com.tengfei.fairy.widget.ActionBarView>
+
+    <com.tengfei.fairy.widget.view_viewgroup.MyViewGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/design_default_color_primary_variant">
+        <com.tengfei.fairy.widget.view_viewgroup.MyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_marginLeft="@dimen/font_20"
+            android:background="@color/color_5184FA"
+            app:my_text="自定义view1"/>
+        <com.tengfei.fairy.widget.view_viewgroup.MyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/dp_10"
+            android:padding="10dp"
+            android:background="@color/color_5184FA"
+            app:my_text="自定义view2"/>
+        <com.tengfei.fairy.widget.view_viewgroup.MyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_5184FA"
+            app:my_text="自定义view3"/>
+    </com.tengfei.fairy.widget.view_viewgroup.MyViewGroup>
+
+
+
+
+
+</LinearLayout>

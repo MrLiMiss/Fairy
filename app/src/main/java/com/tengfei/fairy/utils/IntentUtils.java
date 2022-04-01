@@ -38,6 +38,7 @@ import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
 import com.tengfei.fairy.touch.TouchDataActivity;
+import com.tengfei.fairy.widget.view_viewgroup.ViewActivity;
 import com.tengfei.fairy.widget.WidgetActivity;
 import com.tengfei.fairy.widget.sign.SignNameActivity;
 
@@ -383,5 +384,14 @@ public class IntentUtils {
         Intent intent =new Intent(context, HandlerThreadActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
+    }
+
+    /**
+     * 自定义 view  viewGroup 测试
+     * @param activity
+     */
+    public static void toViewActivity(Activity activity) {
+        Intent intent =new Intent(activity, ViewActivity.class);
+        activity.startActivity(intent);
     }
 }

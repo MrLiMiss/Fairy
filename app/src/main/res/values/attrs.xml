@@ -17,4 +17,11 @@
         <attr name="textColor" format="color"/>
         <attr name="textSize" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="MyView">
+        <attr name="my_text" format="string"/>
+        <attr name="my_textColor" format="color"/>
+        <attr name="my_textSize" format="dimension"/>
+    </declare-styleable>
+
 </resources>
