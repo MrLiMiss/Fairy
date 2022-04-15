@@ -14,6 +14,11 @@
         android:id="@+id/tv_rxjava_base"
         style="@style/SortTextView"
         android:text="rxjava基础"/>
+
+    <TextView
+        android:id="@+id/tv_operation"
+        style="@style/SortTextView"
+        android:text="操作符相关"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,11 +36,6 @@
             android:text="其他操作符"
             style="@style/testButton"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_operation"
-        style="@style/SortTextView"
-        android:text="操作符相关"/>
     <TextView
         android:id="@+id/tv_function"
         style="@style/SortTextView"
@@ -45,10 +45,65 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btn_operate_thread"
+            android:id="@+id/btn_function_thread"
             android:text="线程调度"
             android:textColor="@color/color_5184FA"
             style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_delay"
+            android:text="delay()"
+            android:textColor="@color/color_5184FA"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_do"
+            android:text="do()生命周期"
+            android:textColor="@color/color_5184FA"
+            style="@style/testButton"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_function_onErrorReturn"
+            android:text="onErrorReturn（）"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_onErrorResumeNext"
+            android:text="onErrorResumeNext()"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_onExceptionResumeNext"
+            android:text="onExceptionResumeNext()"
+            style="@style/testButton"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_function_retry"
+            android:text="retry（）"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_retryutils"
+            android:text="retryUtils()"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_retrywhen"
+            android:text="retryWhen()"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_repeat"
+            android:text="repeat()"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_function_repeatwhen"
+            android:text="repeatwhen()"
+            style="@style/testButton"/>
+
     </LinearLayout>
 
     <TextView
@@ -74,6 +129,34 @@
         <Button
             android:id="@+id/btn_operate_fromIterable"
             android:text="fromIterable（）"
+            style="@style/testButton"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_operate_defer"
+            android:text="defer（）延迟操作"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_operate_timer"
+            android:text="timer（）延迟指定时间"
+            style="@style/testButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_operate_interval"
+            android:text="interval（）间隔指定时间操作"
+            style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_operate_intervalRange"
+            android:text="intervalRange（）间隔指定时间操作"
             style="@style/testButton"/>
     </LinearLayout>
     <LinearLayout
