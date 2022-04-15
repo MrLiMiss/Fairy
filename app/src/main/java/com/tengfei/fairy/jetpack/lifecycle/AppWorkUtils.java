@@ -1,5 +1,7 @@
 package com.tengfei.fairy.jetpack.lifecycle;
 
+import android.animation.ValueAnimator;
+
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;

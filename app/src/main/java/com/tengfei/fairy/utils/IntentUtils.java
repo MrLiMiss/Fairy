@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
+import com.tengfei.fairy.RXJAVA.RxjavaActivity;
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.TripartyActivity;
 import com.tengfei.fairy.activity.myView.MyViewActivity;
@@ -392,6 +393,14 @@ public class IntentUtils {
      */
     public static void toViewActivity(Activity activity) {
         Intent intent =new Intent(activity, ViewActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**
+     * @param activity Rxjava 测试
+     */
+    public static void toRxJavaActivity(Activity activity) {
+        Intent intent =new Intent(activity, RxjavaActivity.class);
         activity.startActivity(intent);
     }
 }

@@ -95,6 +95,10 @@
             android:id="@+id/btn_jetpack"
             android:text="JetPack"
             style="@style/testButton"/>
+        <Button
+            android:id="@+id/btn_rxjava"
+            android:text="rxjava"
+            style="@style/testButton"/>
     </LinearLayout>
 
 </LinearLayout>
