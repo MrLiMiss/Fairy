@@ -8,6 +8,9 @@ import com.tengfei.fairy.base.BaseActivity;
 import com.tengfei.fairy.utils.Logs;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -36,7 +39,7 @@ public class RxjavaActivity extends BaseActivity {
         return R.layout.activity_rxjava;
     }
 
-    @OnClick({R.id.btn_divide, R.id.btn_rxjava_link,R.id.btn_operate_thread})
+    @OnClick({R.id.btn_divide, R.id.btn_rxjava_link,R.id.btn_operate_thread,R.id.btn_operate_just,R.id.btn_operate_fromArray,R.id.btn_operate_fromIterable})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_divide://分别创建调用
@@ -47,9 +50,137 @@ public class RxjavaActivity extends BaseActivity {
                 break;
             case R.id.btn_operate_thread://线程调度
                 operateThread();
+                break;
+            case R.id.btn_operate_just:
+                operateJust();//创建操作符 快速创建just（）
+                break;
+            case R.id.btn_operate_fromArray://创建操作符fromArray（）数组
+                createFromArray();
+            case R.id.btn_operate_fromIterable://创建操作符fromIterable（）链表
+                createFromIterable();
+                break;
             default:
                 break;
         }
+    }
+
+    /**
+     * 创建操作符fromIterable（）链表
+     */
+    private void createFromIterable() {
+        /*
+         * 快速发送集合
+         **/
+// 1. 设置一个集合
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+// 2. 通过fromIterable()将集合中的对象 / 数据发送出去
+        Observable.fromIterable(list)
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Logs.d(TAG, "开始采用subscribe连接");
+                    }
+
+                    @Override
+                    public void onNext(Integer value) {
+                        Logs.d(TAG, "接收到了事件"+ value  );
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Logs.d(TAG, "对Error事件作出响应");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Logs.d(TAG, "对Complete事件作出响应");
+                    }
+                });
+
+
+
+
+    }
+
+    /**
+     * 创建操作符 fromArray（）
+     * 1、 快速创建1个被观察者对象（Observable）
+     * 2、发送事件的特点：直接发送 传入的数组数据
+     * 3、会将数组中的数据转换为Observable对象
+     */
+    private void createFromArray() {
+        // 1. 设置需要传入的数组
+        Integer[] items = { 0, 1, 2, 3, 4 };
+
+        // 2. 创建被观察者对象（Observable）时传入数组
+        // 在创建后就会将该数组转换成Observable & 发送该对象中的所有数据
+        Observable.fromArray(items)
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Logs.d(TAG, "开始采用subscribe连接");
+                    }
+
+                    @Override
+                    public void onNext(Integer value) {
+                        Logs.d(TAG, "接收到了事件"+ value  );
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Logs.d(TAG, "对Error事件作出响应");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Logs.d(TAG, "对Complete事件作出响应");
+                    }
+
+                });
+    }
+
+
+
+    /**
+     * 创建操作符 快速创建 just（）
+     * 1、快速创建1个被观察者对象（Observable）
+     * 2、发送事件的特点：直接发送 传入的事件
+     * 3、最多发送10个事件
+     */
+    private void operateJust() {
+
+        // 1. 创建时传入整型1、2、3、4
+        // 在创建后就会发送这些对象，相当于执行了onNext(1)、onNext(2)、onNext(3)、onNext(4)
+        Observable.just(1,2,3,4)
+                // 至此，一个Observable对象创建完毕，以下步骤仅为展示一个完整demo，可以忽略
+                // 2. 通过通过订阅（subscribe）连接观察者和被观察者
+                // 3. 创建观察者 & 定义响应事件的行为
+                .subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                Logs.d(TAG, "开始采用subscribe连接");
+            }
+                    // 默认最先调用复写的 onSubscribe（）
+            @Override
+            public void onNext(@NonNull Integer integer) {
+                Logs.d(TAG, "接收到了事件"+ integer  );
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Logs.d(TAG, "对Error事件作出响应");
+            }
+
+            @Override
+            public void onComplete() {
+                Logs.d(TAG, "对Complete事件作出响应");
+            }
+        });
+
     }
 
     /**
@@ -78,22 +209,22 @@ public class RxjavaActivity extends BaseActivity {
 
             @Override
             public void onSubscribe(Disposable d) {
-                Log.d(TAG, "开始采用subscribe连接");
-                Log.d(TAG, " 观察者 Observer的工作线程是: " + Thread.currentThread().getName());
+                Logs.d(TAG, "开始采用subscribe连接");
+                Logs.d(TAG, " 观察者 Observer的工作线程是: " + Thread.currentThread().getName());
                 // 打印验证
 
             }
             @Override
             public void onNext(Integer value) {
-                Log.d(TAG, "对Next事件"+ value +"作出响应"  );
+                Logs.d(TAG, "对Next事件"+ value +"作出响应"  );
             }
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "对Error事件作出响应");
+                Logs.d(TAG, "对Error事件作出响应");
             }
             @Override
             public void onComplete() {
-                Log.d(TAG, "对Complete事件作出响应");
+                Logs.d(TAG, "对Complete事件作出响应");
             }
         };
 
@@ -113,14 +244,14 @@ public class RxjavaActivity extends BaseActivity {
                 .doOnNext(new Consumer<Integer>() { // 生产事件
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        Log.d(TAG, "第1次观察者Observer的工作线程是： " + Thread.currentThread().getName());
+                        Logs.d(TAG, "第1次观察者Observer的工作线程是： " + Thread.currentThread().getName());
                     }
                 })
                 .observeOn(Schedulers.newThread()) // 第二次指定观察者线程 = 新的工作线程
                 .doOnNext(new Consumer<Integer>() { // 生产事件
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        Log.d(TAG, "第2次观察者Observer的工作线程是： " + Thread.currentThread().getName());
+                        Logs.d(TAG, "第2次观察者Observer的工作线程是： " + Thread.currentThread().getName());
                     }
                 })
                 .subscribe(observer); // 3. 最后再通过订阅（subscribe）连接观察者和被观察者
