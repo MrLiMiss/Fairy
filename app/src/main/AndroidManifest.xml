@@ -89,6 +89,7 @@
         <activity android:name=".muti_thread.handlerthreadTest.HandlerThreadActivity" />
         <activity android:name=".widget.view_viewgroup.ViewActivity" />
         <activity android:name=".RXJAVA.RxjavaActivity" />
+        <activity android:name=".RXJAVA.NetRepeatActivity" />
 
         <meta-data
             android:name="com.google.android.actions"

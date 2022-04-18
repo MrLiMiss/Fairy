@@ -47,17 +47,14 @@
         <Button
             android:id="@+id/btn_function_thread"
             android:text="线程调度"
-            android:textColor="@color/color_5184FA"
             style="@style/testButton"/>
         <Button
             android:id="@+id/btn_function_delay"
             android:text="delay()"
-            android:textColor="@color/color_5184FA"
             style="@style/testButton"/>
         <Button
             android:id="@+id/btn_function_do"
             android:text="do()生命周期"
-            android:textColor="@color/color_5184FA"
             style="@style/testButton"/>
 
     </LinearLayout>
@@ -171,6 +168,28 @@
             android:id="@+id/btn_rxjava_boolean"
             android:text="布尔操作符"
             style="@style/testButton"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_real"
+        style="@style/SortTextView"
+        android:text="项目实际应用："/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_thread"
+            style="@style/SortTextView"
+            android:text="线程切换控制"/>
+        <TextView
+            android:id="@+id/tv_repeat"
+            style="@style/SortTextView"
+            android:text="轮询"/>
+        <TextView
+            android:id="@+id/tv_net_error"
+            style="@style/SortTextView"
+            android:text="网络请求时的差错重试机制"/>
 
     </LinearLayout>
 

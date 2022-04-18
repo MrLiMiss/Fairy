@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.tengfei.fairy.R;
 import com.tengfei.fairy.base.BaseActivity;
+import com.tengfei.fairy.utils.IntentUtils;
 import com.tengfei.fairy.utils.Logs;
 
 
@@ -49,7 +50,8 @@ public class RxjavaActivity extends BaseActivity {
     }
 
     @OnClick({R.id.btn_divide, R.id.btn_rxjava_link,R.id.btn_function_thread,R.id.btn_operate_just,R.id.btn_operate_fromArray,R.id.btn_operate_fromIterable,R.id.btn_operate_defer,R.id.btn_operate_timer,R.id.btn_operate_interval,R.id.btn_operate_intervalRange
-    ,R.id.btn_function_delay,R.id.btn_function_do,R.id.btn_function_onErrorReturn,R.id.btn_function_onErrorResumeNext,R.id.btn_function_retry,R.id.btn_function_retryutils,R.id.btn_function_retrywhen,R.id.btn_function_repeat,R.id.btn_function_repeatwhen})
+    ,R.id.btn_function_delay,R.id.btn_function_do,R.id.btn_function_onErrorReturn,R.id.btn_function_onErrorResumeNext,R.id.btn_function_retry,R.id.btn_function_retryutils,R.id.btn_function_retrywhen,R.id.btn_function_repeat,R.id.btn_function_repeatwhen
+    ,R.id.tv_thread,R.id.tv_repeat,R.id.tv_net_error})
     void click(View view) {
         switch (view.getId()) {
             case R.id.btn_divide://分别创建调用
@@ -93,6 +95,7 @@ public class RxjavaActivity extends BaseActivity {
                 break;
             case R.id.btn_operate_fromArray://创建操作符fromArray（）数组
                 createFromArray();
+                break;
             case R.id.btn_operate_fromIterable://创建操作符fromIterable（）链表
                 createFromIterable();
                 break;
@@ -108,10 +111,34 @@ public class RxjavaActivity extends BaseActivity {
             case R.id.btn_operate_intervalRange://每隔指定时间 就发送 事件
                 createIntervalRange();
                 break;
+            case R.id.tv_thread://线程调度中使用
+                operateThread();
+                Logs.d(TAG,"线程切换");
+                break;
+            case R.id.tv_repeat://轮询
+                reallRepet();
+                break;
+            case R.id.tv_net_error://网络错误重试
+                netErrorRepet();
+                break;
 
             default:
                 break;
         }
+    }
+
+    /**
+     * 网络错误 重试
+     */
+    private void netErrorRepet() {
+    }
+
+    /**
+     *     项目应用轮询：https://www.jianshu.com/p/dbeaaa4afad5
+     *   （有条件）网络请求轮询
+     */
+    private void reallRepet() {
+        IntentUtils.toNetRepeat(activity);//网络轮询
     }
 
     /**

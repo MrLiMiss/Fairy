@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
+import com.tengfei.fairy.RXJAVA.NetRepeatActivity;
 import com.tengfei.fairy.RXJAVA.RxjavaActivity;
 import com.tengfei.fairy.activity.MainActivity;
 import com.tengfei.fairy.activity.TripartyActivity;
@@ -401,6 +402,15 @@ public class IntentUtils {
      */
     public static void toRxJavaActivity(Activity activity) {
         Intent intent =new Intent(activity, RxjavaActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**
+     * 结合Retrofit RxJava 网络轮询（有条件）
+     * @param activity
+     */
+    public static void toNetRepeat(Activity activity) {
+        Intent intent =new Intent(activity, NetRepeatActivity.class);
         activity.startActivity(intent);
     }
 }
