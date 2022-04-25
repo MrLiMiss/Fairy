@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
+import androidx.fragment.app.FragmentActivity;
+
 import com.tengfei.fairy.RXJAVA.NetRepeatActivity;
 import com.tengfei.fairy.RXJAVA.RxjavaActivity;
 import com.tengfei.fairy.activity.MainActivity;
@@ -15,6 +17,8 @@ import com.tengfei.fairy.activity.myView.MyViewActivity;
 import com.tengfei.fairy.androidBase.bitmap.BitmapTestActivity;
 import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
+import com.tengfei.fairy.animation.AnimationActivity;
+import com.tengfei.fairy.animation.DrawbleanActivity;
 import com.tengfei.fairy.anr.ANRActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
 import com.tengfei.fairy.event_conflict.different.in.InEventActivity;
@@ -411,6 +415,24 @@ public class IntentUtils {
      */
     public static void toNetRepeat(Activity activity) {
         Intent intent =new Intent(activity, NetRepeatActivity.class);
+        activity.startActivity(intent);
+    }
+
+
+    /**
+     * 帧动画
+     * @param animationActivity
+     */
+    public static void toDrawblean(AnimationActivity animationActivity) {
+        Intent intent =new Intent(animationActivity, DrawbleanActivity.class);
+        animationActivity.startActivity(intent);
+    }
+
+    /** 跳转到动画相关
+     * @param activity
+     */
+    public static void toAnima(Activity activity) {
+        Intent intent =new Intent(activity, AnimationActivity.class);
         activity.startActivity(intent);
     }
 }

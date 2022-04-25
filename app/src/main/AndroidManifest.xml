@@ -51,7 +51,7 @@
         <activity android:name=".activity.myView.MyViewActivity" />
         <activity
             android:name=".androidBase.lificycle.Aactivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTask" />
         <activity
             android:name=".androidBase.lificycle.Bactivity"
             android:launchMode="standard" />
@@ -90,6 +90,7 @@
         <activity android:name=".widget.view_viewgroup.ViewActivity" />
         <activity android:name=".RXJAVA.RxjavaActivity" />
         <activity android:name=".RXJAVA.NetRepeatActivity" />
+        <activity android:name=".animation.DrawbleanActivity" />
 
         <meta-data
             android:name="com.google.android.actions"
