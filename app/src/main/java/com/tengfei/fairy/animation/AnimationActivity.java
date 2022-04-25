@@ -40,6 +40,8 @@ public class AnimationActivity extends BaseMvpActivity {
                 //属性动画
             case R.id.btn_alphaan:
                 //补间动画
+                IntentUtils.toAlpAnin(this);
+                break;
             default:
                 break;
         }

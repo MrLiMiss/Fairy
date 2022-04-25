@@ -19,6 +19,7 @@ import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
 import com.tengfei.fairy.animation.AnimationActivity;
 import com.tengfei.fairy.animation.DrawbleanActivity;
+import com.tengfei.fairy.animation.TweenActivity;
 import com.tengfei.fairy.anr.ANRActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
 import com.tengfei.fairy.event_conflict.different.in.InEventActivity;
@@ -433,6 +434,15 @@ public class IntentUtils {
      */
     public static void toAnima(Activity activity) {
         Intent intent =new Intent(activity, AnimationActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**
+     * 跳转到补间动画
+     * @param activity
+     */
+    public static void toAlpAnin(Activity activity) {
+        Intent intent =new Intent(activity, TweenActivity.class);
         activity.startActivity(intent);
     }
 }
