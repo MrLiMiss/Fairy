@@ -1,5 +1,7 @@
-package com.tengfei.fairy.animation.valueAnim;
+package com.tengfei.fairy.animation.objAnim;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,21 +10,26 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.tengfei.fairy.animation.valueAnim.Point;
+import com.tengfei.fairy.animation.valueAnim.PointEvaluator;
+
 /**
- * @ Description :自定义view  通过point的动画控制，完成整个view的动画效果
+ * @ Description :结合位置改变point 颜色 （改变object属性）
  * @ Author 李腾飞
- * @ Time 2022/4/26   11:44 AM
+ * @ Time 2022/4/26   11:57 AM
  * @ Version :
  */
-public class MyAnimView extends View {
+public class MyAnimView2 extends View {
 
     public static final float RADIUS = 50f;
 
     private Point currentPoint;
 
+    private String color;
+
     private Paint mPaint;
 
-    public MyAnimView(Context context, AttributeSet attrs) {
+    public MyAnimView2(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.BLUE);
@@ -39,6 +46,18 @@ public class MyAnimView extends View {
         }
     }
 
+
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+        mPaint.setColor(Color.parseColor(color));
+        invalidate();
+    }
+
     private void drawCircle(Canvas canvas) {
         float x = currentPoint.getX();
         float y = currentPoint.getY();
@@ -48,7 +67,6 @@ public class MyAnimView extends View {
     private void startAnimation() {
         Point startPoint = new Point(RADIUS, RADIUS);
         Point endPoint = new Point(getWidth() - RADIUS, getHeight() - RADIUS);
-        // PointEvaluator 估值器完成从开始值到结束值 ，如何过度
         ValueAnimator anim = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -57,8 +75,11 @@ public class MyAnimView extends View {
                 invalidate();
             }
         });
-        anim.setDuration(5000);
-        anim.start();
+        ObjectAnimator anim2 = ObjectAnimator.ofObject(this, "color", new ColorEvaluator(),
+                "#0000FF", "#FF0000");
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.play(anim).with(anim2);
+        animSet.setDuration(5000);
+        animSet.start();
     }
-
 }
