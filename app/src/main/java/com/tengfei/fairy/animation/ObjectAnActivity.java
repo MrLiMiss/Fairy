@@ -28,7 +28,7 @@ public class ObjectAnActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.btn_obj_scale,R.id.btn_obj_rota,R.id.btn_obj_alph,R.id.btn_obj_trans,R.id.tv_obj_set})
+    @OnClick({R.id.btn_obj_scale,R.id.btn_obj_rota,R.id.btn_obj_alph,R.id.btn_obj_trans,R.id.tv_obj_set,R.id.tv_value_anim_senior})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_obj_scale://缩放
@@ -44,11 +44,20 @@ public class ObjectAnActivity extends BaseActivity {
                 break;
             case R.id.tv_obj_set://属性动画组合
                 animSet();
+            case R.id.tv_value_anim_senior:// ValueAnimator 高级用法
+                valueAnimSerior();
                 break;
             default:
                 break;
 
         }
+    }
+
+    /**
+     * ValueAnimator 高级用法
+     */
+    private void valueAnimSerior() {
+
     }
 
     /**

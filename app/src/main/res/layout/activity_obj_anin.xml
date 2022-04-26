@@ -71,6 +71,14 @@
                 android:id="@+id/tv_obj_set"
                 android:text="@string/obj_anim_set"/>
 
+            <TextView
+                style="@style/SortTextView"
+                android:id="@+id/tv_value_anim_senior"
+                android:text="ValueAnimator的高级用法"/>
+            <com.tengfei.fairy.animation.valueAnim.MyAnimView
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
         </LinearLayout>
 
 
