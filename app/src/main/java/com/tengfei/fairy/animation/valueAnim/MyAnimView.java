@@ -47,6 +47,7 @@ public class MyAnimView extends View {
 
     private void startAnimation() {
         Point startPoint = new Point(RADIUS, RADIUS);
+        //getWidth（）是MyAnimView的宽。point在MyAnimView中draw（）
         Point endPoint = new Point(getWidth() - RADIUS, getHeight() - RADIUS);
         // PointEvaluator 估值器完成从开始值到结束值 ，如何过度
         ValueAnimator anim = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
