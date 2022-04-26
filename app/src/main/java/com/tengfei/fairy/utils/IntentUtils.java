@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
-import androidx.fragment.app.FragmentActivity;
-
 import com.tengfei.fairy.RXJAVA.NetRepeatActivity;
 import com.tengfei.fairy.RXJAVA.RxjavaActivity;
 import com.tengfei.fairy.activity.MainActivity;
@@ -19,6 +17,7 @@ import com.tengfei.fairy.androidBase.lificycle.Aactivity;
 import com.tengfei.fairy.androidBase.lificycle.AboutActivity;
 import com.tengfei.fairy.animation.AnimationActivity;
 import com.tengfei.fairy.animation.DrawbleanActivity;
+import com.tengfei.fairy.animation.ObjectAnActivity;
 import com.tengfei.fairy.animation.TweenActivity;
 import com.tengfei.fairy.anr.ANRActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
@@ -443,6 +442,14 @@ public class IntentUtils {
      */
     public static void toAlpAnin(Activity activity) {
         Intent intent =new Intent(activity, TweenActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**跳转属性动画
+     * @param activity
+     */
+    public static void ValueAnin(Activity activity) {
+        Intent intent =new Intent(activity, ObjectAnActivity.class);
         activity.startActivity(intent);
     }
 }

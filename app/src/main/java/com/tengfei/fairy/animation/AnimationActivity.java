@@ -38,6 +38,8 @@ public class AnimationActivity extends BaseMvpActivity {
                 break;
             case R.id.btn_rotatean:
                 //属性动画
+                IntentUtils.ValueAnin(this);
+                break;
             case R.id.btn_alphaan:
                 //补间动画
                 IntentUtils.toAlpAnin(this);

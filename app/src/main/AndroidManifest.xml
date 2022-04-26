@@ -92,6 +92,7 @@
         <activity android:name=".RXJAVA.NetRepeatActivity" />
         <activity android:name=".animation.DrawbleanActivity" />
         <activity android:name=".animation.TweenActivity" />
+        <activity android:name=".animation.ObjectAnActivity" />
 
         <meta-data
             android:name="com.google.android.actions"
