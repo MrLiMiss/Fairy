@@ -32,6 +32,13 @@
                 android:layout_height="200dp" />
             <TextView
                 style="@style/SortTextView"
+                android:id="@+id/tv_obj_interpolator_senior"
+                android:text="插值器（补间器）用法"/>
+            <com.tengfei.fairy.animation.objAnim.MyAnimView3
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <TextView
+                style="@style/SortTextView"
                 android:layout_margin="@dimen/dp_10"
                 android:text="属性动画基础功能"/><LinearLayout
             android:layout_width="match_parent"

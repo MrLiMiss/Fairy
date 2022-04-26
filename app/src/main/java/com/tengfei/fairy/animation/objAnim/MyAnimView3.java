@@ -1,26 +1,27 @@
 package com.tengfei.fairy.animation.objAnim;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.animation.BounceInterpolator;
+        import android.animation.AnimatorSet;
+        import android.animation.ObjectAnimator;
+        import android.animation.ValueAnimator;
+        import android.content.Context;
+        import android.graphics.Canvas;
+        import android.graphics.Color;
+        import android.graphics.Paint;
+        import android.util.AttributeSet;
+        import android.view.View;
+        import android.view.animation.AccelerateInterpolator;
+        import android.view.animation.BounceInterpolator;
 
-import com.tengfei.fairy.animation.valueAnim.Point;
-import com.tengfei.fairy.animation.valueAnim.PointEvaluator;
+        import com.tengfei.fairy.animation.valueAnim.Point;
+        import com.tengfei.fairy.animation.valueAnim.PointEvaluator;
 
 /**
- * @ Description :结合位置改变point 颜色 （改变object属性）
+ * @ Description :插值器
  * @ Author 李腾飞
  * @ Time 2022/4/26   11:57 AM
  * @ Version :
  */
-public class MyAnimView2 extends View {
+public class MyAnimView3 extends View {
 
     public static final float RADIUS = 50f;
 
@@ -30,7 +31,7 @@ public class MyAnimView2 extends View {
 
     private Paint mPaint;
 
-    public MyAnimView2(Context context, AttributeSet attrs) {
+    public MyAnimView3(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.BLUE);
@@ -66,8 +67,8 @@ public class MyAnimView2 extends View {
     }
 
     private void startAnimation() {
-        Point startPoint = new Point(RADIUS, RADIUS);
-        Point endPoint = new Point(getWidth() - RADIUS, getHeight() - RADIUS);
+        Point startPoint = new Point(getWidth() / 2, RADIUS);
+        Point endPoint = new Point(getWidth() / 2, getHeight() - RADIUS);
         ValueAnimator anim = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -76,11 +77,13 @@ public class MyAnimView2 extends View {
                 invalidate();
             }
         });
-        ObjectAnimator anim2 = ObjectAnimator.ofObject(this, "color", new ColorEvaluator(),
-                "#0000FF", "#FF0000");
-        AnimatorSet animSet = new AnimatorSet();
-        animSet.play(anim).with(anim2);
-        animSet.setDuration(5000);
-        animSet.start();
+        //线性加速补间器
+//        anim.setInterpolator(new AccelerateInterpolator(2f));
+        //自由落体补间器
+        anim.setInterpolator(new BounceInterpolator());
+        anim.setDuration(2000);
+        anim.start();
+
     }
 }
+
