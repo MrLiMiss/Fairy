@@ -28,5 +28,6 @@
     <string name="asynctask">AsyncTaskDemo</string>
     <string name="sockettest">Socket通信测试Demo</string>
     <string name="acceptsocket">连接Socket</string>
+    <string name="obj_anim_set">属性组合动画：从屏幕外移动进屏幕，后开始旋转360度，旋转的同时进行淡入淡出</string>
 
 </resources>

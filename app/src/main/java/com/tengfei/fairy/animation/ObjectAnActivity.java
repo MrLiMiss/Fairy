@@ -1,5 +1,6 @@
 package com.tengfei.fairy.animation;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.view.View;
@@ -27,7 +28,7 @@ public class ObjectAnActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.btn_obj_scale,R.id.btn_obj_rota,R.id.btn_obj_alph,R.id.btn_obj_trans})
+    @OnClick({R.id.btn_obj_scale,R.id.btn_obj_rota,R.id.btn_obj_alph,R.id.btn_obj_trans,R.id.tv_obj_set})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_obj_scale://缩放
@@ -38,13 +39,36 @@ public class ObjectAnActivity extends BaseActivity {
             case R.id.btn_obj_alph://透明度
                 animAlph();
                 break;
-            case R.id.btn_obj_trans:
+            case R.id.btn_obj_trans://位移
                 animTrans();
+                break;
+            case R.id.tv_obj_set://属性动画组合
+                animSet();
                 break;
             default:
                 break;
 
         }
+    }
+
+    /**
+     * 属性动画组合
+     *       after(Animator anim)   将现有动画插入到传入的动画之后执行
+     *       after(long delay)   将现有动画延迟指定毫秒后执行
+     *       before(Animator anim)   将现有动画插入到传入的动画之前执行
+     *       with(Animator anim)   将现有动画和传入的动画同时执行
+     *
+     *       TextView先从屏幕外移动进屏幕，然后开始旋转360度，旋转的同时进行淡入淡出操作
+     *
+     */
+    private void animSet() {
+        ObjectAnimator moveIn = ObjectAnimator.ofFloat(mTvProperty, "translationX", -500f, 0f);
+        ObjectAnimator rotate = ObjectAnimator.ofFloat(mTvProperty, "rotation", 0f, 360f);
+        ObjectAnimator fadeInOut = ObjectAnimator.ofFloat(mTvProperty, "alpha", 1f, 0f, 1f);
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.play(rotate).with(fadeInOut).after(moveIn);
+        animSet.setDuration(5000);
+        animSet.start();
     }
 
     /**
