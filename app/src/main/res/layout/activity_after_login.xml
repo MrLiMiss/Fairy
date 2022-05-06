@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:id="@+id/view_after_login_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hideSearch="true"
+        app:hideLine="true"
+        app:titleStr="模拟登录成功后逻辑校验 "/>
+    <TextView
+        android:id="@+id/tv_detail_often"
+        style="@style/SortTextView"
+        android:text="常用设备校验"/>
+    <TextView
+        android:id="@+id/tv_detail_nine_element"
+        style="@style/SortTextView"
+        android:text="9要素处理"/>
+    <TextView
+        android:id="@+id/tv_detail_out_of_date"
+        style="@style/SortTextView"
+        android:text="身份证过期处理"/>
+</LinearLayout>

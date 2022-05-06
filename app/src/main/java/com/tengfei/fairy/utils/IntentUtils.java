@@ -20,6 +20,8 @@ import com.tengfei.fairy.animation.DrawbleanActivity;
 import com.tengfei.fairy.animation.ObjectAnActivity;
 import com.tengfei.fairy.animation.TweenActivity;
 import com.tengfei.fairy.anr.ANRActivity;
+import com.tengfei.fairy.designPattern.PatternActivity;
+import com.tengfei.fairy.designPattern.chanResponsibily.ChainOfLoginActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
 import com.tengfei.fairy.event_conflict.different.in.InEventActivity;
 import com.tengfei.fairy.event_conflict.different.out.OutEventActivity;
@@ -450,6 +452,22 @@ public class IntentUtils {
      */
     public static void ValueAnin(Activity activity) {
         Intent intent =new Intent(activity, ObjectAnActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /** 跳转到设计模式
+     * @param activity
+     */
+    public static void toPatternActivity(Activity activity) {
+        Intent intent =new Intent(activity, PatternActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**跳转到责任链模式
+     * @param activity
+     */
+    public static void toChainResponsibilyActivity(Activity activity) {
+        Intent intent =new Intent(activity, ChainOfLoginActivity.class);
         activity.startActivity(intent);
     }
 }

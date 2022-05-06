@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:id="@+id/view_actionbar_chain_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hideSearch="true"
+        app:hideLine="true"
+        app:titleStr="责任链模式处理登录 "/>
+    <TextView
+        android:id="@+id/tv_detail_login"
+        style="@style/SortTextView"
+        android:text="登录结果处理"/>
+</LinearLayout>

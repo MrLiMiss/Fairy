@@ -93,6 +93,9 @@
         <activity android:name=".animation.DrawbleanActivity" />
         <activity android:name=".animation.TweenActivity" />
         <activity android:name=".animation.ObjectAnActivity" />
+        <activity android:name=".designPattern.chanResponsibily.AfterLoginCheckActivity" />
+        <activity android:name=".designPattern.chanResponsibily.ChainOfLoginActivity" />
+        <activity android:name=".designPattern.PatternActivity" />
 
         <meta-data
             android:name="com.google.android.actions"

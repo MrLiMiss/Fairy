@@ -80,7 +80,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom,R.id.btn_ANR,R.id.btn_event,R.id.btn_viewdrow,R.id.tv_animation})
+    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom,R.id.btn_ANR,R.id.btn_event,R.id.btn_viewdrow,R.id.tv_animation,R.id.tv_design_pattern})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_base_android://Android 基础知识
@@ -115,6 +115,10 @@ public class HonorFragment extends BaseFragment {
                 break;
             case R.id.btn_event:
                 IntentUtils.toEventActivity(getContext());
+                break;
+            case R.id.tv_design_pattern://设计模式
+                IntentUtils.toPatternActivity(getActivity());
+                break;
 //            case R.id.tv_animation:
 //                Intent intent=new Intent(getContext(), AnimationActivity.class);
 //                break;

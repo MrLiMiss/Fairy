@@ -1,9 +1,8 @@
 package com.tengfei.fairy.designPattern.strategy;
 
-import org.json.JSONObject;
 
 /**
- * @ Description :包装策略的类
+ * @ Description :包装策略的类（运行上下文）
  * @ Author 李腾飞
  * @ Time 2022/5/5   10:27 AM
  * @ Version :

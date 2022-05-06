@@ -35,7 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (getContentLayout() != 0) {
             setContentView(getContentLayout());
         }
-        Logs.i("lifecycle-BaseActivity", "onCreate()");
         activity = this;
         ButterKnife.bind(this);
         initGui();
@@ -123,7 +122,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void startActivity(Intent intent) {
         // 防止连续点击
         if (isFastDoubleClick()) {
-            Logs.d("BaseActivity", "startActivity() 重复调用");
             return;
         }
         super.startActivity(intent);
@@ -149,7 +147,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         // 防止连续点击
         if (isFastDoubleClick()) {
-            Logs.d("BaseActivity", "startActivity() 重复调用");
             return;
         }
     }
@@ -158,32 +155,27 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onStart() {
         super.onStart();
-        Logs.i("lifecycle-BaseActivity", "onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Logs.i("lifecycle-BaseActivity", "onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Logs.i("lifecycle-BaseActivity", "onPause()");
     }
 
 
     @Override
     protected void onStop() {
         super.onStop();
-        Logs.i("lifecycle-BaseActivity", "onStop()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Logs.i("lifecycle-BaseActivity", "onDestroy()");
     }
 
 

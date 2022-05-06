@@ -1,4 +1,4 @@
-package com.tengfei.fairy.proxy;
+package com.tengfei.fairy.designPattern.proxy.dynamicproxy;
 
 /**
  * @ Description :代理-静态代理
