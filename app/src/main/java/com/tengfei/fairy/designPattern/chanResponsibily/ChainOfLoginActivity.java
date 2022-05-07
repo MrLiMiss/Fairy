@@ -69,7 +69,7 @@ public class ChainOfLoginActivity extends BaseActivity {
     @Override
     protected void initData() {
         userInfoVo = new UserInfoVo("111","020","often","fullNineElement",true);
-        userInfoVo.setIsOften("notOften");//非常用设备
+//        userInfoVo.setIsOften("notOften");//非常用设备
         userInfoVo.setNineElement("incomplete");//就要素不完整
 
     }

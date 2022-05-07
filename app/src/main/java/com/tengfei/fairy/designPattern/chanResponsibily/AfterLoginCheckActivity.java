@@ -41,16 +41,16 @@ public class AfterLoginCheckActivity extends BaseActivity {
                 activity.finish();
                 break;
             case R.id.tv_detail_nine_element:
+                Logs.d(TAG, "ltf-九要素校验完毕，发送EventBus");
                 UserInfoVo userInfoVo2 = new UserInfoVo("111", "020", "often", "NineElement", true);
                 userInfoVo2.setNineElement("fullNineElement");
                 EventBus.getDefault().post(userInfoVo2);
-                Logs.d(TAG, "ltf-九要素校验完毕，发送EventBus");
                 break;
             case R.id.tv_detail_out_of_date:
+                Logs.d(TAG, "ltf-身份证信息更新完毕，发送EventBus");
                 UserInfoVo userInfoVo3 = new UserInfoVo("111", "020", "often", "NineElement", true);
                 userInfoVo3.setOutOfDate(false);
                 EventBus.getDefault().post(userInfoVo3);
-                Logs.d(TAG, "ltf-身份证信息更新完毕，发送EventBus");
                 break;
             default:
                 break;

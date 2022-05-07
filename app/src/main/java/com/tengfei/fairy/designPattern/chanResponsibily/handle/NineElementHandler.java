@@ -18,11 +18,14 @@ public class NineElementHandler extends ChainHandler {
     public static String TAG= NineElementHandler.class.getSimpleName();
     @Override
     public void handleRequest(Activity activity, UserInfoVo userInfoVo) {
+        Logs.d(TAG,"ltf-九要素校验开始处理");
+
         if (!userInfoVo.getNineElement().equals("fullNineElement")){
+            Logs.d(TAG,"ltf-九要素校验不通过，进行进一步处理补充");
             Intent intent=new Intent(activity, AfterLoginCheckActivity.class);
             activity.startActivity(intent);
-            Logs.d(TAG,"ltf-九要素校验开始处理");
         }else {
+            Logs.d(TAG,"ltf-9要素校验通过");
             if (getNext()!=null){
                 getNext().handleRequest(activity,userInfoVo);
             }else {

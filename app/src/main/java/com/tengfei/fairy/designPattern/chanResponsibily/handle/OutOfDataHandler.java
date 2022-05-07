@@ -19,11 +19,13 @@ public class OutOfDataHandler extends ChainHandler {
 
     @Override
     public void handleRequest(Activity activity, UserInfoVo userInfoVo) {
+        Logs.d(TAG, "ltf-身份证过期校验开始处理");
         if (userInfoVo.isOutOfDate()) {//身份证过期
+            Logs.d(TAG, "ltf-身份证过期校验进一步补充处理");
             Intent intent = new Intent(activity, AfterLoginCheckActivity.class);
             activity.startActivity(intent);
-            Logs.d(TAG, "ltf-身份证过期校验开始处理");
         } else {
+            Logs.d(TAG, "ltf-身份证过期校验通过");
             if (getNext() != null) {
                   getNext().handleRequest(activity,userInfoVo);
             } else {

@@ -19,11 +19,13 @@ public class LoginOftenHandler extends ChainHandler {
 
     @Override
     public void handleRequest(Activity activity, UserInfoVo userInfoVo) {
-         if (!userInfoVo.getIsOften().equals("Often")){
-             Logs.d(TAG,"ltf-常用设备校验开始处理");
+        Logs.d(TAG,"ltf-常用设备校验开始处理");
+         if (!userInfoVo.getIsOften().equals("often")){
+             Logs.d(TAG,"ltf-常用设备校验不通过，进一步处理开始");
              Intent intent=new Intent(activity, AfterLoginCheckActivity.class);
              activity.startActivity(intent);
          }else {
+             Logs.d(TAG,"ltf-常用设备校验通过");
              if (getNext()!=null){
                  getNext().handleRequest(activity,userInfoVo);
              }else {
