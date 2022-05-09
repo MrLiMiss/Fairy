@@ -215,3 +215,17 @@
 -keep class com.bjrxtd.sdk.** {*;}
 -dontwarn com.bjrxtd.sdk.**
 -dontwarn -keep class com.bjrxtd.sdk.** {*;}
+
+# Gson
+-keepattributes Signature-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+# 使用Gson时需要配置Gson的解析对象及变量都不混淆。不然Gson会找不到变量。
+# 将下面替换成自己的实体类
+-keep class com.example.bean.** { *; }
+
+# Okio
+-dontwarn com.squareup.**
+-dontwarn okio.**
+-keep public class org.codehaus.* { *; }
+-keep public class java.nio.* { *; }
