@@ -82,7 +82,7 @@
         <activity android:name=".oom.singleIntense.SingleOOMActivity" />
         <activity android:name=".oom.singleIntense.LastActivity" />
         <activity android:name=".anr.ANRActivity" />
-        <activity android:name=".event_conflict.different.out.OutEventActivity" />
+        <activity android:name=".event_conflict.different.outevent.OutEventActivity" />
         <activity android:name=".event_conflict.EventActivity" />
         <activity android:name=".event_conflict.different.in.InEventActivity" />
         <activity android:name=".muti_thread.intentService.MyIntentServiceActivity" />

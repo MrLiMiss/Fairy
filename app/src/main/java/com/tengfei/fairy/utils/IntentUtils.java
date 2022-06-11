@@ -24,7 +24,7 @@ import com.tengfei.fairy.designPattern.PatternActivity;
 import com.tengfei.fairy.designPattern.chanResponsibily.ChainOfLoginActivity;
 import com.tengfei.fairy.event_conflict.EventActivity;
 import com.tengfei.fairy.event_conflict.different.in.InEventActivity;
-import com.tengfei.fairy.event_conflict.different.out.OutEventActivity;
+import com.tengfei.fairy.event_conflict.different.outevent.OutEventActivity;
 import com.tengfei.fairy.eventbus.EventBus2Activity;
 import com.tengfei.fairy.eventbus.EventBusActivity;
 import com.tengfei.fairy.androidBase.lificycle.ConfigChangeActivity;

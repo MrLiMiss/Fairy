@@ -16,12 +16,13 @@ import java.lang.reflect.Field;
 public class IntegerExample {
 
     public static void main(String[] args){
-        Integer a=1;
-        Integer b=2;
-        System.out.println("交换前：a="+a+",b="+b);
-//        swap(a,b);
-        swap2(a,b);
-        System.out.println("swap交换后：a="+a+",b="+b);
+//        Integer a=1;
+//        Integer b=2;
+//        System.out.println("交换前：a="+a+",b="+b);
+////        swap(a,b);
+//        swap2(a,b);
+//        System.out.println("swap交换后：a="+a+",b="+b);
+        test();
     }
 
     private static void swap(Integer a,Integer b){
@@ -49,6 +50,26 @@ public class IntegerExample {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+    }
+
+
+    public static void test1(){
+        int x=3;
+        int y=1;
+        if (x==y){
+            System.out.println("Equal");
+        }else {
+            System.out.println("notEqual");
+        }
+    }
+    public static void test(){
+        Integer x=null;
+        int y=3;
+        if (y==x){
+            System.out.println("Equal");
+        }else {
+            System.out.println("notEqual");
         }
     }
 }
