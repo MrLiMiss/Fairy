@@ -45,12 +45,15 @@ import com.tengfei.fairy.oom.singleIntense.SingleOOMActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
+import com.tengfei.fairy.sqlite.SqlActivity;
 import com.tengfei.fairy.touch.TouchDataActivity;
 import com.tengfei.fairy.widget.view_viewgroup.ViewActivity;
 import com.tengfei.fairy.widget.WidgetActivity;
 import com.tengfei.fairy.widget.sign.SignNameActivity;
 
 import static android.content.Context.BIND_AUTO_CREATE;
+
+import androidx.fragment.app.FragmentActivity;
 
 /**
  * @ Description :intent 跳转工具类
@@ -468,6 +471,15 @@ public class IntentUtils {
      */
     public static void toChainResponsibilyActivity(Activity activity) {
         Intent intent =new Intent(activity, ChainOfLoginActivity.class);
+        activity.startActivity(intent);
+    }
+
+    /**
+     * 跳转到 sql 测试页面
+     * @param activity
+     */
+    public static void toSqlActivity(Activity activity) {
+        Intent intent =new Intent(activity, SqlActivity.class);
         activity.startActivity(intent);
     }
 }

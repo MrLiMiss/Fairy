@@ -4,6 +4,14 @@ apply plugin: 'kotlin-android'
 def config = rootProject.ext.android
 
 android {
+    signingConfigs {
+        fairydebug {
+            storeFile file(isDebug)
+            storePassword '123123'
+            keyAlias '123123'
+            keyPassword '123123'
+        }
+    }
     compileSdkVersion config.compileSdkVersion
     buildToolsVersion config.buildToolsVersion
 

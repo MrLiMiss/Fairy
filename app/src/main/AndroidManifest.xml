@@ -96,6 +96,7 @@
         <activity android:name=".designPattern.chanResponsibily.AfterLoginCheckActivity" />
         <activity android:name=".designPattern.chanResponsibily.ChainOfLoginActivity" />
         <activity android:name=".designPattern.PatternActivity" />
+        <activity android:name=".sqlite.SqlActivity" />
 
         <meta-data
             android:name="com.google.android.actions"
