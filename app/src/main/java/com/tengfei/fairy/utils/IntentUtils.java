@@ -482,4 +482,12 @@ public class IntentUtils {
         Intent intent =new Intent(activity, SqlActivity.class);
         activity.startActivity(intent);
     }
+
+    /** 跳转到 Kotlin相关测试
+     * @param activity
+     */
+    public static void toKotlin(Activity activity) {
+//        Intent intent =new Intent(activity, KotlinActivity.class);
+//        activity.startActivity(intent);
+    }
 }

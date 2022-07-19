@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="我的Fragment"/>
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:text="我的Fragment"/>
+        <Button
+            android:id="@+id/bt_main_login"
+            android:text="去登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
+
 </LinearLayout>

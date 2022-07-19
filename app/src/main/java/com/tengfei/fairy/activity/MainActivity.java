@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
         mTabLayout = findViewById(R.id.tabLayout);
         mViewPager = findViewById(R.id.viewpager);
         initFragment(TAB_FRAGMENT, TAB_IMGS, TAB_TITLES);
-
+        initWindow();
 
     }
 

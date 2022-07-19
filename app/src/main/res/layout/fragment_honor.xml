@@ -57,6 +57,10 @@
         </LinearLayout>
             <TextView
                 style="@style/SortTextView"
+                android:id="@+id/tv_kotlin"
+                android:text="Kotlin"></TextView>
+            <TextView
+                style="@style/SortTextView"
                 android:id="@+id/tv_base_android"
                 android:text="基础知识"></TextView>
             <TextView
