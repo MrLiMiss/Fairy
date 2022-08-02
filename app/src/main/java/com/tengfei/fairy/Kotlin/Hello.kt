@@ -128,6 +128,7 @@ fun main(args: Array<String>) {    // 包级可见的函数，接受一个字符
     Hello().vars(1, 2, 3, 4, 5, 6, 7, 8)
     Hello().lambada()
     Hello().stringMode()
+    Hello().ranageTest(9)
 
 
 }
