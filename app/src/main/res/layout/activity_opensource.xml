@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tengfei.fairy.widget.ActionBarView
+        android:id="@+id/view_actionbar_triparty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hideSearch="true"
+        app:hideLine="true"
+        app:titleStr="开源组件"/>
+    <LinearLayout
+        android:id="@+id/ll_sanfang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_pdfview"
+            style="@style/testButton"
+            android:text="PDFView" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -42,6 +42,7 @@ import com.tengfei.fairy.muti_thread.handlerTest.HandlerActivity;
 import com.tengfei.fairy.muti_thread.handlerthreadTest.HandlerThreadActivity;
 import com.tengfei.fairy.muti_thread.intentService.MyIntentServiceActivity;
 import com.tengfei.fairy.oom.singleIntense.SingleOOMActivity;
+import com.tengfei.fairy.opensource.OpenSourceActivity;
 import com.tengfei.fairy.service.MusicService;
 import com.tengfei.fairy.service.MyIntentService;
 import com.tengfei.fairy.service.ServiceTestActivity;
@@ -489,5 +490,15 @@ public class IntentUtils {
     public static void toKotlin(Activity activity) {
 //        Intent intent =new Intent(activity, KotlinActivity.class);
 //        activity.startActivity(intent);
+    }
+
+    /**
+     * 跳转到开源组件相关
+     *
+     * @param activity
+     */
+    public static void toOpenSource(FragmentActivity activity) {
+        Intent intent = new Intent(activity, OpenSourceActivity.class);
+        activity.startActivity(intent);
     }
 }

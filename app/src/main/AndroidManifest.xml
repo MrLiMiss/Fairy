@@ -97,6 +97,7 @@
         <activity android:name=".designPattern.chanResponsibily.ChainOfLoginActivity" />
         <activity android:name=".designPattern.PatternActivity" />
         <activity android:name=".sqlite.SqlActivity" />
+        <activity android:name=".opensource.OpenSourceActivity" />
 
         <meta-data
             android:name="com.google.android.actions"

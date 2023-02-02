@@ -80,7 +80,7 @@ public class HonorFragment extends BaseFragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom,R.id.btn_ANR,R.id.btn_event,R.id.btn_viewdrow,R.id.tv_animation,R.id.tv_design_pattern,R.id.btn_sqlite,R.id.tv_kotlin})
+    @OnClick({R.id.btn_touch,R.id.tv_base_android,R.id.tv_widget,R.id.tv_triparty,R.id.btn_activity,R.id.test_test,R.id.btn_service,R.id.btn_manager,R.id.btn_muti_thread,R.id.tv_http,R.id.btn_jni,R.id.btn_oom,R.id.btn_ANR,R.id.btn_event,R.id.btn_viewdrow,R.id.tv_animation,R.id.tv_design_pattern,R.id.btn_sqlite,R.id.tv_kotlin,R.id.tv_open_source})
     void click(View view) {
         switch (view.getId()) {
             case R.id.tv_base_android://Android 基础知识
@@ -163,6 +163,9 @@ public class HonorFragment extends BaseFragment {
                 break;
             case R.id.tv_kotlin://Kotlin 相关
                 IntentUtils.toKotlin(getActivity());
+                break;
+            case R.id.tv_open_source://开源组件
+                IntentUtils.toOpenSource(getActivity());
                 break;
             default:
                 break;

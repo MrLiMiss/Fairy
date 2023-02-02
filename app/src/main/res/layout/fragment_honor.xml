@@ -63,17 +63,20 @@
                 style="@style/SortTextView"
                 android:id="@+id/tv_base_android"
                 android:text="基础知识"></TextView>
-            <TextView
-                android:id="@+id/tv_triparty"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/textview_background"
-                android:padding="5dp"
-                android:text="三方库相关"
-                android:textColor="@color/colorAccent"
-                android:textSize="15sp" />
-
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/SortTextView"
+                    android:id="@+id/tv_triparty"
+                    android:text="三方框架"
+                    android:textSize="15sp" />
+                <TextView
+                    style="@style/SortTextView"
+                    android:id="@+id/tv_open_source"
+                    android:text="开源组件"></TextView>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_widget"
